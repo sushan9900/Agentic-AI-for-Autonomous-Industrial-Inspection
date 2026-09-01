@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0",
+  "inspection_id": "insp-IMG_6526-1-b2676b6b",
+  "component_id": "PIPE-SEC-0077",
+  "component_type": "pipeline",
+  "status": "QUALITY_WARNING",
+  "source_image": {
+    "filename": "IMG_6526-1.jpg",
+    "file_extension": ".jpg",
+    "width": 544,
+    "height": 384,
+    "channels": 3,
+    "file_size_bytes": 106005,
+    "sha256_hash": "b2676b6bb2ce91fd3ba2a2c37aa671c5b7eb9dc05edbd1d86f488ca74f32b8dc"
+  },
+  "model": {
+    "model_name": "YOLO11n-seg",
+    "model_architecture": "YOLO11n-seg",
+    "model_version": "1.0.0",
+    "checkpoint_identifier": "best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "framework": "ultralytics",
+    "framework_version": "8.4.136",
+    "confidence_threshold": 0.25,
+    "input_size": [
+      640,
+      640
+    ],
+    "device": "0"
+  },
+  "summary": {
+    "detection_count": 7,
+    "max_confidence": 0.4758,
+    "mean_confidence": 0.4123,
+    "min_confidence": 0.269
+  },
+  "detections": [
+    {
+      "detection_id": "det-001",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.4758,
+      "bounding_box": {
+        "x_pixel": 202.57,
+        "y_pixel": 177.88,
+        "width_pixel": 166.69,
+        "height_pixel": 19.67,
+        "x_norm": 0.3724,
+        "y_norm": 0.4632,
+        "width_norm": 0.3064,
+        "height_norm": 0.0512
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 1268.42,
+        "mask_area_percentage": 0.6072,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.6072,
+        "location_type": null,
+        "estimated_size": "167.85px x 7.56px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-002",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.475,
+      "bounding_box": {
+        "x_pixel": 377.02,
+        "y_pixel": 180.6,
+        "width_pixel": 18.16,
+        "height_pixel": 10.74,
+        "x_norm": 0.6931,
+        "y_norm": 0.4703,
+        "width_norm": 0.0334,
+        "height_norm": 0.028
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 98.6,
+        "mask_area_percentage": 0.0472,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.0472,
+        "location_type": null,
+        "estimated_size": "21.1px x 4.67px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-003",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.4577,
+      "bounding_box": {
+        "x_pixel": 450.24,
+        "y_pixel": 174.01,
+        "width_pixel": 79.49,
+        "height_pixel": 18.14,
+        "x_norm": 0.8276,
+        "y_norm": 0.4532,
+        "width_norm": 0.1461,
+        "height_norm": 0.0472
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 519.94,
+        "mask_area_percentage": 0.2489,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.2489,
+        "location_type": null,
+        "estimated_size": "81.53px x 6.38px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-004",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.4559,
+      "bounding_box": {
+        "x_pixel": 0.84,
+        "y_pixel": 179.53,
+        "width_pixel": 143.88,
+        "height_pixel": 21.21,
+        "x_norm": 0.0015,
+        "y_norm": 0.4675,
+        "width_norm": 0.2645,
+        "height_norm": 0.0552
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 656.35,
+        "mask_area_percentage": 0.3142,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.3142,
+        "location_type": null,
+        "estimated_size": "145.43px x 4.51px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-005",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.4487,
+      "bounding_box": {
+        "x_pixel": 411.78,
+        "y_pixel": 163.46,
+        "width_pixel": 31.14,
+        "height_pixel": 9.59,
+        "x_norm": 0.7569,
+        "y_norm": 0.4257,
+        "width_norm": 0.0572,
+        "height_norm": 0.025
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 201.17,
+        "mask_area_percentage": 0.0963,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.0963,
+        "location_type": null,
+        "estimated_size": "32.58px x 6.17px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-006",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.3038,
+      "bounding_box": {
+        "x_pixel": 420.47,
+        "y_pixel": 174.59,
+        "width_pixel": 109.86,
+        "height_pixel": 18.78,
+        "x_norm": 0.7729,
+        "y_norm": 0.4547,
+        "width_norm": 0.2019,
+        "height_norm": 0.0489
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 511.8,
+        "mask_area_percentage": 0.245,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.245,
+        "location_type": null,
+        "estimated_size": "111.45px x 4.59px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-007",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.269,
+      "bounding_box": {
+        "x_pixel": 399.74,
+        "y_pixel": 171.89,
+        "width_pixel": 134.42,
+        "height_pixel": 23.69,
+        "x_norm": 0.7348,
+        "y_norm": 0.4476,
+        "width_norm": 0.2471,
+        "height_norm": 0.0617
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 622.72,
+        "mask_area_percentage": 0.2981,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.2981,
+        "location_type": null,
+        "estimated_size": "136.49px x 4.56px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    }
+  ],
+  "quality": {
+    "brightness_mean": 155.07,
+    "contrast_std": 12.65,
+    "blur_score": 36.91,
+    "blur_detected": true,
+    "low_contrast_detected": true,
+    "underexposed": false,
+    "overexposed": false,
+    "warnings": [
+      "BLUR",
+      "LOW_CONTRAST"
+    ]
+  },
+  "processing": {
+    "started_at": "2026-08-31T17:07:12.936771+00:00",
+    "validation_ms": 0.36,
+    "preprocessing_ms": 0.22,
+    "inference_ms": 58.65,
+    "postprocessing_ms": 0.01,
+    "evidence_construction_ms": 18.81,
+    "total_execution_ms": 78.05
+  }
+}

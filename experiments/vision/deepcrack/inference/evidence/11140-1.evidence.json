@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "inspection_id": "insp-11140-1-89fd36ba",
+  "component_id": "PIPE-SEC-0014",
+  "component_type": "pipeline",
+  "status": "SUCCESS",
+  "source_image": {
+    "filename": "11140-1.jpg",
+    "file_extension": ".jpg",
+    "width": 544,
+    "height": 384,
+    "channels": 3,
+    "file_size_bytes": 130205,
+    "sha256_hash": "89fd36ba0ad15cfca817fd223f07ba38629a889518fb92b2df5b86f4f55f6920"
+  },
+  "model": {
+    "model_name": "YOLO11n-seg",
+    "model_architecture": "YOLO11n-seg",
+    "model_version": "1.0.0",
+    "checkpoint_identifier": "best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "framework": "ultralytics",
+    "framework_version": "8.4.136",
+    "confidence_threshold": 0.25,
+    "input_size": [
+      640,
+      640
+    ],
+    "device": "0"
+  },
+  "summary": {
+    "detection_count": 3,
+    "max_confidence": 0.8629,
+    "mean_confidence": 0.7302,
+    "min_confidence": 0.6143
+  },
+  "detections": [
+    {
+      "detection_id": "det-001",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.8629,
+      "bounding_box": {
+        "x_pixel": 318.64,
+        "y_pixel": 303.39,
+        "width_pixel": 45.57,
+        "height_pixel": 78.87,
+        "x_norm": 0.5857,
+        "y_norm": 0.7901,
+        "width_norm": 0.0838,
+        "height_norm": 0.2054
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 757.46,
+        "mask_area_percentage": 0.3626,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.3626,
+        "location_type": null,
+        "estimated_size": "91.09px x 8.32px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-002",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.7134,
+      "bounding_box": {
+        "x_pixel": 167.25,
+        "y_pixel": 54.32,
+        "width_pixel": 144.24,
+        "height_pixel": 182.42,
+        "x_norm": 0.3074,
+        "y_norm": 0.1415,
+        "width_norm": 0.2651,
+        "height_norm": 0.4751
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 1592.41,
+        "mask_area_percentage": 0.7623,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.7623,
+        "location_type": null,
+        "estimated_size": "232.56px x 6.85px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-003",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.6143,
+      "bounding_box": {
+        "x_pixel": 164.96,
+        "y_pixel": 5.97,
+        "width_pixel": 9.04,
+        "height_pixel": 28.18,
+        "x_norm": 0.3032,
+        "y_norm": 0.0155,
+        "width_norm": 0.0166,
+        "height_norm": 0.0734
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 109.46,
+        "mask_area_percentage": 0.0524,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.0524,
+        "location_type": null,
+        "estimated_size": "29.59px x 3.7px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    }
+  ],
+  "quality": {
+    "brightness_mean": 139.29,
+    "contrast_std": 25.71,
+    "blur_score": 3145.94,
+    "blur_detected": false,
+    "low_contrast_detected": false,
+    "underexposed": false,
+    "overexposed": false,
+    "warnings": []
+  },
+  "processing": {
+    "started_at": "2026-08-31T17:07:07.190637+00:00",
+    "validation_ms": 0.39,
+    "preprocessing_ms": 0.23,
+    "inference_ms": 47.81,
+    "postprocessing_ms": 0.0,
+    "evidence_construction_ms": 17.37,
+    "total_execution_ms": 65.83
+  }
+}

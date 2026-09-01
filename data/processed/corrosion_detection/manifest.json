@@ -1,0 +1,3969 @@
+{
+  "dataset_id": "corrosion_detection",
+  "role": "domain_generalization_inference",
+  "total_samples": 152,
+  "samples": [
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000001",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000001.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000001",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4160,
+      "image_height": 3120,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.703244+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000004",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000004.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000004",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 1926,
+      "image_height": 2574,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.705242+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000006",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000006.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000006",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3693,
+      "image_height": 2462,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.706748+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000007",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000007.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000007",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2462,
+      "image_height": 1846,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.708764+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000008",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000008.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000008",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2462,
+      "image_height": 1846,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.709764+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000009",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000009.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000009",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4924,
+      "image_height": 3283,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.712759+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000010",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000010.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000010",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4604,
+      "image_height": 3041,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.714762+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000012",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000012.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000012",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5820,
+      "image_height": 3880,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.716760+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000013",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000013.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000013",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4190,
+      "image_height": 3142,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.717770+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000014",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000014.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000014",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5820,
+      "image_height": 3880,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.719757+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000015",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000015.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000015",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5820,
+      "image_height": 3880,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.720757+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000016",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000016.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000016",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5524,
+      "image_height": 3755,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.722763+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000017",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000017.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000017",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5820,
+      "image_height": 3880,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.723772+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000018",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000018.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000018",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5820,
+      "image_height": 3880,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.724775+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000019",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000019.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000019",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5804,
+      "image_height": 3538,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.726771+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000020",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000020.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000020",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5469,
+      "image_height": 3642,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.728781+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000021",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000021.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000021",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5256,
+      "image_height": 3743,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.730784+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000022",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000022.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000022",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 6177,
+      "image_height": 4118,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.732774+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000024",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000024.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000024",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5877,
+      "image_height": 3918,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.742311+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000025",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000025.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000025",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3000,
+      "image_height": 2250,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.746499+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000026",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000026.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000026",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4288,
+      "image_height": 2848,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.750503+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000027",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000027.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000027",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3648,
+      "image_height": 2736,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.755043+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000030",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000030.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000030",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4752,
+      "image_height": 3168,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.760924+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000031",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000031.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000031",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2816,
+      "image_height": 1968,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.763005+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000032",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000032.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000032",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5472,
+      "image_height": 3648,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.769005+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000033",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000033.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000033",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2400,
+      "image_height": 1581,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.773008+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000034",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000034.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000034",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4752,
+      "image_height": 3168,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.779005+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000035",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000035.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000035",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3000,
+      "image_height": 2316,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.781013+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000040",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000040.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000040",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2000,
+      "image_height": 3008,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.783011+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000078",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000078.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000078",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.789014+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000140",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000140.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000140",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.794529+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000143",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000143.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000143",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.801543+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000144",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000144.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000144",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.809542+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000145",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000145.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000145",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.817066+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000146",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000146.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000146",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.822076+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000147",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000147.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000147",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.828071+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000150",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000150.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000150",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.834089+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000151",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000151.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000151",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.839079+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000152",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000152.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000152",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.845610+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000153",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000153.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000153",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.853620+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000154",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000154.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000154",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.862129+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000155",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000155.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000155",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.870140+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000168",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000168.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000168",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.874137+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000178",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000178.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000178",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.878146+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000179",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000179.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000179",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.883154+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000183",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000183.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000183",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.889157+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000184",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000184.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000184",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.894659+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000185",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000185.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000185",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.900674+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000186",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000186.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000186",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.906669+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000187",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000187.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000187",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.916198+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000190",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000190.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000190",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.923201+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000191",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000191.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000191",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.932210+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000192",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000192.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000192",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.939214+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000193",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000193.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000193",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.947185+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000195",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000195.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000195",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.955609+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000196",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000196.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000196",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.966624+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000197",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000197.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000197",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.972622+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000218",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000218.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000218",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.979642+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000219",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000219.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000219",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.984631+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000222",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000222.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000222",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:38.990640+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000223",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000223.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000223",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.000166+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000224",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000224.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000224",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.008173+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000225",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000225.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000225",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.021692+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000226",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000226.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000226",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.027711+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000227",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000227.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000227",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.034714+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000230",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000230.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000230",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.041616+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000231",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000231.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000231",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.047941+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000232",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000232.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000232",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.054944+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000233",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000233.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000233",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.059944+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000236",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000236.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000236",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 3024,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.067481+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000237",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000237.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000237",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.072471+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000342",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000342.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000342",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.075478+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000343",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000343.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000343",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.078475+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000344",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000344.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000344",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.081485+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000345",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000345.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000345",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.085485+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000346",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000346.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000346",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.088488+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000347",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000347.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000347",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.092485+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000350",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000350.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000350",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.094997+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000351",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000351.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000351",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.099006+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000352",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000352.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000352",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.103089+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000353",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000353.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000353",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.107012+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000356",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000356.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000356",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.111682+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000378",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000378.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000378",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.114597+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000379",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000379.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000379",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.116825+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000380",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000380.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000380",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.120833+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000381",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000381.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000381",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.129731+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000383",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000383.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000383",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.133178+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000384",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000384.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000384",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.137191+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000385",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000385.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000385",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.140189+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000386",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000386.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000386",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.143189+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000387",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000387.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000387",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.147300+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000390",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000390.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000390",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.151293+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000391",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000391.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000391",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.154295+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000392",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000392.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000392",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.160807+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000393",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000393.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000393",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.163808+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000394",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000394.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000394",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.166814+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000395",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000395.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000395",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.170808+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000408",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000408.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000408",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.175813+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000409",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000409.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000409",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.181820+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000418",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000418.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000418",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.189818+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000419",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000419.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000419",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.197344+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000420",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000420.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000420",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.203344+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000421",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000421.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000421",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.209868+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000422",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000422.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000422",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.215872+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000423",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000423.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000423",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.224869+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000424",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000424.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000424",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.235265+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000427",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000427.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000427",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.244774+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000430",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000430.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000430",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.254789+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000431",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000431.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000431",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.264793+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000434",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000434.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000434",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.274318+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000435",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000435.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000435",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.283375+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000436",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000436.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000436",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.289351+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000437",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000437.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000437",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3024,
+      "image_height": 4032,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.296589+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000480",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000480.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000480",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2288,
+      "image_height": 1712,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.298590+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000481",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000481.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000481",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2346,
+      "image_height": 1760,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.299617+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000495",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000495.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000495",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2256,
+      "image_height": 1504,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.301589+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000508",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000508.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000508",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2376,
+      "image_height": 1584,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.303591+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000522",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000522.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000522",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 1920,
+      "image_height": 1440,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.305588+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000537",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000537.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000537",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2048,
+      "image_height": 1360,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.307590+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000540",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000540.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000540",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 4608,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.311583+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000541",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000541.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000541",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2945,
+      "image_height": 2207,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.315105+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000542",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000542.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000542",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3456,
+      "image_height": 4608,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.321118+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000544",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000544.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000544",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4752,
+      "image_height": 3168,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.325114+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000545",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000545.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000545",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5184,
+      "image_height": 3888,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.330131+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000550",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000550.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000550",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2592,
+      "image_height": 1944,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.333128+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000551",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000551.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000551",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4320,
+      "image_height": 2432,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.337127+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000552",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000552.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000552",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4272,
+      "image_height": 2848,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.342127+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000553",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000553.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000553",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3184,
+      "image_height": 2123,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.343131+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000554",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000554.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000554",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 1704,
+      "image_height": 2272,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.345652+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000555",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000555.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000555",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5068,
+      "image_height": 3379,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.352650+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000556",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000556.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000556",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4000,
+      "image_height": 2248,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.355655+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000557",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000557.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000557",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4048,
+      "image_height": 2697,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.359653+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000563",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000563.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000563",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2330,
+      "image_height": 1114,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.360651+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000568",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000568.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000568",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4272,
+      "image_height": 2848,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.364174+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000569",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000569.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000569",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4272,
+      "image_height": 2848,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.366174+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000570",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000570.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000570",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 1987,
+      "image_height": 1323,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.368175+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000573",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000573.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000573",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 2000,
+      "image_height": 1483,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.370175+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000578",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000578.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000578",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3500,
+      "image_height": 2333,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.373176+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000579",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000579.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000579",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4524,
+      "image_height": 2882,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.379178+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000580",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000580.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000580",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3872,
+      "image_height": 2592,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.383191+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000581",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000581.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000581",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 6021,
+      "image_height": 4014,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.390190+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000582",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000582.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000582",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5472,
+      "image_height": 3080,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.399466+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000583",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000583.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000583",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3088,
+      "image_height": 2056,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.401465+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000586",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000586.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000586",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 3008,
+      "image_height": 2000,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.405470+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000587",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000587.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000587",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5184,
+      "image_height": 3456,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.413994+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000591",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000591.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000591",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5184,
+      "image_height": 3456,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.419993+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000592",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000592.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000592",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5184,
+      "image_height": 3456,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.424992+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000593",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000593.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000593",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 8192,
+      "image_height": 5461,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.442998+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000594",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000594.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000594",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5472,
+      "image_height": 3648,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.457049+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000595",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000595.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000595",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 5184,
+      "image_height": 3456,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.464053+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000596",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000596.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000596",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4168,
+      "image_height": 2779,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.470050+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_detection",
+      "sample_id": "000597",
+      "image_path": "data\\raw\\corrosion_detection\\extracted\\Largeimage\\000597.jpg",
+      "annotation_path": null,
+      "annotation_type": "unannotated",
+      "source_split": "inference",
+      "group_id": "corrosion_asset_000597",
+      "original_labels": [
+        "corrosion"
+      ],
+      "image_width": 4608,
+      "image_height": 3072,
+      "channels": 3,
+      "metadata": {
+        "role": "domain_generalization_inference"
+      },
+      "provenance": {
+        "source_dataset": "Image-based Corrosion Detection Dataset",
+        "source_archive": "Corrosion_Data.zip",
+        "source_archive_hash": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.478055+00:00",
+        "transformation_applied": null
+      }
+    }
+  ],
+  "statistics": {
+    "total_samples": 152,
+    "annotation_types": {
+      "unannotated": 152
+    },
+    "width_min": 1704,
+    "width_max": 8192,
+    "height_min": 1114,
+    "height_max": 5461
+  }
+}

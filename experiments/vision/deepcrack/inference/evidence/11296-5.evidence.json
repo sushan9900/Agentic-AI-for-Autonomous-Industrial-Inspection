@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "inspection_id": "insp-11296-5-53674107",
+  "component_id": "PIPE-SEC-0068",
+  "component_type": "pipeline",
+  "status": "SUCCESS",
+  "source_image": {
+    "filename": "11296-5.jpg",
+    "file_extension": ".jpg",
+    "width": 544,
+    "height": 384,
+    "channels": 3,
+    "file_size_bytes": 100853,
+    "sha256_hash": "5367410794bd4fd9323ce522fce6e30bf1e591ca8bd19dfc4ae27054918461d3"
+  },
+  "model": {
+    "model_name": "YOLO11n-seg",
+    "model_architecture": "YOLO11n-seg",
+    "model_version": "1.0.0",
+    "checkpoint_identifier": "best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "framework": "ultralytics",
+    "framework_version": "8.4.136",
+    "confidence_threshold": 0.25,
+    "input_size": [
+      640,
+      640
+    ],
+    "device": "0"
+  },
+  "summary": {
+    "detection_count": 3,
+    "max_confidence": 0.7917,
+    "mean_confidence": 0.6329,
+    "min_confidence": 0.4692
+  },
+  "detections": [
+    {
+      "detection_id": "det-001",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.7917,
+      "bounding_box": {
+        "x_pixel": 381.65,
+        "y_pixel": 317.01,
+        "width_pixel": 58.55,
+        "height_pixel": 65.36,
+        "x_norm": 0.7016,
+        "y_norm": 0.8255,
+        "width_norm": 0.1076,
+        "height_norm": 0.1702
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 607.68,
+        "mask_area_percentage": 0.2909,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.2909,
+        "location_type": null,
+        "estimated_size": "87.75px x 6.93px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-002",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.6378,
+      "bounding_box": {
+        "x_pixel": 0.0,
+        "y_pixel": 4.69,
+        "width_pixel": 377.79,
+        "height_pixel": 312.69,
+        "x_norm": 0.0,
+        "y_norm": 0.0122,
+        "width_norm": 0.6945,
+        "height_norm": 0.8143
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 5532.61,
+        "mask_area_percentage": 2.6485,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 2.6485,
+        "location_type": null,
+        "estimated_size": "490.41px x 11.28px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-003",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.4692,
+      "bounding_box": {
+        "x_pixel": 0.01,
+        "y_pixel": 125.46,
+        "width_pixel": 69.41,
+        "height_pixel": 46.39,
+        "x_norm": 0.0,
+        "y_norm": 0.3267,
+        "width_norm": 0.1276,
+        "height_norm": 0.1208
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 761.43,
+        "mask_area_percentage": 0.3645,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.3645,
+        "location_type": null,
+        "estimated_size": "83.49px x 9.12px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    }
+  ],
+  "quality": {
+    "brightness_mean": 192.65,
+    "contrast_std": 20.96,
+    "blur_score": 63.54,
+    "blur_detected": false,
+    "low_contrast_detected": false,
+    "underexposed": false,
+    "overexposed": false,
+    "warnings": []
+  },
+  "processing": {
+    "started_at": "2026-08-31T17:07:12.053680+00:00",
+    "validation_ms": 0.5,
+    "preprocessing_ms": 0.23,
+    "inference_ms": 59.58,
+    "postprocessing_ms": 0.01,
+    "evidence_construction_ms": 19.14,
+    "total_execution_ms": 79.47
+  }
+}

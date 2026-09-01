@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "inspection_id": "insp-11134-6-8564b258",
+  "component_id": "PIPE-SEC-0010",
+  "component_type": "pipeline",
+  "status": "SUCCESS",
+  "source_image": {
+    "filename": "11134-6.jpg",
+    "file_extension": ".jpg",
+    "width": 544,
+    "height": 384,
+    "channels": 3,
+    "file_size_bytes": 98254,
+    "sha256_hash": "8564b25892b34fcc7b338ed99f1438ee557685fa00ef2e6966a561d36baf4975"
+  },
+  "model": {
+    "model_name": "YOLO11n-seg",
+    "model_architecture": "YOLO11n-seg",
+    "model_version": "1.0.0",
+    "checkpoint_identifier": "best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "framework": "ultralytics",
+    "framework_version": "8.4.136",
+    "confidence_threshold": 0.25,
+    "input_size": [
+      640,
+      640
+    ],
+    "device": "0"
+  },
+  "summary": {
+    "detection_count": 3,
+    "max_confidence": 0.8619,
+    "mean_confidence": 0.4796,
+    "min_confidence": 0.2826
+  },
+  "detections": [
+    {
+      "detection_id": "det-001",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.8619,
+      "bounding_box": {
+        "x_pixel": 0.0,
+        "y_pixel": 3.51,
+        "width_pixel": 541.56,
+        "height_pixel": 380.49,
+        "x_norm": 0.0,
+        "y_norm": 0.0091,
+        "width_norm": 0.9955,
+        "height_norm": 0.9909
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 19174.35,
+        "mask_area_percentage": 9.1789,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 9.1789,
+        "location_type": null,
+        "estimated_size": "661.86px x 28.97px",
+        "spread": "widespread",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-002",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.2944,
+      "bounding_box": {
+        "x_pixel": 317.56,
+        "y_pixel": 6.85,
+        "width_pixel": 223.15,
+        "height_pixel": 376.23,
+        "x_norm": 0.5837,
+        "y_norm": 0.0178,
+        "width_norm": 0.4102,
+        "height_norm": 0.9798
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 15215.78,
+        "mask_area_percentage": 7.2839,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 7.2839,
+        "location_type": null,
+        "estimated_size": "437.43px x 34.78px",
+        "spread": "widespread",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-003",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.2826,
+      "bounding_box": {
+        "x_pixel": 524.23,
+        "y_pixel": 277.48,
+        "width_pixel": 19.66,
+        "height_pixel": 17.03,
+        "x_norm": 0.9637,
+        "y_norm": 0.7226,
+        "width_norm": 0.0361,
+        "height_norm": 0.0443
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 191.14,
+        "mask_area_percentage": 0.0915,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.0915,
+        "location_type": null,
+        "estimated_size": "26.01px x 7.35px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    }
+  ],
+  "quality": {
+    "brightness_mean": 158.53,
+    "contrast_std": 29.49,
+    "blur_score": 657.63,
+    "blur_detected": false,
+    "low_contrast_detected": false,
+    "underexposed": false,
+    "overexposed": false,
+    "warnings": []
+  },
+  "processing": {
+    "started_at": "2026-08-31T17:07:06.836095+00:00",
+    "validation_ms": 0.38,
+    "preprocessing_ms": 0.2,
+    "inference_ms": 80.25,
+    "postprocessing_ms": 0.01,
+    "evidence_construction_ms": 21.5,
+    "total_execution_ms": 102.35
+  }
+}

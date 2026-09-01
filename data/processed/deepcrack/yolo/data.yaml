@@ -1,0 +1,8 @@
+# Ultralytics YOLO11 Segmentation Dataset Configuration for DeepCrack
+path: C:/sushan_repos/Agentic-AI-for-Autonomous-Industrial-Inspection/data/processed/deepcrack/yolo
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: crack

@@ -1,0 +1,62 @@
+{
+  "dataset_name": "Images and pixel annotations for corrosion segmentation",
+  "doi": "10.17632/kcyn4nhv2c.1",
+  "source": "Mendeley Data",
+  "authors": [
+    "Marina Rios",
+    "Paulo Ivson Netto",
+    "Deane Roehl"
+  ],
+  "institution": "Pontifícia Universidade Católica do Rio de Janeiro (PUC-Rio)",
+  "publication_date": "2023-04-24",
+  "acquisition_date": "2026-08-31",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "archive_filename": "Labeled images.zip",
+  "archive_size_bytes": 262967506,
+  "sha256_checksum": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+  "extracted_path": "data/raw/corrosion_segmentation/extracted/Labeled images",
+  "file_counts": {
+    "total_files": 145,
+    "directories": 6,
+    "original_images": 34,
+    "visualization_images": 36,
+    "corrosion_label_archives": 35,
+    "background_label_archives": 35,
+    "desktop_ini_files": 5
+  },
+  "image_statistics": {
+    "total_original_images": 34,
+    "readable_images": 34,
+    "corrupted_images": 0,
+    "formats": {
+      "TIFF": 34
+    },
+    "channels": {
+      "3_channel_RGB": 34
+    },
+    "width": {
+      "min": 200,
+      "max": 3952,
+      "median": 1581
+    },
+    "height": {
+      "min": 132,
+      "max": 3380,
+      "median": 956
+    }
+  },
+  "annotation_statistics": {
+    "annotation_format": "ImageJ binary ROI (.roi) coordinate bounding patches packaged in .tif.zip per image",
+    "total_corrosion_rois": 352,
+    "total_background_rois": 351,
+    "total_sparse_annotations": 703,
+    "annotation_nature": "SPARSE PATCH-LEVEL ANNOTATIONS (Not full instance segmentation masks)",
+    "original_classes": [
+      "Corrosion",
+      "Background"
+    ]
+  },
+  "split_information": "Official train/validation/test split not found in source archive.",
+  "domain_characteristics": "Real-world atmospheric corrosion on painted and unpainted structural steel, maritime structures, industrial machinery, and outdoor metal surfaces.",
+  "notes": "Acquired directly from verified Mendeley Data DOI 10.17632/kcyn4nhv2c.1. Original Labeled images.zip preserved unchanged."
+}

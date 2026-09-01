@@ -1,0 +1,22 @@
+{
+  "model_architecture": "YOLO11n-seg",
+  "dataset": "DeepCrack",
+  "training_duration_seconds": 1154.5154328346252,
+  "best_weights": "C:\\sushan_repos\\Agentic-AI-for-Autonomous-Industrial-Inspection\\runs\\segment\\experiments\\vision\\deepcrack\\baseline\\weights\\best.pt",
+  "validation_metrics": {
+    "seg_mAP50": 0.3034076102211728,
+    "seg_mAP50_95": 0.08922526268718425,
+    "box_mAP50": 0.30419449527047565,
+    "box_mAP50_95": 0.1455602991440736,
+    "precision": 0.46307793839872563,
+    "recall": 0.305993690851735
+  },
+  "test_metrics": {
+    "seg_mAP50": 0.3435743754270172,
+    "seg_mAP50_95": 0.10996340327902246,
+    "box_mAP50": 0.39904590283590147,
+    "box_mAP50_95": 0.21133210802873945,
+    "precision": 0.5151349590532688,
+    "recall": 0.40294117647058825
+  }
+}

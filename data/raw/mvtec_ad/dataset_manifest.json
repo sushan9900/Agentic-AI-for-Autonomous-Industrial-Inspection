@@ -1,0 +1,48 @@
+{
+  "dataset_name": "MVTec Anomaly Detection (MVTec AD)",
+  "official_source": "https://www.mvtec.com/research-teaching/datasets/mvtec-ad",
+  "paper_reference": "Paul Bergmann, Michael Fauser, David Sattlegger, Carsten Steger. 'MVTec AD — A Comprehensive Real-World Dataset for Unsupervised Anomaly Detection', CVPR 2019 / IJCV 2021",
+  "paper_doi": "10.1007/s11263-020-01400-4",
+  "acquisition_date": "2026-08-31",
+  "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)",
+  "evaluation_package": {
+    "archive_filename": "mvtec_ad_evaluation.tar.xz",
+    "archive_size_bytes": 11056,
+    "sha256_checksum": "dfcda7d67eee25316ec6ae5042c0b1684a4cabf33b2346be351e2ce36013f220",
+    "extracted_path": "data/raw/mvtec_ad/evaluation"
+  },
+  "benchmark_structure": {
+    "total_categories": 15,
+    "texture_categories": ["carpet", "grid", "leather", "tile", "wood"],
+    "object_categories": ["bottle", "cable", "capsule", "hazelnut", "metal_nut", "pill", "screw", "toothbrush", "transistor", "zipper"],
+    "total_images": 5354,
+    "train_images_count": 3629,
+    "test_images_count": 1725,
+    "test_normal_images": 467,
+    "test_anomalous_images": 1258,
+    "ground_truth_masks_count": 1258,
+    "anomaly_types_count": 73
+  },
+  "category_breakdown": {
+    "bottle": { "type": "object", "train": 209, "test_good": 20, "test_anomaly": 63, "defects": ["broken_large", "broken_small", "contamination"] },
+    "cable": { "type": "object", "train": 224, "test_good": 58, "test_anomaly": 92, "defects": ["bent_wire", "cable_swap", "combined", "cut_inner_insulation", "cut_outer_insulation", "missing_cable", "missing_wire", "poke_insulation"] },
+    "capsule": { "type": "object", "train": 219, "test_good": 23, "test_anomaly": 109, "defects": ["crack", "faulty_imprint", "poke", "scratch", "squeeze"] },
+    "carpet": { "type": "texture", "train": 280, "test_good": 28, "test_anomaly": 89, "defects": ["color", "cut", "hole", "metal_contamination", "thread"] },
+    "grid": { "type": "texture", "train": 264, "test_good": 21, "test_anomaly": 57, "defects": ["bent", "broken", "glue", "metal_contamination", "thread"] },
+    "hazelnut": { "type": "object", "train": 391, "test_good": 40, "test_anomaly": 70, "defects": ["crack", "cut", "hole", "print"] },
+    "leather": { "type": "texture", "train": 245, "test_good": 32, "test_anomaly": 92, "defects": ["color", "cut", "fold", "glue", "poke"] },
+    "metal_nut": { "type": "object", "train": 220, "test_good": 22, "test_anomaly": 93, "defects": ["bent", "color", "flip", "scratch"] },
+    "pill": { "type": "object", "train": 267, "test_good": 26, "test_anomaly": 141, "defects": ["color", "combined", "contamination", "crack", "faulty_imprint", "pill_type", "scratch"] },
+    "screw": { "type": "object", "train": 320, "test_good": 41, "test_anomaly": 119, "defects": ["manipulated_front", "scratch_head", "scratch_neck", "thread_side", "thread_top"] },
+    "tile": { "type": "texture", "train": 230, "test_good": 33, "test_anomaly": 84, "defects": ["crack", "glue_strip", "gray_stroke", "oil", "rough"] },
+    "toothbrush": { "type": "object", "train": 60, "test_good": 12, "test_anomaly": 30, "defects": ["defective"] },
+    "transistor": { "type": "object", "train": 213, "test_good": 40, "test_anomaly": 60, "defects": ["bent_lead", "cut_lead", "damaged_case", "misplaced"] },
+    "wood": { "type": "texture", "train": 247, "test_good": 19, "test_anomaly": 60, "defects": ["color", "combined", "hole", "liquid", "scratch"] },
+    "zipper": { "type": "object", "train": 240, "test_good": 32, "test_anomaly": 119, "defects": ["broken_teeth", "combined", "fabric_border", "fabric_interior", "rough", "split_teeth", "squeezed_teeth"] }
+  },
+  "patchcore_compatibility": {
+    "status": "Fully Compatible",
+    "evaluation_metrics": ["Image-level AUROC", "Pixel-level AUROC", "PRO (Per-Region Overlap) AU-PRO"],
+    "workflow_design": "Train only on normal defect-free images ('good'), evaluate anomaly detection and pixel localization on test images and ground-truth masks."
+  }
+}

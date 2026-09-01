@@ -1,0 +1,1001 @@
+{
+  "dataset_id": "corrosion_segmentation",
+  "role": "auxiliary_patch_roi_analysis",
+  "total_samples": 34,
+  "samples": [
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag107",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag107.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag107.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag107",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1100,
+      "image_height": 940,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag107.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag107.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.517275+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag115",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag115.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag115.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag115",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1044,
+      "image_height": 956,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag115.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag115.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.518272+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag134",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag134.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag134.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag134",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 308,
+      "image_height": 2300,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag134.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag134.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.518272+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag137",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag137.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag137.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag137",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2212,
+      "image_height": 904,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag137.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag137.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.519639+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag142",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag142.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag142.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag142",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 876,
+      "image_height": 1028,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag142.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag142.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.520637+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag144",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag144.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag144.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag144",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 852,
+      "image_height": 680,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag144.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag144.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.521632+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag146",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag146.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag146.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag146",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1156,
+      "image_height": 488,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag146.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag146.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.521632+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag170",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag170.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag170.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag170",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 3417,
+      "image_height": 534,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag170.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag170.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.522637+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag19",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag19.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag19.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag19",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 200,
+      "image_height": 1904,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag19.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag19.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.523631+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag195",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag195.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag195.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag195",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 822,
+      "image_height": 1422,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag195.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag195.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.524635+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag199",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag199.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag199.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag199",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 508,
+      "image_height": 692,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag199.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag199.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.525633+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag203",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag203.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag203.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag203",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1581,
+      "image_height": 768,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag203.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag203.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.526636+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag204",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag204.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag204.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag204",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2104,
+      "image_height": 156,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag204.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag204.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.527641+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag205",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag205.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag205.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag205",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 3952,
+      "image_height": 1724,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag205.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag205.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.528637+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag215",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag215.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag215.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag215",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2196,
+      "image_height": 888,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag215.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag215.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.529652+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag217",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag217.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag217.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag217",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 708,
+      "image_height": 492,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag217.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag217.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.530652+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag219",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag219.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag219.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag219",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1180,
+      "image_height": 408,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag219.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag219.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.531646+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag220",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag220.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag220.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag220",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1348,
+      "image_height": 132,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag220.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag220.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.532647+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag225",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag225.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag225.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag225",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 3324,
+      "image_height": 2204,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag225.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag225.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.533651+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag227",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag227.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag227.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag227",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2680,
+      "image_height": 1804,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag227.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag227.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.534654+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag233",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag233.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag233.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag233",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 592,
+      "image_height": 1048,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag233.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag233.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.535653+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag241",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag241.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag241.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag241",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1028,
+      "image_height": 536,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag241.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag241.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.536651+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag246",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag246.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag246.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag246",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2400,
+      "image_height": 300,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag246.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag246.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.537655+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag249",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag249.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag249.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag249",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2740,
+      "image_height": 632,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag249.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag249.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.538657+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag26",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag26.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag26.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag26",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1232,
+      "image_height": 2348,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag26.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag26.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.539651+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag268",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag268.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag268.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag268",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 3068,
+      "image_height": 460,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag268.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag268.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.540647+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag4",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag4.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag4.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag4",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 224,
+      "image_height": 3380,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag4.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag4.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.541652+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag48",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag48.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag48.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag48",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2601,
+      "image_height": 1602,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag48.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag48.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.542652+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag53",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag53.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag53.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag53",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 3896,
+      "image_height": 1328,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag53.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag53.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.543650+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag59",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag59.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag59.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag59",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1692,
+      "image_height": 888,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag59.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag59.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.544652+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag63",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag63.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag63.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag63",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2696,
+      "image_height": 2332,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag63.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag63.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.545775+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag65",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag65.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag65.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag65",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2468,
+      "image_height": 2504,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag65.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag65.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.546774+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag710",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag710.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag710.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag710",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 2220,
+      "image_height": 1902,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag710.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag710.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.546774+00:00",
+        "transformation_applied": null
+      }
+    },
+    {
+      "dataset_id": "corrosion_segmentation",
+      "sample_id": "Imag93",
+      "image_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Original images\\Imag93.tif",
+      "annotation_path": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag93.tif.zip",
+      "annotation_type": "patch_roi",
+      "source_split": "patch_roi",
+      "group_id": "puc_rio_Imag93",
+      "original_labels": [
+        "Corrosion",
+        "Background"
+      ],
+      "image_width": 1392,
+      "image_height": 968,
+      "channels": 3,
+      "metadata": {
+        "corrosion_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Corrosion\\CorrosionImag93.tif.zip",
+        "background_rois_zip": "data\\raw\\corrosion_segmentation\\extracted\\Labeled images\\Labeled images\\Labels\\Background\\BackgroundImag93.tif.zip",
+        "annotation_nature": "sparse_patch_rois"
+      },
+      "provenance": {
+        "source_dataset": "Images and pixel annotations for corrosion segmentation",
+        "source_archive": "Labeled images.zip",
+        "source_archive_hash": "6fbd29524a81f4d8250a3cf978da09ad09d48f65522677792156d0bdf454fcce",
+        "pipeline_version": "1.0.0",
+        "processed_at": "2026-08-31T16:11:39.547771+00:00",
+        "transformation_applied": null
+      }
+    }
+  ],
+  "statistics": {
+    "total_samples": 34,
+    "annotation_type": "patch_roi",
+    "classes": [
+      "Corrosion",
+      "Background"
+    ]
+  }
+}

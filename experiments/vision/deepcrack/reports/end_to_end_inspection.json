@@ -1,0 +1,31 @@
+{
+  "image": "data/processed/deepcrack/yolo/images/test/11112.jpg",
+  "model": "YOLO11n-seg",
+  "llm": "ollama/gemma3:latest",
+  "device": "cuda",
+  "detection_count": 3,
+  "risk_score": 100,
+  "risk_level": "CRITICAL",
+  "decision": "URGENT_ENGINEERING_REVIEW",
+  "human_review_status": "PENDING_HUMAN_REVIEW",
+  "decision_id": "dec-insp-11112-real-e2e-ASSET-PL-01",
+  "latencies_ms": {
+    "vision_validation_ms": 0.43,
+    "vision_preprocessing_ms": 0.18,
+    "yolo_inference_ms": 5643.63,
+    "vision_postprocessing_ms": 0.01,
+    "evidence_construction_ms": 17.26,
+    "total_vision_execution_ms": 5661.57,
+    "agent_total_ms": 63185.2,
+    "persistence_ms": 63.92,
+    "end_to_end_total_ms": 74192.32
+  },
+  "repeatability": {
+    "detections_match": true,
+    "risk_score_match": true,
+    "decision_match": true,
+    "human_review_match": true
+  },
+  "persistence_verified": true,
+  "timestamp": "2026-09-01T13:12:33.522530+00:00"
+}

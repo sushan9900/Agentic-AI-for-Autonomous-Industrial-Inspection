@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0",
+  "inspection_id": "insp-IMG_6542-4-ce484a3e",
+  "component_id": "PIPE-SEC-0084",
+  "component_type": "pipeline",
+  "status": "SUCCESS",
+  "source_image": {
+    "filename": "IMG_6542-4.jpg",
+    "file_extension": ".jpg",
+    "width": 384,
+    "height": 544,
+    "channels": 3,
+    "file_size_bytes": 177543,
+    "sha256_hash": "ce484a3eba7a6adc231617c2d9fa2e5cd5dd3a001db6aea294aa5956d63e0a7f"
+  },
+  "model": {
+    "model_name": "YOLO11n-seg",
+    "model_architecture": "YOLO11n-seg",
+    "model_version": "1.0.0",
+    "checkpoint_identifier": "best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "framework": "ultralytics",
+    "framework_version": "8.4.136",
+    "confidence_threshold": 0.25,
+    "input_size": [
+      640,
+      640
+    ],
+    "device": "0"
+  },
+  "summary": {
+    "detection_count": 1,
+    "max_confidence": 0.5285,
+    "mean_confidence": 0.5285,
+    "min_confidence": 0.5285
+  },
+  "detections": [
+    {
+      "detection_id": "det-001",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.5285,
+      "bounding_box": {
+        "x_pixel": 103.24,
+        "y_pixel": 18.27,
+        "width_pixel": 133.38,
+        "height_pixel": 523.81,
+        "x_norm": 0.2689,
+        "y_norm": 0.0336,
+        "width_norm": 0.3473,
+        "height_norm": 0.9629
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 7344.16,
+        "mask_area_percentage": 3.5157,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 3.5157,
+        "location_type": null,
+        "estimated_size": "540.52px x 13.59px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    }
+  ],
+  "quality": {
+    "brightness_mean": 161.27,
+    "contrast_std": 27.74,
+    "blur_score": 554.56,
+    "blur_detected": false,
+    "low_contrast_detected": false,
+    "underexposed": false,
+    "overexposed": false,
+    "warnings": []
+  },
+  "processing": {
+    "started_at": "2026-08-31T17:07:13.651817+00:00",
+    "validation_ms": 0.32,
+    "preprocessing_ms": 0.29,
+    "inference_ms": 66.74,
+    "postprocessing_ms": 0.01,
+    "evidence_construction_ms": 36.28,
+    "total_execution_ms": 103.66
+  }
+}

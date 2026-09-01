@@ -1,0 +1,26 @@
+{
+  "device": "0",
+  "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "gpu_vram_allocated_mb": 43.79,
+  "cold_load_time_ms": 606.85,
+  "iterations": 25,
+  "inference_latency_ms": {
+    "mean": 55.26,
+    "median": 56.24,
+    "min": 44.24,
+    "max": 69.37,
+    "std": 6.51
+  },
+  "total_latency_ms": {
+    "mean": 74.88,
+    "median": 75.54,
+    "min": 61.17,
+    "max": 103.28
+  },
+  "determinism": {
+    "detection_count_stable": true,
+    "detection_count": 3,
+    "confidence_max_delta": 0.0,
+    "confidence_stable": true
+  }
+}

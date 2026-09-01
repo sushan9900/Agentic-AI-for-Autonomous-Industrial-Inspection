@@ -1,0 +1,70 @@
+{
+  "dataset_name": "DeepCrack",
+  "source_repository": "https://github.com/yhlleo/DeepCrack",
+  "paper_reference": "Liu et al., 'DeepCrack: A Deep Hierarchical Feature Learning Architecture for Crack Segmentation', Neurocomputing, 2019",
+  "doi": "10.1016/j.neucom.2019.01.036",
+  "acquisition_date": "2026-08-31",
+  "license_and_usage": "Restricted to non-commercial research and educational purposes",
+  "archive_filename": "DeepCrack.zip",
+  "archive_size_bytes": 67708808,
+  "sha256_checksum": "ec3fc2bee3b71c2cc3c74739cbc51c97b77f78193d08ce3dda0e16d7d41bf585",
+  "extracted_path": "data/raw/deepcrack/extracted",
+  "file_counts": {
+    "total_files": 1074,
+    "directories": 4,
+    "train_images": 300,
+    "train_masks": 300,
+    "test_images": 237,
+    "test_masks": 237,
+    "total_rgb_images": 537,
+    "total_ground_truth_masks": 537
+  },
+  "split_structure": {
+    "train": {
+      "images": 300,
+      "masks": 300,
+      "folder_img": "train_img",
+      "folder_lab": "train_lab"
+    },
+    "test": {
+      "images": 237,
+      "masks": 237,
+      "folder_img": "test_img",
+      "folder_lab": "test_lab"
+    },
+    "validation": {
+      "status": "No official validation split in original source (requires partitioning from train)"
+    }
+  },
+  "image_statistics": {
+    "total_images": 537,
+    "readable_images": 537,
+    "corrupted_images": 0,
+    "duplicate_images": 0,
+    "formats": {
+      "JPEG": 537
+    },
+    "channels": {
+      "3_channel_RGB": 537
+    },
+    "resolutions": [
+      { "resolution": "544x384", "count": 490, "percentage": 91.25 },
+      { "resolution": "384x544", "count": 47, "percentage": 8.75 }
+    ]
+  },
+  "annotation_statistics": {
+    "annotation_format": "Binary PNG ground-truth segmentation masks",
+    "total_masks": 537,
+    "mask_channels": 1,
+    "pixel_encoding": "0 (background), 255 (crack foreground)",
+    "pairing_status": "100% paired (0 missing, 0 orphan masks)",
+    "classes": [
+      "crack"
+    ]
+  },
+  "leakage_findings": "10 image filename stems ('11289-1' to '11289-10') appear in both train and test. Visual hash verification confirms they are distinct sub-crops, but share the same underlying asset sequence. Group-aware splitting recommended for leakage prevention.",
+  "yolo_compatibility": {
+    "detection": "Compatible via minimum bounding rectangle extraction around mask contours.",
+    "segmentation": "Directly compatible with YOLO11-Seg via OpenCV polygon contour approximation."
+  }
+}

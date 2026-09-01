@@ -1,0 +1,155 @@
+{
+  "decision_id": "dec-insp-11112-44e62c64-44e62c64",
+  "schema_version": "1.0",
+  "inspection_id": "insp-11112-44e62c64",
+  "priority": "CRITICAL",
+  "confidence": "LOW",
+  "defect_summary": "Detected 3 crack indication(s) with maximum surface coverage of 4.55% and estimated maximum crack length of 0.0px.",
+  "evidence_summary": "Inspection executed via YOLO11n-seg (checkpoint hash: f9a4ab02). Image hash: 44e62c64. Image quality metrics passed.",
+  "recommended_action": "IMMEDIATE ACTION REQUIRED: Flag for emergency structural integrity review and non-destructive examination (NDE).",
+  "requires_human_review": true,
+  "rule_evaluations": [
+    {
+      "rule_id": "RULE-QUAL-001",
+      "rule_name": "Image Quality Impairment Warning",
+      "triggered": false,
+      "severity": "LOW",
+      "explanation": "Image quality metrics satisfy standard development clarity thresholds.",
+      "evidence_fields_used": [
+        "quality.warnings",
+        "quality.blur_detected",
+        "quality.low_contrast_detected"
+      ]
+    },
+    {
+      "rule_id": "RULE-DET-000",
+      "rule_name": "No Defect Indications Detected",
+      "triggered": false,
+      "severity": "LOW",
+      "explanation": "Defect indications present in visual evidence (3 detections found).",
+      "evidence_fields_used": [
+        "detection_count",
+        "status"
+      ]
+    },
+    {
+      "rule_id": "RULE-SEV-001",
+      "rule_name": "High Defect Surface Area Coverage",
+      "triggered": false,
+      "severity": "LOW",
+      "explanation": "Surface defect area (4.55%) within development baseline thresholds (< 5.0%).",
+      "evidence_fields_used": [
+        "max_affected_area_pct",
+        "total_affected_area_pct"
+      ]
+    },
+    {
+      "rule_id": "RULE-SEV-002",
+      "rule_name": "Large Defect Spatial Bounding Region",
+      "triggered": true,
+      "severity": "CRITICAL",
+      "explanation": "Critical spatial bounding span (94.64% >= 35.0% of frame).",
+      "evidence_fields_used": [
+        "max_bounding_box_pct"
+      ]
+    },
+    {
+      "rule_id": "RULE-SEV-003",
+      "rule_name": "Extensive Crack Propagation Length",
+      "triggered": false,
+      "severity": "LOW",
+      "explanation": "Estimated crack length (0.0px) below extensive threshold (450.0px).",
+      "evidence_fields_used": [
+        "max_crack_length_px"
+      ]
+    },
+    {
+      "rule_id": "RULE-SEV-004",
+      "rule_name": "Multiple Defect Regions Detected",
+      "triggered": true,
+      "severity": "MEDIUM",
+      "explanation": "Multiple defect regions: 3 distinct indications detected in a single component frame (>= 3).",
+      "evidence_fields_used": [
+        "detection_count",
+        "detection_ids"
+      ]
+    },
+    {
+      "rule_id": "RULE-CONF-001",
+      "rule_name": "Marginal Model Confidence Verification",
+      "triggered": true,
+      "severity": "REVIEW_REQUIRED",
+      "explanation": "One or more defect detections exhibit marginal model confidence (0.33 < 0.35). Human inspector review is required to confirm physical presence and prevent false alarms.",
+      "evidence_fields_used": [
+        "min_confidence",
+        "mean_confidence"
+      ]
+    }
+  ],
+  "evidence_references": {
+    "source_image_filename": "11112.jpg",
+    "source_image_sha256": "44e62c6410a898b496e245ac28f3f1604c31acb04cad4e5b0551738f40a78313",
+    "model_checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "detection_ids": [
+      "det-001",
+      "det-002",
+      "det-003"
+    ]
+  },
+  "decision_trace": [
+    {
+      "step_number": 1,
+      "action": "INGEST_EVIDENCE",
+      "inputs_used": {
+        "inspection_id": "insp-11112-44e62c64",
+        "schema_version": "1.0",
+        "status": "SUCCESS",
+        "source_image": "11112.jpg"
+      },
+      "output_summary": "Ingested VisionEvidence v1.0 with status SUCCESS.",
+      "timestamp": "2026-08-31T17:15:10.733479+00:00"
+    },
+    {
+      "step_number": 2,
+      "action": "NORMALIZE_EVIDENCE",
+      "inputs_used": {
+        "detection_count": 3,
+        "max_affected_area_pct": 4.5519,
+        "quality_warnings_count": 0
+      },
+      "output_summary": "Normalized evidence: 3 detection(s), 0 quality warning(s).",
+      "timestamp": "2026-08-31T17:15:10.734489+00:00"
+    },
+    {
+      "step_number": 3,
+      "action": "EVALUATE_RULES",
+      "inputs_used": {
+        "total_rules_evaluated": 7
+      },
+      "output_summary": "Evaluated 7 rules (3 triggered: ['RULE-SEV-002', 'RULE-SEV-004', 'RULE-CONF-001']).",
+      "timestamp": "2026-08-31T17:15:10.734489+00:00"
+    },
+    {
+      "step_number": 4,
+      "action": "AGGREGATE_DECISION",
+      "inputs_used": {
+        "triggered_severities": [
+          "CRITICAL",
+          "MEDIUM",
+          "REVIEW_REQUIRED"
+        ],
+        "aggregated_priority": "CRITICAL",
+        "confidence": "LOW"
+      },
+      "output_summary": "Final priority determined as CRITICAL with LOW confidence.",
+      "timestamp": "2026-08-31T17:15:10.734489+00:00"
+    }
+  ],
+  "limitations": [
+    "Development baseline model detects crack anomalies only; corrosion and other defects are not evaluated.",
+    "Thresholds are for research/development testing and do not constitute certified engineering limits (API/ASME).",
+    "Clean visual evidence does not guarantee structural integrity under internal or subsurface failure modes.",
+    "All high-priority and critical recommendations require mandatory human inspector sign-off before dispatch."
+  ],
+  "created_at": "2026-08-31T17:15:10.734489+00:00"
+}

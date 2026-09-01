@@ -1,0 +1,18 @@
+{
+  "total_images_processed": 537,
+  "split_counts": {
+    "train": 378,
+    "val": 73,
+    "test": 86
+  },
+  "total_polygons_generated": 1785,
+  "images_with_annotations": 537,
+  "images_without_annotations": 0,
+  "contour_stats": {
+    "total_contours_found": 1970,
+    "retained": 1785,
+    "discarded_small_area": 185,
+    "discarded_insufficient_points": 0
+  },
+  "failures": []
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "inspection_id": "insp-IMG_6542-1-5ef4f217",
+  "component_id": "PIPE-SEC-0081",
+  "component_type": "pipeline",
+  "status": "SUCCESS",
+  "source_image": {
+    "filename": "IMG_6542-1.jpg",
+    "file_extension": ".jpg",
+    "width": 384,
+    "height": 544,
+    "channels": 3,
+    "file_size_bytes": 180475,
+    "sha256_hash": "5ef4f217a459069304f88b8cf002e65055df45367d9a0e833c7ad435714b3483"
+  },
+  "model": {
+    "model_name": "YOLO11n-seg",
+    "model_architecture": "YOLO11n-seg",
+    "model_version": "1.0.0",
+    "checkpoint_identifier": "best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "framework": "ultralytics",
+    "framework_version": "8.4.136",
+    "confidence_threshold": 0.25,
+    "input_size": [
+      640,
+      640
+    ],
+    "device": "0"
+  },
+  "summary": {
+    "detection_count": 3,
+    "max_confidence": 0.5332,
+    "mean_confidence": 0.3559,
+    "min_confidence": 0.2603
+  },
+  "detections": [
+    {
+      "detection_id": "det-001",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.5332,
+      "bounding_box": {
+        "x_pixel": 79.61,
+        "y_pixel": 50.08,
+        "width_pixel": 266.74,
+        "height_pixel": 493.92,
+        "x_norm": 0.2073,
+        "y_norm": 0.0921,
+        "width_norm": 0.6946,
+        "height_norm": 0.9079
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 4418.78,
+        "mask_area_percentage": 2.1153,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 2.1153,
+        "location_type": null,
+        "estimated_size": "561.34px x 7.87px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-002",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.2742,
+      "bounding_box": {
+        "x_pixel": 67.78,
+        "y_pixel": 0.0,
+        "width_pixel": 249.52,
+        "height_pixel": 505.9,
+        "x_norm": 0.1765,
+        "y_norm": 0.0,
+        "width_norm": 0.6498,
+        "height_norm": 0.93
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 4098.75,
+        "mask_area_percentage": 1.9621,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 1.9621,
+        "location_type": null,
+        "estimated_size": "564.09px x 7.27px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-003",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.2603,
+      "bounding_box": {
+        "x_pixel": 8.13,
+        "y_pixel": 1.25,
+        "width_pixel": 145.84,
+        "height_pixel": 432.9,
+        "x_norm": 0.0212,
+        "y_norm": 0.0023,
+        "width_norm": 0.3798,
+        "height_norm": 0.7958
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 2900.1,
+        "mask_area_percentage": 1.3883,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 1.3883,
+        "location_type": null,
+        "estimated_size": "456.81px x 6.35px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    }
+  ],
+  "quality": {
+    "brightness_mean": 167.59,
+    "contrast_std": 23.15,
+    "blur_score": 626.61,
+    "blur_detected": false,
+    "low_contrast_detected": false,
+    "underexposed": false,
+    "overexposed": false,
+    "warnings": []
+  },
+  "processing": {
+    "started_at": "2026-08-31T17:07:13.362589+00:00",
+    "validation_ms": 0.53,
+    "preprocessing_ms": 0.34,
+    "inference_ms": 68.07,
+    "postprocessing_ms": 0.0,
+    "evidence_construction_ms": 20.91,
+    "total_execution_ms": 89.87
+  }
+}

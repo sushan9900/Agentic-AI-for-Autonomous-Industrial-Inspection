@@ -1,0 +1,45 @@
+# ==============================================================================
+# INDUSTRIAL INSPECTION DECISION RULES CONFIGURATION
+#
+# IMPORTANT NOTICE:
+# These thresholds are for DEVELOPMENT, RESEARCH, AND BASELINE TESTING ONLY.
+# They DO NOT represent certified, statutory, or field-qualified engineering limits.
+# In production, thresholds must be calibrated against API 570 / ASME B31G or
+# asset-specific structural integrity standards.
+# ==============================================================================
+
+development_only: true
+schema_version: "1.0"
+
+# Rule threshold configuration (Development/Experimental)
+thresholds:
+  # Minimum confidence threshold below which a detection is flagged for review
+  low_confidence: 0.35
+  
+  # Critical confidence below which detection is considered uncertain
+  uncertain_confidence: 0.20
+  
+  # Percentage of total image area covered by defect polygon (Shoelace)
+  high_affected_area_pct: 5.0
+  critical_affected_area_pct: 12.0
+  
+  # Percentage of total image area covered by bounding box
+  large_bounding_region_pct: 15.0
+  critical_bounding_region_pct: 35.0
+  
+  # Estimated crack length in pixels (diagonal proxy)
+  extensive_crack_length_px: 450.0
+  critical_crack_length_px: 750.0
+  
+  # Count of distinct defect instances in a single inspection image
+  multiple_regions_threshold: 3
+  dense_cluster_threshold: 6
+
+# Precedence mapping for priority aggregation:
+# If multiple rules trigger, the highest rank takes precedence.
+priority_precedence:
+  - CRITICAL
+  - HIGH
+  - REVIEW_REQUIRED
+  - MEDIUM
+  - LOW

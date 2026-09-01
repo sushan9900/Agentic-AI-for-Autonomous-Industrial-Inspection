@@ -1,0 +1,62 @@
+{
+  "dataset_name": "Image-based Corrosion Detection Dataset",
+  "doi": "10.17632/tbjn6p2gn9.1",
+  "source": "Mendeley Data",
+  "authors": [
+    "Mohammad R. Jahanshahi",
+    "Deegan Atha",
+    "Cheng Qian"
+  ],
+  "publication_date": "2020-10-06",
+  "acquisition_date": "2026-08-31",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "archive_filename": "Corrosion_Data.zip",
+  "archive_size_bytes": 662667730,
+  "sha256_checksum": "f667aedcb6be8e25bdd3a454d106f9304953ad4eb5f267f6798b228be397c07a",
+  "extracted_path": "data/raw/corrosion_detection/extracted",
+  "file_counts": {
+    "total_files": 152,
+    "directories": 1,
+    "image_files": 152,
+    "annotation_files": 0
+  },
+  "image_statistics": {
+    "total_images": 152,
+    "readable_images": 152,
+    "corrupted_images": 0,
+    "duplicate_images": 0,
+    "formats": {
+      "JPEG": 152
+    },
+    "channels": {
+      "3_channel_RGB": 152
+    },
+    "width": {
+      "min": 1704,
+      "max": 8192,
+      "median": 3024
+    },
+    "height": {
+      "min": 1114,
+      "max": 5461,
+      "median": 3024
+    },
+    "most_common_resolutions": [
+      { "resolution": "3024x4032", "count": 31, "percentage": 20.39 },
+      { "resolution": "3024x3024", "count": 29, "percentage": 19.08 },
+      { "resolution": "2592x1944", "count": 25, "percentage": 16.45 },
+      { "resolution": "5820x3880", "count": 5, "percentage": 3.29 },
+      { "resolution": "5184x3456", "count": 4, "percentage": 2.63 }
+    ]
+  },
+  "annotation_statistics": {
+    "annotation_format": "None bundled in source archive (raw full-resolution source image dataset)",
+    "total_annotations": 0,
+    "available_labels": [
+      "corrosion"
+    ]
+  },
+  "split_information": "Official train/validation/test split not found in source archive.",
+  "domain_characteristics": "Real-world structural steel, piping, metal plates, and civil infrastructure surfaces exhibiting varying stages of oxidation and surface rust under natural lighting.",
+  "notes": "Acquired directly from verified Mendeley Data DOI 10.17632/tbjn6p2gn9.1. Original ZIP archive preserved unchanged."
+}

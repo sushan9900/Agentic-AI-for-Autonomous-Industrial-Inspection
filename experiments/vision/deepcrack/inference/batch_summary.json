@@ -1,0 +1,25 @@
+{
+  "batch_timestamp": "2026-08-31T17:07:13Z",
+  "model_info": {
+    "model_type": "YOLO11n-seg",
+    "task": "instance_segmentation",
+    "model_path": "experiments\\vision\\deepcrack\\baseline\\weights\\best.pt",
+    "device": "0",
+    "is_loaded": true,
+    "class_names": {
+      "0": "crack"
+    },
+    "confidence_threshold": 0.25
+  },
+  "input_directory": "data\\processed\\deepcrack\\yolo\\images\\test",
+  "total_images_inspected": 86,
+  "successful_inspections": 67,
+  "no_detection_inspections": 0,
+  "quality_warning_inspections": 19,
+  "failed_inspections": 0,
+  "total_defects_detected": 354,
+  "average_inference_time_ms": 165.03,
+  "average_confidence": 0.4911,
+  "total_batch_duration_ms": 16750.59,
+  "failures": []
+}

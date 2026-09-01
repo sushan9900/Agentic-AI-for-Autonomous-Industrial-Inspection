@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "inspection_id": "insp-11134-3-83113f7b",
+  "component_id": "PIPE-SEC-0007",
+  "component_type": "pipeline",
+  "status": "SUCCESS",
+  "source_image": {
+    "filename": "11134-3.jpg",
+    "file_extension": ".jpg",
+    "width": 544,
+    "height": 384,
+    "channels": 3,
+    "file_size_bytes": 104030,
+    "sha256_hash": "83113f7be7815053a21d9a8b0136e86d7cbc089cc2191c11ca29a7888a83f47c"
+  },
+  "model": {
+    "model_name": "YOLO11n-seg",
+    "model_architecture": "YOLO11n-seg",
+    "model_version": "1.0.0",
+    "checkpoint_identifier": "best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "framework": "ultralytics",
+    "framework_version": "8.4.136",
+    "confidence_threshold": 0.25,
+    "input_size": [
+      640,
+      640
+    ],
+    "device": "0"
+  },
+  "summary": {
+    "detection_count": 3,
+    "max_confidence": 0.6789,
+    "mean_confidence": 0.5941,
+    "min_confidence": 0.5376
+  },
+  "detections": [
+    {
+      "detection_id": "det-001",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.6789,
+      "bounding_box": {
+        "x_pixel": 39.57,
+        "y_pixel": 89.8,
+        "width_pixel": 503.23,
+        "height_pixel": 291.2,
+        "x_norm": 0.0727,
+        "y_norm": 0.2339,
+        "width_norm": 0.9251,
+        "height_norm": 0.7583
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 8252.02,
+        "mask_area_percentage": 3.9503,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 3.9503,
+        "location_type": null,
+        "estimated_size": "581.41px x 14.19px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-002",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.5659,
+      "bounding_box": {
+        "x_pixel": 41.55,
+        "y_pixel": 191.44,
+        "width_pixel": 494.55,
+        "height_pixel": 189.01,
+        "x_norm": 0.0764,
+        "y_norm": 0.4985,
+        "width_norm": 0.9091,
+        "height_norm": 0.4922
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 5716.86,
+        "mask_area_percentage": 2.7367,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 2.7367,
+        "location_type": null,
+        "estimated_size": "529.44px x 10.8px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-003",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.5376,
+      "bounding_box": {
+        "x_pixel": 0.95,
+        "y_pixel": 4.97,
+        "width_pixel": 298.56,
+        "height_pixel": 379.03,
+        "x_norm": 0.0017,
+        "y_norm": 0.0129,
+        "width_norm": 0.5488,
+        "height_norm": 0.9871
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 7226.76,
+        "mask_area_percentage": 3.4595,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 3.4595,
+        "location_type": null,
+        "estimated_size": "482.5px x 14.98px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    }
+  ],
+  "quality": {
+    "brightness_mean": 159.21,
+    "contrast_std": 29.65,
+    "blur_score": 667.86,
+    "blur_detected": false,
+    "low_contrast_detected": false,
+    "underexposed": false,
+    "overexposed": false,
+    "warnings": []
+  },
+  "processing": {
+    "started_at": "2026-08-31T17:07:06.527404+00:00",
+    "validation_ms": 0.32,
+    "preprocessing_ms": 0.17,
+    "inference_ms": 79.74,
+    "postprocessing_ms": 0.01,
+    "evidence_construction_ms": 20.08,
+    "total_execution_ms": 100.34
+  }
+}

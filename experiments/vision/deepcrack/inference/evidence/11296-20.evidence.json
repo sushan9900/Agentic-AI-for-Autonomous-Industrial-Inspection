@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "inspection_id": "insp-11296-20-8d4a9d9a",
+  "component_id": "PIPE-SEC-0062",
+  "component_type": "pipeline",
+  "status": "QUALITY_WARNING",
+  "source_image": {
+    "filename": "11296-20.jpg",
+    "file_extension": ".jpg",
+    "width": 544,
+    "height": 384,
+    "channels": 3,
+    "file_size_bytes": 118441,
+    "sha256_hash": "8d4a9d9aafd5345e4350dea4c1a6408b35863bd6e2dc0b0359a8f0a880d80fa0"
+  },
+  "model": {
+    "model_name": "YOLO11n-seg",
+    "model_architecture": "YOLO11n-seg",
+    "model_version": "1.0.0",
+    "checkpoint_identifier": "best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "framework": "ultralytics",
+    "framework_version": "8.4.136",
+    "confidence_threshold": 0.25,
+    "input_size": [
+      640,
+      640
+    ],
+    "device": "0"
+  },
+  "summary": {
+    "detection_count": 3,
+    "max_confidence": 0.814,
+    "mean_confidence": 0.6666,
+    "min_confidence": 0.5365
+  },
+  "detections": [
+    {
+      "detection_id": "det-001",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.814,
+      "bounding_box": {
+        "x_pixel": 207.95,
+        "y_pixel": 0.5,
+        "width_pixel": 18.56,
+        "height_pixel": 107.1,
+        "x_norm": 0.3823,
+        "y_norm": 0.0013,
+        "width_norm": 0.0341,
+        "height_norm": 0.2789
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 742.83,
+        "mask_area_percentage": 0.3556,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.3556,
+        "location_type": null,
+        "estimated_size": "108.7px x 6.83px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-002",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.6493,
+      "bounding_box": {
+        "x_pixel": 194.7,
+        "y_pixel": 113.29,
+        "width_pixel": 43.32,
+        "height_pixel": 222.42,
+        "x_norm": 0.3579,
+        "y_norm": 0.295,
+        "width_norm": 0.0796,
+        "height_norm": 0.5792
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 1488.38,
+        "mask_area_percentage": 0.7125,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.7125,
+        "location_type": null,
+        "estimated_size": "226.6px x 6.57px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    },
+    {
+      "detection_id": "det-003",
+      "class_id": 0,
+      "defect_type": "crack",
+      "confidence": 0.5365,
+      "bounding_box": {
+        "x_pixel": 231.27,
+        "y_pixel": 346.32,
+        "width_pixel": 7.42,
+        "height_pixel": 17.73,
+        "x_norm": 0.4251,
+        "y_norm": 0.9019,
+        "width_norm": 0.0136,
+        "height_norm": 0.0462
+      },
+      "segmentation": {
+        "polygon_count": 1,
+        "normalized_polygons": [],
+        "mask_area_pixels": 91.08,
+        "mask_area_percentage": 0.0436,
+        "mask_artifact_path": null
+      },
+      "severity_features": {
+        "affected_area_percentage": 0.0436,
+        "location_type": null,
+        "estimated_size": "19.22px x 4.74px",
+        "spread": "localized",
+        "visual_severity": null
+      }
+    }
+  ],
+  "quality": {
+    "brightness_mean": 164.72,
+    "contrast_std": 19.35,
+    "blur_score": 139.43,
+    "blur_detected": false,
+    "low_contrast_detected": true,
+    "underexposed": false,
+    "overexposed": false,
+    "warnings": [
+      "LOW_CONTRAST"
+    ]
+  },
+  "processing": {
+    "started_at": "2026-08-31T17:07:11.534822+00:00",
+    "validation_ms": 0.36,
+    "preprocessing_ms": 0.17,
+    "inference_ms": 50.64,
+    "postprocessing_ms": 0.0,
+    "evidence_construction_ms": 18.48,
+    "total_execution_ms": 69.67
+  }
+}

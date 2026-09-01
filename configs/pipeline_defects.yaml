@@ -1,0 +1,26 @@
+# Ultralytics YOLO Dataset Configuration for Industrial Pipeline Inspection
+
+# Root dataset directory path (relative to repo root or absolute)
+path: data/processed/yolo/pipeline_defects
+
+# Split paths (relative to 'path')
+train: train/images
+val: val/images
+test: test/images
+
+# Defect class taxonomy mapping
+names:
+  0: corrosion
+  1: crack
+  2: coating_damage
+  3: surface_damage
+
+# Dataset metadata & documentation
+metadata:
+  domain: "Industrial Pipeline Inspection"
+  version: "1.0.0"
+  source_datasets:
+    - "Mendeley Pipeline Corrosion Image Dataset (Ata et al., 2021)"
+    - "Mendeley Corrosion Condition Classification & Segmentation (Nash et al., 2022)"
+    - "DeepCrack Dataset (Liu et al., 2019)"
+  taxonomy_notes: "Grounded 4-class primary taxonomy. Physical deformation deferred to future 3D/sensor stages."

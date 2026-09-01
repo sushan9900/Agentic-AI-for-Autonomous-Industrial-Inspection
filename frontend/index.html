@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industrial Inspection Workstation — Autonomous AI & Human-in-the-Loop Review</title>
+  <link rel="stylesheet" href="/dashboard/css/style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="brand-logo">AI</div>
+      <div class="brand-info">
+        <h1>AUTONOMOUS INDUSTRIAL INSPECTION</h1>
+        <p>Engineering Reliability & Human-in-the-Loop Workstation</p>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" role="tablist">
+      <button class="nav-tab-btn active" id="tab-overview" onclick="app.navigate('overview')">Overview</button>
+      <button class="nav-tab-btn" id="tab-inspect" onclick="app.navigate('inspect')">New Inspection</button>
+      <button class="nav-tab-btn" id="tab-inspections" onclick="app.navigate('inspections')">Inspection History</button>
+      <button class="nav-tab-btn" id="tab-assets" onclick="app.navigate('assets')">Assets</button>
+      <button class="nav-tab-btn" id="tab-system" onclick="app.navigate('system')">System Status</button>
+    </nav>
+
+    <!-- Header Status & Inspector Profile -->
+    <div class="header-status">
+      <div class="status-pill" id="header-llm-pill">
+        <span class="status-dot pulse" id="header-llm-dot"></span>
+        <span id="header-llm-text">Ollama (gemma3:latest)</span>
+      </div>
+      <div class="status-pill">
+        <span>Inspector: <strong id="current-inspector-label">INSP-7801</strong></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="app-main">
+    
+    <!-- PAGE 1: OVERVIEW -->
+    <section class="view-page active" id="page-overview">
+      <h2 class="page-title">Operations Overview</h2>
+      <p class="page-subtitle">Real-time telemetry and inspection review workflow status</p>
+
+      <!-- KPI Grid -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Total Inspections</div>
+          <div class="kpi-value" id="kpi-total">0</div>
+          <div class="kpi-subtext">Cumulative recorded inspections</div>
+        </div>
+        <div class="kpi-card" style="border-left: 4px solid var(--accent-amber);">
+          <div class="kpi-label">Pending Human Review</div>
+          <div class="kpi-value" style="color: var(--accent-amber);" id="kpi-pending">0</div>
+          <div class="kpi-subtext">Awaiting inspector approval</div>
+        </div>
+        <div class="kpi-card" style="border-left: 4px solid var(--accent-rose);">
+          <div class="kpi-label">Critical Findings</div>
+          <div class="kpi-value" style="color: var(--accent-rose);" id="kpi-critical">0</div>
+          <div class="kpi-subtext">Risk score &ge; 75 (Urgent Review)</div>
+        </div>
+        <div class="kpi-card" style="border-left: 4px solid var(--accent-emerald);">
+          <div class="kpi-label">Approved Work Orders</div>
+          <div class="kpi-value" style="color: var(--accent-emerald);" id="kpi-approved">0</div>
+          <div class="kpi-subtext">Authorized maintenance actions</div>
+        </div>
+      </div>
+
+      <!-- Recent Inspections Card -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Recent Inspection Decisions</span>
+          <button class="btn btn-secondary" onclick="app.navigate('inspections')">View All History &rarr;</button>
+        </div>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Decision ID</th>
+                <th>Asset ID</th>
+                <th>Risk Level</th>
+                <th>Operational Action</th>
+                <th>Review Status</th>
+                <th>Timestamp</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="overview-recent-tbody">
+              <tr>
+                <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 24px;">Loading recent inspections...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: NEW INSPECTION -->
+    <section class="view-page" id="page-inspect">
+      <h2 class="page-title">New Industrial Inspection</h2>
+      <p class="page-subtitle">Upload high-resolution inspection image for autonomous perception and multi-modal risk reasoning</p>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <form id="new-inspection-form" onsubmit="app.handleInspectionSubmit(event)">
+          <!-- Target Asset Selection -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label class="form-label" for="select-asset-id">Target Asset *</label>
+              <select id="select-asset-id" class="form-select" required onchange="app.handleAssetChange(this.value)">
+                <option value="ASSET-PL-01">ASSET-PL-01 (Crude Hydrocarbon Transmission Pipeline Loop 1A)</option>
+                <option value="ASSET-TK-04">ASSET-TK-04 (Atmospheric Hydrocarbon Storage Tank 04)</option>
+                <option value="ASSET-ST-12">ASSET-ST-12 (Heavy Pipe Rack Structural Support Frame 12)</option>
+                <option value="ASSET-PU-07">ASSET-PU-07 (High-Pressure Main Feed Booster Pump Unit 07)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="select-component-id">Component Segment</label>
+              <select id="select-component-id" class="form-select">
+                <option value="PIPE-SEG-4021">PIPE-SEG-4021 (PIPE_SEGMENT)</option>
+                <option value="PIPE-WELD-4022">PIPE-WELD-4022 (WELD_SEAM)</option>
+                <option value="PIPE-FLG-4023">PIPE-FLG-4023 (FLANGE)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dropzone -->
+          <div class="form-group">
+            <label class="form-label">Inspection Image File *</label>
+            <div class="dropzone" id="upload-dropzone" onclick="document.getElementById('file-input').click()">
+              <div class="dropzone-icon">&#128247;</div>
+              <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Click to select or drag &amp; drop inspection image</div>
+              <div style="font-size: 12px; color: var(--text-muted);">Supports JPG, JPEG, PNG, TIFF (Max 20MB)</div>
+              <input type="file" id="file-input" style="display: none;" accept=".jpg,.jpeg,.png,.tif,.tiff" onchange="app.handleFileSelect(event)">
+            </div>
+            <div id="selected-file-details" style="display: none; margin-top: 10px; font-size: 12px; background-color: var(--bg-subtle); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+              Selected: <strong id="selected-filename"></strong> (<span id="selected-filesize"></span>)
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+            <button type="button" class="btn btn-secondary" onclick="app.loadDemoImage()">Use DeepCrack Demo (11112.jpg)</button>
+            <button type="submit" class="btn btn-primary" id="btn-submit-inspection">Run Inspection &rarr;</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Processing Progress State -->
+      <div id="inspection-progress-container" style="display: none;">
+        <div class="progress-box">
+          <div class="spinner"></div>
+          <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 6px;" id="progress-title">Inspection in Progress...</h3>
+          <p style="font-size: 13px; color: var(--text-muted);" id="progress-desc">Executing YOLO11n-seg perception and 11-stage autonomous agent reasoning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3: INSPECTION HISTORY -->
+    <section class="view-page" id="page-inspections">
+      <h2 class="page-title">Inspection Records &amp; Audit Trail</h2>
+      <p class="page-subtitle">Search, filter, and inspect persistent autonomous decisions stored in PostgreSQL</p>
+
+      <!-- Filter Toolbar -->
+      <div class="filter-toolbar">
+        <input type="text" id="history-search" class="form-input" style="max-width: 280px;" placeholder="Search Decision or Asset ID..." oninput="app.loadHistory()">
+        
+        <select id="history-risk-filter" class="form-select" style="max-width: 160px;" onchange="app.loadHistory()">
+          <option value="">All Risk Levels</option>
+          <option value="CRITICAL">Critical</option>
+          <option value="HIGH">High</option>
+          <option value="MEDIUM">Medium</option>
+          <option value="LOW">Low</option>
+        </select>
+
+        <select id="history-status-filter" class="form-select" style="max-width: 180px;" onchange="app.loadHistory()">
+          <option value="">All Review Statuses</option>
+          <option value="PENDING_HUMAN_REVIEW">Pending Review</option>
+          <option value="APPROVED">Approved</option>
+          <option value="REJECTED">Rejected</option>
+          <option value="REQUEST_FURTHER_INSPECTION">Further Inspection</option>
+        </select>
+
+        <button class="btn btn-secondary" onclick="app.loadHistory()">Refresh</button>
+      </div>
+
+      <!-- History Table -->
+      <div class="card" style="padding: 0;">
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Decision ID</th>
+                <th>Inspection ID</th>
+                <th>Asset ID</th>
+                <th>Defects</th>
+                <th>Risk Score</th>
+                <th>Operational Action</th>
+                <th>Review Status</th>
+                <th>Timestamp</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="history-tbody">
+              <tr>
+                <td colspan="9" style="text-align: center; color: var(--text-muted); padding: 24px;">Loading inspection history...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: INSPECTION DETAIL & HUMAN REVIEW WORKSTATION -->
+    <section class="view-page" id="page-detail">
+      <!-- Breadcrumb & Header -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+        <div>
+          <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 12px; margin-bottom: 8px;" onclick="app.navigate('inspections')">&larr; Back to History</button>
+          <h2 class="page-title" id="detail-decision-title">Inspection Decision Review</h2>
+          <p class="page-subtitle" id="detail-decision-subtitle">Decision ID: ...</p>
+        </div>
+        <div id="detail-review-badge-container"></div>
+      </div>
+
+      <!-- Detail Grid -->
+      <div class="detail-grid">
+        
+        <!-- LEFT COLUMN: VISUAL EVIDENCE & DETECTIONS -->
+        <div>
+          <div class="card" style="padding: 16px;">
+            <div class="card-header">
+              <span class="card-title">Visual Perception Evidence</span>
+              <span id="detail-img-filename" style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);"></span>
+            </div>
+
+            <!-- Image Viewer -->
+            <div class="image-viewer-container" id="image-viewer-box">
+              <img id="detail-main-img" src="" alt="Inspection Visual Evidence" class="inspection-main-img">
+            </div>
+
+            <!-- Viewer Controls -->
+            <div class="viewer-toolbar">
+              <div class="toolbar-group">
+                <button class="btn btn-secondary" id="btn-toggle-overlay" onclick="app.toggleOverlay(true)">AI Overlay</button>
+                <button class="btn btn-secondary" id="btn-toggle-raw" onclick="app.toggleOverlay(false)">Raw RGB</button>
+              </div>
+              <div class="toolbar-group">
+                <button class="btn btn-secondary" style="padding: 4px 8px;" onclick="app.zoomImage(0.2)">+</button>
+                <button class="btn btn-secondary" style="padding: 4px 8px;" onclick="app.zoomImage(-0.2)">-</button>
+                <button class="btn btn-secondary" style="padding: 4px 8px;" onclick="app.resetZoom()">Reset</button>
+              </div>
+            </div>
+
+            <!-- Detections List -->
+            <div style="margin-top: 16px;">
+              <h4 style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 8px;">
+                Detected Defect Regions (<span id="detail-detection-count">0</span>)
+              </h4>
+              <div id="detail-detections-list" style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- Dynamic Detections -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: RISK, DECISION, LLM RECOMMENDATION, TRACE, & REVIEW -->
+        <div>
+          
+          <!-- Operational Risk Card -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Deterministic Risk Assessment</span>
+              <span style="font-size: 11px; color: var(--text-dim);">Calculation: v1.0-deterministic</span>
+            </div>
+            <div class="risk-banner" id="detail-risk-banner">
+              <div class="risk-score-circle" id="detail-risk-circle">
+                <span class="risk-score-num" id="detail-risk-score-num">0</span>
+                <span class="risk-score-max">/ 100</span>
+              </div>
+              <div>
+                <div style="font-size: 16px; font-weight: 700;" id="detail-risk-level-title">RISK LEVEL</div>
+                <div style="font-size: 12px; color: var(--text-secondary); margin-top: 2px;">
+                  Operational Risk Index (Physical geometry, recurrence, and facility precedents)
+                </div>
+              </div>
+            </div>
+            <div style="font-size: 12px; color: var(--text-secondary);">
+              <strong>Contributing Risk Factors:</strong>
+              <ul id="detail-risk-factors-list" style="margin-left: 18px; margin-top: 4px; display: flex; flex-direction: column; gap: 2px;"></ul>
+            </div>
+          </div>
+
+          <!-- Authoritative Decision Card -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Authoritative Operational Action</span>
+              <span class="badge badge-info">Deterministic Engine</span>
+            </div>
+            <div style="font-size: 18px; font-weight: 800; color: var(--accent-primary); margin-bottom: 6px;" id="detail-op-action">
+              URGENT_ENGINEERING_REVIEW
+            </div>
+            <p style="font-size: 13px; color: var(--text-secondary);" id="detail-op-rationale">...</p>
+          </div>
+
+          <!-- LLM-Synthesized Work Order Recommendation -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">LLM-Synthesized Work Order Draft</span>
+              <span class="badge badge-info" id="detail-llm-model-badge">Ollama (gemma3:latest)</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Recommended Engineering Action:</div>
+              <div style="font-size: 14px; font-weight: 600; color: var(--text-primary);" id="detail-wo-action">...</div>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Technical Justification:</div>
+              <p style="font-size: 13px; color: var(--text-secondary);" id="detail-wo-justification">...</p>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+              <div>
+                <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Required NDE Methods:</div>
+                <div style="font-size: 12px;" id="detail-wo-methods">-</div>
+              </div>
+              <div>
+                <div style="font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;">Safety &amp; Hazard Notes:</div>
+                <div style="font-size: 12px;" id="detail-wo-safety">-</div>
+              </div>
+            </div>
+            <div style="font-size: 11px; color: var(--text-dim); border-top: 1px solid var(--border-light); padding-top: 8px;" id="detail-wo-cost-notes">
+              Historical cost estimates: unavailable.
+            </div>
+          </div>
+
+          <!-- 11-Stage Reasoning Trace -->
+          <div class="card">
+            <div class="card-header" style="cursor: pointer;" onclick="app.toggleTrace()">
+              <span class="card-title">Observable Agent Reasoning Trace (11 Stages)</span>
+              <span style="font-size: 12px; color: var(--accent-blue);" id="trace-toggle-btn">&#9660; Expand</span>
+            </div>
+            <div id="detail-trace-container" class="trace-timeline" style="display: none;">
+              <!-- Dynamic Trace Steps -->
+            </div>
+          </div>
+
+          <!-- HUMAN REVIEW GATE -->
+          <div class="card" style="border: 2px solid var(--border-medium); background-color: #fafafa;">
+            <div class="card-header">
+              <span class="card-title" style="color: var(--text-primary);">Human-in-the-Loop Inspector Review Gate</span>
+              <span class="badge badge-pending" id="detail-gate-badge">PENDING REVIEW</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px;">
+              Strict Safety Guardrail: Maintenance actions require authorized human inspector decision. Zero automated dispatch.
+            </p>
+
+            <form id="review-action-form" onsubmit="app.handleReviewSubmit(event)">
+              <div class="form-group">
+                <label class="form-label" for="reviewer-name-input">Authorized Reviewer Name *</label>
+                <input type="text" id="reviewer-name-input" class="form-input" value="S. Ray (Lead Reliability Inspector)" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="reviewer-comment-input">Inspector Audit Comments &amp; Notes</label>
+                <textarea id="reviewer-comment-input" class="form-textarea" placeholder="Enter engineering justification, approval remarks, or conditional notes..."></textarea>
+              </div>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button type="button" class="btn btn-success" id="btn-approve" onclick="app.submitReview('APPROVED')">&#10004; Approve Recommendation</button>
+                <button type="button" class="btn btn-danger" id="btn-reject" onclick="app.submitReview('REJECTED')">&#10008; Reject</button>
+                <button type="button" class="btn btn-warning" id="btn-request-further" onclick="app.submitReview('REQUEST_FURTHER_INSPECTION')">&#128269; Request Further Inspection</button>
+              </div>
+            </form>
+
+            <div id="review-persisted-banner" style="display: none; margin-top: 16px; padding: 12px; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-sm); font-size: 12px;">
+              <strong>Review Status Persisted in PostgreSQL:</strong>
+              <div id="review-persisted-details" style="margin-top: 4px; color: var(--text-secondary);"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGE 5: ASSETS -->
+    <section class="view-page" id="page-assets">
+      <h2 class="page-title">Industrial Asset Intelligence Registry</h2>
+      <p class="page-subtitle">Connected critical equipment, specifications, and telemetry</p>
+
+      <div class="card" style="padding: 0;">
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Asset ID</th>
+                <th>Asset Name</th>
+                <th>Asset Type</th>
+                <th>Location</th>
+                <th>Operational Status</th>
+                <th>Service Age</th>
+                <th>Warranty Status</th>
+              </tr>
+            </thead>
+            <tbody id="assets-tbody">
+              <tr>
+                <td colspan="7" style="text-align: center; color: var(--text-muted); padding: 24px;">Loading asset registry...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6: SYSTEM STATUS -->
+    <section class="view-page" id="page-system">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+        <div>
+          <h2 class="page-title">System Diagnostics &amp; Component Status</h2>
+          <p class="page-subtitle">Real-time health telemetry across backend, database, YOLO vision runtime, and Ollama LLM</p>
+        </div>
+        <button class="btn btn-secondary" onclick="app.loadSystemStatus()">Refresh Diagnostics</button>
+      </div>
+
+      <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+        <div class="kpi-card">
+          <div class="kpi-label">FastAPI Backend</div>
+          <div class="kpi-value" style="color: var(--accent-emerald);" id="sys-backend-status">HEALTHY</div>
+          <div class="kpi-subtext">REST API v1 active</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">PostgreSQL Database</div>
+          <div class="kpi-value" style="color: var(--accent-emerald);" id="sys-db-status">CONNECTED</div>
+          <div class="kpi-subtext">Port 5433 (psycopg3)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">YOLO11n-seg Vision Model</div>
+          <div class="kpi-value" style="color: var(--accent-blue);" id="sys-vision-status">LOADED</div>
+          <div class="kpi-subtext">weights/best.pt</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Local Ollama LLM</div>
+          <div class="kpi-value" style="color: var(--accent-purple);" id="sys-llm-status">AVAILABLE</div>
+          <div class="kpi-subtext">Model: gemma3:latest</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Hardware Acceleration</div>
+          <div class="kpi-value" style="font-size: 18px; color: var(--text-primary);" id="sys-device-status">CUDA</div>
+          <div class="kpi-subtext" id="sys-device-name">NVIDIA GeForce RTX 3050 Laptop GPU</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- JavaScript Client App -->
+  <script src="/dashboard/js/app.js"></script>
+</body>
+</html>

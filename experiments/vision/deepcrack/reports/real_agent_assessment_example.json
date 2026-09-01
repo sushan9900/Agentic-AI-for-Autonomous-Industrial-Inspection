@@ -1,0 +1,119 @@
+{
+  "assessment": {
+    "schema_version": "1.0",
+    "assessment_id": "assess-insp-11112-44e62c64-PIPE-SEG-4021",
+    "component_id": "PIPE-SEG-4021",
+    "inspection_reference": "insp-11112-44e62c64",
+    "summary": "The Primary Body Segment 4021 (Span 40m - 52m) exhibits multiple crack detections identified through autonomous visual inspection. The detections are clustered and meet the criteria for a CRITICAL severity level due to the confidence scores and spatial extent. Historical data indicates a pattern of crack formation, potentially linked to cyclic vibration.",
+    "detected_defects": [
+      {
+        "detection_id": "det-001",
+        "defect_type": "crack",
+        "confidence": 0.6381,
+        "affected_area_percentage": 4.5519
+      },
+      {
+        "detection_id": "det-002",
+        "defect_type": "crack",
+        "confidence": 0.3513,
+        "affected_area_percentage": 4.4343
+      },
+      {
+        "detection_id": "det-003",
+        "defect_type": "crack",
+        "confidence": 0.3269,
+        "affected_area_percentage": 0.0508
+      }
+    ],
+    "historical_context_summary": "The component has a history of crack detections, including a CRITICAL finding in 2026 and a MEDIUM finding in 2024. Recent maintenance included sandblasting and epoxy coating application in 2024. The last manual visual inspection in 2023 found no defects. The historical failure incident (INC-2022-044) involving crack propagation due to vibration suggests a potential vulnerability.",
+    "reasoning": "The autonomous inspection identified three crack detections with varying confidence levels. The detection with ID 'det-001' has the highest confidence (63.8%) and a significant spatial area (4.55%). The deterministic rules triggered due to the number of detections and confidence levels, indicating a potential concern. Given the component's high-pressure application and the historical incident related to vibration, the risk of further crack propagation is elevated. The recent coating application may have masked previous defects, but the presence of multiple detections warrants immediate investigation.",
+    "risk_factors": [
+      "Cyclic Vibration",
+      "Material Degradation",
+      "Coating Integrity"
+    ],
+    "recommended_actions": [
+      "Detailed NDE Inspection",
+      "Vibration Monitoring Review",
+      "Coating Condition Assessment"
+    ],
+    "confidence": "HIGH",
+    "uncertainty": "The confidence scores provided by the autonomous inspection system are based on algorithms and may not fully represent the actual condition of the component. Further human inspection is required to confirm the presence and severity of the cracks.",
+    "human_review_required": true,
+    "source_references": {
+      "source_image_filename": "11112.jpg",
+      "source_image_sha256": "44e62c6410a898b496e245ac28f3f1604c31acb04cad4e5b0551738f40a78313",
+      "model_checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+      "inspection_decision_id": "dec-insp-11112-44e62c64-44e62c64",
+      "is_synthetic_data": true,
+      "component_id": "PIPE-SEG-4021",
+      "asset_id": "ASSET-PL-01"
+    },
+    "generated_at": "2026-09-01T14:05:05.220942+00:00",
+    "model_provenance": {
+      "provider": "ollama",
+      "model": "gemma3:latest",
+      "duration_ms": 68784.6,
+      "prompt_tokens": 1131,
+      "completion_tokens": 722
+    }
+  },
+  "draft_work_order": {
+    "schema_version": "1.0",
+    "draft_id": "wo-draft-insp-11112-44e62c64-PIPE-SEG-4021",
+    "component_id": "PIPE-SEG-4021",
+    "inspection_reference": "insp-11112-44e62c64",
+    "priority": "CRITICAL",
+    "recommended_action": "Conduct Ultrasonic Thickness Measurement and Crack Detection NDE (UT/CD) on Primary Body Segment 4021, Span 40m - 52m. Focus on areas identified by the autonomous inspection system, specifically around the detected crack locations.",
+    "justification": "The autonomous inspection identified multiple crack detections with a critical confidence level. The deterministic rules triggered, and the historical context of previous crack occurrences and the vibration-related failure incident necessitate immediate investigation to assess the extent of the damage and potential for further propagation. UT/CD provides a robust method for quantifying crack size and location.",
+    "required_inspection": "Ultrasonic Thickness Measurement and Crack Detection (UT/CD)",
+    "suggested_team": "Pipeline Structural Integrity Team",
+    "estimated_downtime_hours": 8.0,
+    "estimated_cost": 4000.0,
+    "supporting_evidence": [
+      "det-001",
+      "det-002",
+      "det-003"
+    ],
+    "historical_support": [
+      "MAINT-2024-0891",
+      "MAINT-2023-0144"
+    ],
+    "uncertainty": "The confidence scores provided by the autonomous inspection system are based on algorithms and may not fully represent the actual condition of the component. Further human inspection is required to confirm the presence and severity of the cracks.",
+    "approval_status": "PENDING_HUMAN_REVIEW",
+    "generated_at": "2026-09-01T14:05:05.220942+00:00",
+    "generated_by": "InspectionReasoningAgent"
+  },
+  "reasoning_trace": {
+    "trace_id": "trace-insp-11112-44e62c64-PIPE-SEG-4021",
+    "component_id": "PIPE-SEG-4021",
+    "input_evidence_references": {
+      "inspection_id": "insp-11112-44e62c64",
+      "source_image_filename": "11112.jpg",
+      "source_image_sha256": "44e62c6410a898b496e245ac28f3f1604c31acb04cad4e5b0551738f40a78313",
+      "detection_count": 3
+    },
+    "historical_context_references": {
+      "asset_id": "ASSET-PL-01",
+      "maintenance_records_count": 2,
+      "inspections_count": 3,
+      "is_synthetic_data": true
+    },
+    "deterministic_decision_reference": {
+      "decision_id": "dec-insp-11112-44e62c64-44e62c64",
+      "priority": "CRITICAL",
+      "confidence": "LOW",
+      "triggered_rules": [
+        "RULE-SEV-002",
+        "RULE-SEV-004",
+        "RULE-CONF-001"
+      ]
+    },
+    "provider": "ollama",
+    "model": "gemma3:latest",
+    "prompt_version": "1.0",
+    "timestamp": "2026-09-01T14:05:05.220942+00:00",
+    "output_reference": "assess-insp-11112-44e62c64-PIPE-SEG-4021",
+    "human_review_status": "PENDING_HUMAN_REVIEW"
+  }
+}

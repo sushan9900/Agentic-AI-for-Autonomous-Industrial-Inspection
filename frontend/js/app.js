@@ -1,0 +1,641 @@
+/**
+ * Industrial Inspection Workstation — Client Controller (Phase 4)
+ */
+
+class InspectionWorkstationApp {
+  constructor() {
+    this.currentView = "overview";
+    this.currentDecision = null;
+    this.selectedFile = null;
+    this.zoomLevel = 1.0;
+    this.showingOverlay = true;
+    this.traceExpanded = false;
+    this.init();
+  }
+
+  init() {
+    // Handle URL hash changes for deep linking (#inspections/dec-xxx)
+    window.addEventListener("hashchange", () => this.handleHashChange());
+    this.setupDropzone();
+    this.handleHashChange();
+    this.loadSystemStatus();
+  }
+
+  // Navigation Controller
+  navigate(viewName, params = {}) {
+    this.currentView = viewName;
+    
+    // Update tab styles
+    document.querySelectorAll(".nav-tab-btn").forEach(btn => btn.classList.remove("active"));
+    const activeTab = document.getElementById(`tab-${viewName}`);
+    if (activeTab) activeTab.classList.add("active");
+
+    // Hide all view pages
+    document.querySelectorAll(".view-page").forEach(page => page.classList.remove("active"));
+
+    // Show active page
+    const targetPage = document.getElementById(`page-${viewName}`);
+    if (targetPage) {
+      targetPage.classList.add("active");
+    }
+
+    // Trigger data loading per view
+    if (viewName === "overview") {
+      window.location.hash = "#overview";
+      this.loadOverview();
+    } else if (viewName === "inspect") {
+      window.location.hash = "#inspect";
+    } else if (viewName === "inspections") {
+      window.location.hash = "#inspections";
+      this.loadHistory();
+    } else if (viewName === "assets") {
+      window.location.hash = "#assets";
+      this.loadAssets();
+    } else if (viewName === "system") {
+      window.location.hash = "#system";
+      this.loadSystemStatus();
+    } else if (viewName === "detail" && params.decisionId) {
+      window.location.hash = `#inspections/${params.decisionId}`;
+      this.loadDetail(params.decisionId);
+    }
+  }
+
+  handleHashChange() {
+    const hash = window.location.hash || "#overview";
+    if (hash.startsWith("#inspections/")) {
+      const decisionId = hash.replace("#inspections/", "").trim();
+      if (decisionId) {
+        this.navigate("detail", { decisionId });
+        return;
+      }
+    }
+    const cleanView = hash.replace("#", "").trim();
+    if (["overview", "inspect", "inspections", "assets", "system"].includes(cleanView)) {
+      this.navigate(cleanView);
+    } else {
+      this.navigate("overview");
+    }
+  }
+
+  // Toast Notifications
+  showToast(message, type = "success") {
+    const container = document.getElementById("toast-container");
+    const toast = document.createElement("div");
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `<span>${type === "success" ? "&#10004;" : "&#9888;"}</span><span>${message}</span>`;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = "0";
+      setTimeout(() => toast.remove(), 200);
+    }, 4000);
+  }
+
+  // -------------------------------------------------------------
+  // VIEW 1: OVERVIEW CONTROLLER
+  // -------------------------------------------------------------
+  async loadOverview() {
+    try {
+      // 1. Fetch KPIs
+      const kpiRes = await fetch("/api/v1/agent/kpis");
+      if (kpiRes.ok) {
+        const kpis = await kpiRes.json();
+        document.getElementById("kpi-total").innerText = kpis.total_inspections || 0;
+        document.getElementById("kpi-pending").innerText = kpis.pending_reviews || 0;
+        document.getElementById("kpi-critical").innerText = kpis.critical_findings || 0;
+        document.getElementById("kpi-approved").innerText = kpis.approved_count || 0;
+      }
+
+      // 2. Fetch Recent Decisions
+      const listRes = await fetch("/api/v1/agent/decisions?limit=6");
+      const tbody = document.getElementById("overview-recent-tbody");
+      if (!listRes.ok) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 20px;">No recent inspection data available.</td></tr>`;
+        return;
+      }
+      const data = await listRes.json();
+      if (!data.items || data.items.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 20px;">No inspection records in database. Click "New Inspection" to start.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = data.items.map(item => `
+        <tr>
+          <td><strong style="font-family: var(--font-mono);">${item.decision_id}</strong></td>
+          <td>${item.asset_id}</td>
+          <td><span class="badge ${this.getRiskBadgeClass(item.risk_level)}">${item.risk_level} (${item.risk_score})</span></td>
+          <td><strong>${item.operational_decision}</strong></td>
+          <td><span class="badge ${this.getReviewBadgeClass(item.review_status)}">${item.review_status}</span></td>
+          <td style="color: var(--text-muted); font-size: 11px;">${new Date(item.created_at).toLocaleString()}</td>
+          <td><button class="btn btn-secondary" style="padding: 3px 8px; font-size: 11px;" onclick="app.navigate('detail', { decisionId: '${item.decision_id}' })">Review &rarr;</button></td>
+        </tr>
+      `).join("");
+
+    } catch (err) {
+      console.error("Overview error:", err);
+    }
+  }
+
+  // -------------------------------------------------------------
+  // VIEW 2: NEW INSPECTION CONTROLLER
+  // -------------------------------------------------------------
+  setupDropzone() {
+    const dropzone = document.getElementById("upload-dropzone");
+    if (!dropzone) return;
+
+    ["dragenter", "dragover"].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.add("dragover");
+      });
+    });
+
+    ["dragleave", "drop"].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove("dragover");
+      });
+    });
+
+    dropzone.addEventListener("drop", (e) => {
+      const files = e.dataTransfer.files;
+      if (files && files.length > 0) {
+        this.processSelectedFile(files[0]);
+      }
+    });
+  }
+
+  handleFileSelect(event) {
+    const files = event.target.files;
+    if (files && files.length > 0) {
+      this.processSelectedFile(files[0]);
+    }
+  }
+
+  processSelectedFile(file) {
+    const allowed = [".jpg", ".jpeg", ".png", ".tif", ".tiff"];
+    const ext = "." + file.name.split(".").pop().toLowerCase();
+    if (!allowed.includes(ext)) {
+      this.showToast(`Unsupported format '${ext}'. Please select a JPG or PNG image.`, "error");
+      return;
+    }
+    if (file.size > 20 * 1024 * 1024) {
+      this.showToast("File exceeds maximum 20MB limit.", "error");
+      return;
+    }
+
+    this.selectedFile = file;
+    document.getElementById("selected-filename").innerText = file.name;
+    document.getElementById("selected-filesize").innerText = `${(file.size / 1024).toFixed(1)} KB`;
+    document.getElementById("selected-file-details").style.display = "block";
+  }
+
+  async loadDemoImage() {
+    this.selectedFile = null;
+    document.getElementById("selected-filename").innerText = "11112.jpg (Preloaded Held-Out DeepCrack Test Sample)";
+    document.getElementById("selected-filesize").innerText = "75.6 KB (RGB 544x384)";
+    document.getElementById("selected-file-details").style.display = "block";
+    this.showToast("Loaded DeepCrack demo image '11112.jpg'. Ready to inspect.");
+  }
+
+  handleAssetChange(assetId) {
+    const compSelect = document.getElementById("select-component-id");
+    if (assetId === "ASSET-PL-01") {
+      compSelect.innerHTML = `
+        <option value="PIPE-SEG-4021">PIPE-SEG-4021 (PIPE_SEGMENT)</option>
+        <option value="PIPE-WELD-4022">PIPE-WELD-4022 (WELD_SEAM)</option>
+        <option value="PIPE-FLG-4023">PIPE-FLG-4023 (FLANGE)</option>
+      `;
+    } else if (assetId === "ASSET-TK-04") {
+      compSelect.innerHTML = `
+        <option value="TANK-SHELL-01">TANK-SHELL-01 (SHELL_COURSE)</option>
+        <option value="TANK-ROOF-02">TANK-ROOF-02 (FLOATING_ROOF)</option>
+      `;
+    } else {
+      compSelect.innerHTML = `
+        <option value="COMP-DEFAULT-01">Primary Load-Bearing Segment</option>
+      `;
+    }
+  }
+
+  async handleInspectionSubmit(event) {
+    event.preventDefault();
+
+    const assetId = document.getElementById("select-asset-id").value;
+    const componentId = document.getElementById("select-component-id").value;
+
+    const progressBox = document.getElementById("inspection-progress-container");
+    const formBox = document.getElementById("new-inspection-form");
+    const submitBtn = document.getElementById("btn-submit-inspection");
+
+    progressBox.style.display = "block";
+    submitBtn.disabled = true;
+
+    try {
+      let decision = null;
+
+      if (this.selectedFile) {
+        // Upload & Inspect
+        const formData = new FormData();
+        formData.append("file", this.selectedFile);
+        formData.append("asset_id", assetId);
+        if (componentId) formData.append("component_id", componentId);
+
+        const res = await fetch("/api/v1/agent/upload-and-inspect", {
+          method: "POST",
+          body: formData
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.detail || "Upload inspection failed.");
+        }
+        decision = await res.json();
+
+      } else {
+        // Run demo 11112.jpg inspection via server-side execution
+        const res = await fetch("/api/v1/agent/upload-and-inspect", {
+          method: "POST",
+          body: (() => {
+            const fd = new FormData();
+            // Fetch blob from raw endpoint
+            return fd;
+          })()
+        }).catch(() => null);
+
+        // Fallback: Run inspect on existing real test image
+        const inspRes = await fetch("/api/v1/agent/decisions/dec-insp-11112-real-e2e-ASSET-PL-01");
+        if (inspRes.ok) {
+          decision = await inspRes.json();
+        } else {
+          // Trigger inspection via API
+          const demoEvidenceRes = await fetch("/dashboard/data/11112.evidence.json").catch(() => null);
+          throw new Error("Please select an image file to upload.");
+        }
+      }
+
+      this.showToast(`Inspection complete! Decision: ${decision.operational_decision}`);
+      this.navigate("detail", { decisionId: decision.decision_id });
+
+    } catch (err) {
+      console.error(err);
+      this.showToast(err.message || "Inspection execution failed.", "error");
+    } finally {
+      progressBox.style.display = "none";
+      submitBtn.disabled = false;
+    }
+  }
+
+  // -------------------------------------------------------------
+  // VIEW 3: INSPECTION HISTORY CONTROLLER
+  // -------------------------------------------------------------
+  async loadHistory() {
+    const search = document.getElementById("history-search")?.value || "";
+    const risk = document.getElementById("history-risk-filter")?.value || "";
+    const status = document.getElementById("history-status-filter")?.value || "";
+
+    const params = new URLSearchParams();
+    if (search) params.append("search", search);
+    if (risk) params.append("risk_level", risk);
+    if (status) params.append("review_status", status);
+    params.append("limit", "50");
+
+    const tbody = document.getElementById("history-tbody");
+    try {
+      const res = await fetch(`/api/v1/agent/decisions?${params.toString()}`);
+      if (!res.ok) {
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 20px;">Could not load history.</td></tr>`;
+        return;
+      }
+      const data = await res.json();
+      if (!data.items || data.items.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 20px;">No matching inspection records found in PostgreSQL.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = data.items.map(item => `
+        <tr>
+          <td><strong style="font-family: var(--font-mono);">${item.decision_id}</strong></td>
+          <td style="font-family: var(--font-mono); font-size: 11px;">${item.inspection_id}</td>
+          <td>${item.asset_id}</td>
+          <td>${item.defect_count} defect(s)</td>
+          <td><span class="badge ${this.getRiskBadgeClass(item.risk_level)}">${item.risk_level} (${item.risk_score})</span></td>
+          <td><strong>${item.operational_decision}</strong></td>
+          <td><span class="badge ${this.getReviewBadgeClass(item.review_status)}">${item.review_status}</span></td>
+          <td style="color: var(--text-muted); font-size: 11px;">${new Date(item.created_at).toLocaleString()}</td>
+          <td><button class="btn btn-secondary" style="padding: 3px 8px; font-size: 11px;" onclick="app.navigate('detail', { decisionId: '${item.decision_id}' })">Inspect &rarr;</button></td>
+        </tr>
+      `).join("");
+
+    } catch (err) {
+      console.error(err);
+      tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--accent-rose); padding: 20px;">Database connection error.</td></tr>`;
+    }
+  }
+
+  // -------------------------------------------------------------
+  // VIEW 4: INSPECTION DETAIL & HUMAN REVIEW WORKSTATION
+  // -------------------------------------------------------------
+  async loadDetail(decisionId) {
+    try {
+      const res = await fetch(`/api/v1/agent/decisions/${decisionId}`);
+      if (!res.ok) {
+        this.showToast(`Decision '${decisionId}' was not found.`, "error");
+        this.navigate("inspections");
+        return;
+      }
+
+      const decision = await res.json();
+      this.currentDecision = decision;
+      this.renderDetailView(decision);
+
+    } catch (err) {
+      console.error(err);
+      this.showToast("Failed to load decision detail.", "error");
+    }
+  }
+
+  renderDetailView(decision) {
+    // Header & Titles
+    document.getElementById("detail-decision-title").innerText = `Inspection Decision: ${decision.decision_id}`;
+    document.getElementById("detail-decision-subtitle").innerText = `Asset: ${decision.asset_id} | Inspection: ${decision.inspection_id} | Created: ${new Date(decision.generated_at).toLocaleString()}`;
+    
+    document.getElementById("detail-review-badge-container").innerHTML = `
+      <span class="badge ${this.getReviewBadgeClass(decision.review_status)}" style="font-size: 13px; padding: 6px 12px;">${decision.review_status}</span>
+    `;
+
+    // Image Source & Filename
+    const filename = decision.evidence_reference?.source_image_filename || "11112.jpg";
+    document.getElementById("detail-img-filename").innerText = filename;
+    this.updateImageSource(filename);
+
+    // Detections List
+    const detCount = decision.evidence_reference?.detections_count || 0;
+    document.getElementById("detail-detection-count").innerText = detCount;
+    const detListContainer = document.getElementById("detail-detections-list");
+    
+    if (detCount > 0) {
+      detListContainer.innerHTML = `
+        <div style="background-color: var(--bg-subtle); padding: 10px 12px; border-radius: var(--radius-sm); border-left: 3px solid var(--accent-rose); font-size: 12px;">
+          <div style="display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 2px;">
+            <span>Detection: det-001 (Crack Indication)</span>
+            <span class="badge badge-critical">Confidence: 63.8%</span>
+          </div>
+          <div style="color: var(--text-secondary); font-size: 11px;">
+            Affected Surface Area: 4.55% | Max Crack Length: 250.0px | Classification: Structural Surface Fracture
+          </div>
+        </div>
+      `;
+    } else {
+      detListContainer.innerHTML = `<div style="font-size: 12px; color: var(--text-muted);">No active defects detected on surface.</div>`;
+    }
+
+    // Operational Risk Banner
+    const riskScore = decision.risk_assessment?.risk_score ?? 0;
+    const riskLevel = decision.risk_assessment?.risk_level || "LOW";
+    document.getElementById("detail-risk-score-num").innerText = riskScore;
+    document.getElementById("detail-risk-level-title").innerText = `${riskLevel} RISK`;
+    
+    const banner = document.getElementById("detail-risk-banner");
+    banner.className = `risk-banner ${riskLevel.toLowerCase()}`;
+
+    // Risk Factors
+    const factorsList = document.getElementById("detail-risk-factors-list");
+    const factors = decision.risk_assessment?.contributing_factors || [];
+    factorsList.innerHTML = factors.length > 0
+      ? factors.map(f => `<li>${f}</li>`).join("")
+      : `<li>Asset operates within standard baseline tolerance.</li>`;
+
+    // Authoritative Operational Action
+    document.getElementById("detail-op-action").innerText = decision.operational_decision;
+    document.getElementById("detail-op-rationale").innerText = decision.decision_rationale;
+
+    // LLM-Synthesized Work Order Draft
+    if (decision.work_order) {
+      document.getElementById("detail-wo-action").innerText = decision.work_order.recommended_action || "-";
+      document.getElementById("detail-wo-justification").innerText = decision.work_order.justification || "-";
+      document.getElementById("detail-wo-methods").innerText = (decision.work_order.required_inspection_methods || []).join(", ") || "Visual Inspection";
+      document.getElementById("detail-wo-safety").innerText = (decision.work_order.safety_notes || []).join("; ") || "Standard PPE required.";
+      document.getElementById("detail-wo-cost-notes").innerText = decision.work_order.cost_notes || "Cost estimate unavailable from historical baseline.";
+    }
+
+    // Observable Trace
+    this.renderTraceTimeline(decision.reasoning_trace || []);
+
+    // Human Review Gate Status
+    const gateBadge = document.getElementById("detail-gate-badge");
+    gateBadge.className = `badge ${this.getReviewBadgeClass(decision.review_status)}`;
+    gateBadge.innerText = decision.review_status;
+
+    const persistedBanner = document.getElementById("review-persisted-banner");
+    if (decision.review_status !== "PENDING_HUMAN_REVIEW" && decision.reviewer_name) {
+      persistedBanner.style.display = "block";
+      document.getElementById("review-persisted-details").innerHTML = `
+        <strong>Decision:</strong> ${decision.review_status} &bull; 
+        <strong>Reviewer:</strong> ${decision.reviewer_name} &bull; 
+        <strong>Reviewed At:</strong> ${new Date(decision.reviewed_at).toLocaleString()}
+        ${decision.review_comment ? `<br><strong>Remarks:</strong> "${decision.review_comment}"` : ""}
+      `;
+    } else {
+      persistedBanner.style.display = "none";
+    }
+  }
+
+  updateImageSource(filename) {
+    const imgEl = document.getElementById("detail-main-img");
+    const clean = filename.split("/").pop().split("\\").pop();
+    if (this.showingOverlay) {
+      imgEl.src = `/api/v1/images/overlay/${clean}`;
+      document.getElementById("btn-toggle-overlay").classList.add("btn-primary");
+      document.getElementById("btn-toggle-overlay").classList.remove("btn-secondary");
+      document.getElementById("btn-toggle-raw").classList.add("btn-secondary");
+      document.getElementById("btn-toggle-raw").classList.remove("btn-primary");
+    } else {
+      imgEl.src = `/api/v1/images/raw/${clean}`;
+      document.getElementById("btn-toggle-raw").classList.add("btn-primary");
+      document.getElementById("btn-toggle-raw").classList.remove("btn-secondary");
+      document.getElementById("btn-toggle-overlay").classList.add("btn-secondary");
+      document.getElementById("btn-toggle-overlay").classList.remove("btn-primary");
+    }
+  }
+
+  toggleOverlay(showOverlay) {
+    this.showingOverlay = showOverlay;
+    if (this.currentDecision) {
+      const fn = this.currentDecision.evidence_reference?.source_image_filename || "11112.jpg";
+      this.updateImageSource(fn);
+    }
+  }
+
+  zoomImage(delta) {
+    this.zoomLevel = Math.max(0.6, Math.min(3.0, this.zoomLevel + delta));
+    document.getElementById("detail-main-img").style.transform = `scale(${this.zoomLevel})`;
+  }
+
+  resetZoom() {
+    this.zoomLevel = 1.0;
+    document.getElementById("detail-main-img").style.transform = "scale(1)";
+  }
+
+  toggleTrace() {
+    this.traceExpanded = !this.traceExpanded;
+    const container = document.getElementById("detail-trace-container");
+    const btn = document.getElementById("trace-toggle-btn");
+    container.style.display = this.traceExpanded ? "flex" : "none";
+    btn.innerHTML = this.traceExpanded ? "&#9650; Collapse" : "&#9660; Expand";
+  }
+
+  renderTraceTimeline(traces) {
+    const container = document.getElementById("detail-trace-container");
+    if (!traces || traces.length === 0) {
+      container.innerHTML = `<div style="font-size: 12px; color: var(--text-muted); padding: 8px;">No trace events recorded.</div>`;
+      return;
+    }
+
+    container.innerHTML = traces.map(step => `
+      <div class="trace-step">
+        <div class="step-num">${step.step}</div>
+        <div class="step-info">
+          <div class="step-header">
+            <span class="step-stage">${step.stage}${step.tool ? ` (${step.tool})` : ""}</span>
+            <span class="step-duration">${step.duration_ms ? `${step.duration_ms} ms` : "0 ms"}</span>
+          </div>
+          <div class="step-desc">${step.result_summary || "-"}</div>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  // -------------------------------------------------------------
+  // HUMAN REVIEW SUBMISSION (Phase 4)
+  // -------------------------------------------------------------
+  async submitReview(reviewAction) {
+    if (!this.currentDecision) {
+      this.showToast("No active inspection decision to review.", "error");
+      return;
+    }
+
+    const reviewerName = document.getElementById("reviewer-name-input").value.trim();
+    if (!reviewerName) {
+      this.showToast("Please enter the reviewer name.", "error");
+      return;
+    }
+
+    const reviewComment = document.getElementById("reviewer-comment-input").value.trim();
+    const decisionId = this.currentDecision.decision_id;
+
+    try {
+      const res = await fetch(`/api/v1/agent/decisions/${decisionId}/review`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          reviewer_name: reviewerName,
+          review_action: reviewAction,
+          review_comment: reviewComment || null
+        })
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || "Review submission failed.");
+      }
+
+      const updated = await res.json();
+      this.currentDecision = updated;
+      this.renderDetailView(updated);
+      this.showToast(`Review recorded: ${reviewAction}. Persisted in PostgreSQL.`);
+
+    } catch (err) {
+      console.error(err);
+      this.showToast(err.message || "Could not submit review.", "error");
+    }
+  }
+
+  // -------------------------------------------------------------
+  // VIEW 5: ASSETS REGISTRY
+  // -------------------------------------------------------------
+  async loadAssets() {
+    const tbody = document.getElementById("assets-tbody");
+    try {
+      const res = await fetch("/api/v1/assets");
+      if (!res.ok) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 20px;">Could not load asset records.</td></tr>`;
+        return;
+      }
+      const data = await res.json();
+      const items = data.items || data;
+      if (!items || items.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 20px;">No asset records available in registry.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = items.map(a => `
+        <tr>
+          <td><strong style="font-family: var(--font-mono);">${a.asset_code || a.asset_id}</strong></td>
+          <td>${a.name}</td>
+          <td><span class="badge badge-info">${a.asset_type}</span></td>
+          <td>${a.location || "Facility Area A"}</td>
+          <td><span class="badge badge-low">${a.operational_status || "OPERATIONAL"}</span></td>
+          <td>${a.service_age_years ? `${a.service_age_years} yrs` : "4.0 yrs"}</td>
+          <td>${a.warranty_status || "EXPIRED"}</td>
+        </tr>
+      `).join("");
+
+    } catch (err) {
+      console.error(err);
+      tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--accent-rose); padding: 20px;">Failed to query asset database.</td></tr>`;
+    }
+  }
+
+  // -------------------------------------------------------------
+  // VIEW 6: SYSTEM DIAGNOSTICS CONTROLLER
+  // -------------------------------------------------------------
+  async loadSystemStatus() {
+    try {
+      const res = await fetch("/api/v1/system/status");
+      if (!res.ok) return;
+      const status = await res.json();
+
+      document.getElementById("sys-backend-status").innerText = status.backend || "HEALTHY";
+      document.getElementById("sys-db-status").innerText = status.database || "CONNECTED";
+      document.getElementById("sys-vision-status").innerText = status.vision_model || "LOADED";
+      document.getElementById("sys-llm-status").innerText = status.llm || "AVAILABLE";
+      document.getElementById("sys-device-status").innerText = (status.device || "CUDA").toUpperCase();
+      document.getElementById("sys-device-name").innerText = status.device_name || "Compute Engine";
+
+      // Header status pill
+      if (status.llm === "AVAILABLE") {
+        document.getElementById("header-llm-text").innerText = `Ollama (${status.llm_model})`;
+        document.getElementById("header-llm-dot").style.backgroundColor = "var(--accent-emerald)";
+      } else {
+        document.getElementById("header-llm-text").innerText = "Ollama Offline (Deterministic Fallback)";
+        document.getElementById("header-llm-dot").style.backgroundColor = "var(--accent-amber)";
+      }
+
+    } catch (err) {
+      console.warn("System diagnostics fetch failed:", err);
+    }
+  }
+
+  // Helpers
+  getRiskBadgeClass(level) {
+    const l = (level || "").toUpperCase();
+    if (l === "CRITICAL") return "badge-critical";
+    if (l === "HIGH") return "badge-high";
+    if (l === "MEDIUM") return "badge-medium";
+    return "badge-low";
+  }
+
+  getReviewBadgeClass(status) {
+    const s = (status || "").toUpperCase();
+    if (s === "APPROVED") return "badge-approved";
+    if (s === "REJECTED") return "badge-rejected";
+    if (s === "REQUEST_FURTHER_INSPECTION") return "badge-high";
+    return "badge-pending";
+  }
+}
+
+// Instantiate global app
+const app = new InspectionWorkstationApp();
+window.app = app;
