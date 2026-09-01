@@ -32,7 +32,7 @@ def get_system_status(db: Session = Depends(get_db)) -> Dict[str, Any]:
     llm_status = "AVAILABLE"
     try:
         health = llm_service.health_check()
-        if not health.is_available:
+        if not health.available:
             llm_status = "UNAVAILABLE"
     except Exception:
         llm_status = "UNAVAILABLE"

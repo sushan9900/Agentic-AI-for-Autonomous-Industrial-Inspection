@@ -1,5 +1,6 @@
 """LLM provider service manager (Phase 2C)."""
 
+from backend.app.llm.schemas import LLMHealthStatus
 from typing import Optional
 from backend.app.core.config import settings
 from backend.app.llm.base import BaseLLMProvider
@@ -25,6 +26,10 @@ class LLMService:
                 # Default strictly to Ollama
                 self._provider = OllamaProvider()
         return self._provider
+
+    def health_check(self):
+        """Checks health of the active LLM provider."""
+        return self.get_provider().health_check()
 
     def set_provider(self, provider: BaseLLMProvider) -> None:
         """Sets an explicit LLM provider (useful for test dependency injection)."""

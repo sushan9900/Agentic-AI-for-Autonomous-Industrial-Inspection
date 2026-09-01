@@ -109,3 +109,6 @@ frontend/.next/
 
 data/raw/**/extracted/
 data/raw/**/desktop.ini
+
+# Runtime inspection uploads
+data/uploads/
