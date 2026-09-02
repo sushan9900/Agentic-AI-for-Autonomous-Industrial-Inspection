@@ -4,7 +4,7 @@
     "assessment_id": "assess-insp-11112-44e62c64-PIPE-SEG-4021",
     "component_id": "PIPE-SEG-4021",
     "inspection_reference": "insp-11112-44e62c64",
-    "summary": "The Primary Body Segment 4021 (Span 40m - 52m) exhibits multiple crack detections identified through autonomous visual inspection. The detections are clustered and meet the criteria for a CRITICAL severity level due to the confidence scores and spatial extent. Historical data indicates a pattern of cracking associated with cyclic vibration and coating conditions.",
+    "summary": "The Primary Body Segment 4021 (Span 40m - 52m) exhibits multiple crack detections identified through autonomous visual inspection. The detections are clustered and meet the criteria for a CRITICAL severity level due to the confidence scores and spatial extent. Historical data indicates a pattern of crack formation, potentially linked to cyclic vibration.",
     "detected_defects": [
       {
         "detection_id": "det-001",
@@ -25,11 +25,11 @@
         "affected_area_percentage": 0.0508
       }
     ],
-    "historical_context_summary": "The component has a history of crack detections, including a CRITICAL finding in 2026 and a MEDIUM finding in 2024. Recent maintenance included sandblasting and epoxy coating application in 2024. Prior inspections have shown a lack of issues in 2023. The historical failure incident (INC-2022-044) involving crack propagation due to vibration suggests a potential vulnerability.",
-    "reasoning": "The autonomous inspection identified three crack detections with varying confidence levels. The detection with ID 'det-001' has the highest confidence (63.8%) and a significant spatial area (4.55%). The deterministic rules triggered due to the number of detections and confidence levels, indicating a potential concern. The component's material (Carbon Steel A106_GR_B) is susceptible to crack propagation under cyclic loading, as evidenced by the historical failure incident. The recent coating application may have masked previous defects, but the presence of multiple cracks suggests ongoing degradation.",
+    "historical_context_summary": "The component has a history of crack detections, including a critical crack identified in 2026 and a medium crack in 2024. Recent maintenance included sandblasting and epoxy coating application in 2024. The last manual inspection in 2023 found no defects. The historical failure incident (INC-2022-044) involving crack propagation due to vibration suggests a potential vulnerability.",
+    "reasoning": "The autonomous inspection identified three crack detections with varying confidence levels. The detection with ID 'det-001' has the highest confidence (63.8%) and a significant spatial area (4.55%). The deterministic rules triggered due to the number of detections and confidence levels, indicating a potential concern. Given the component's function as a high-pressure distribution manifold and the historical incident involving vibration-induced crack propagation, the current findings warrant immediate investigation. The recent coating application may have masked previous defects, but the presence of multiple cracks suggests a continuing issue.",
     "risk_factors": [
-      "Cyclic Loading",
-      "Coating Integrity",
+      "Cyclic Vibration",
+      "Material Degradation",
       "Fatigue Crack Propagation"
     ],
     "recommended_actions": [
@@ -37,8 +37,8 @@
       "Coating Integrity Assessment",
       "Vibration Monitoring Review"
     ],
-    "confidence": "MEDIUM",
-    "uncertainty": "The confidence scores for the detections are relatively low, and the autonomous inspection system may be susceptible to false alarms. Further investigation is required to confirm the physical presence and extent of the cracks.",
+    "confidence": "HIGH",
+    "uncertainty": "The confidence scores of the autonomous detection system are subject to limitations. Further investigation is required to confirm the physical presence and extent of the cracks and to determine the root cause of the defect formation.",
     "human_review_required": true,
     "source_references": {
       "source_image_filename": "11112.jpg",
@@ -49,13 +49,13 @@
       "component_id": "PIPE-SEG-4021",
       "asset_id": "ASSET-PL-01"
     },
-    "generated_at": "2026-09-01T16:33:56.202545+00:00",
+    "generated_at": "2026-09-02T15:59:59.093749+00:00",
     "model_provenance": {
       "provider": "ollama",
       "model": "gemma3:latest",
-      "duration_ms": 88225.37,
+      "duration_ms": 73993.12,
       "prompt_tokens": 1131,
-      "completion_tokens": 713
+      "completion_tokens": 679
     }
   },
   "draft_work_order": {
@@ -64,9 +64,9 @@
     "component_id": "PIPE-SEG-4021",
     "inspection_reference": "insp-11112-44e62c64",
     "priority": "CRITICAL",
-    "recommended_action": "Perform Ultrasonic Thickness Survey and Visual Examination of Primary Body Segment 4021 (Span 40m - 52m) to confirm crack locations and assess crack size and propagation. Conduct a coating integrity assessment to determine if the coating is providing adequate protection.",
-    "justification": "The autonomous inspection identified multiple critical crack detections. The deterministic rules triggered, and the historical context suggests a potential for continued crack propagation. A detailed NDE examination is required to accurately assess the damage and determine the appropriate repair strategy.",
-    "required_inspection": "Ultrasonic NDE Sa 2.5, Visual Examination",
+    "recommended_action": "Perform Ultrasonic NDE Examination - Focus on Crack Detection and Coating Integrity Assessment.",
+    "justification": "The autonomous inspection identified multiple critical crack detections. The deterministic rules triggered, and the historical context suggests a potential for continued crack propagation. A thorough NDE examination is required to accurately assess the crack size, orientation, and depth, as well as the integrity of the applied coating.",
+    "required_inspection": "Ultrasonic NDE Sa 2.5",
     "suggested_team": "Pipeline Structural Integrity Team",
     "estimated_downtime_hours": 8.0,
     "estimated_cost": 4000.0,
@@ -79,9 +79,9 @@
       "MAINT-2024-0891",
       "MAINT-2023-0144"
     ],
-    "uncertainty": "The confidence scores for the detections are relatively low, and the autonomous inspection system may be susceptible to false alarms. Further investigation is required to confirm the physical presence and extent of the cracks.",
+    "uncertainty": "The confidence scores of the autonomous detection system are subject to limitations. Further investigation is required to confirm the physical presence and extent of the cracks and to determine the root cause of the defect formation.",
     "approval_status": "PENDING_HUMAN_REVIEW",
-    "generated_at": "2026-09-01T16:33:56.202545+00:00",
+    "generated_at": "2026-09-02T15:59:59.094765+00:00",
     "generated_by": "InspectionReasoningAgent"
   },
   "reasoning_trace": {
@@ -112,7 +112,7 @@
     "provider": "ollama",
     "model": "gemma3:latest",
     "prompt_version": "1.0",
-    "timestamp": "2026-09-01T16:33:56.202545+00:00",
+    "timestamp": "2026-09-02T15:59:59.094765+00:00",
     "output_reference": "assess-insp-11112-44e62c64-PIPE-SEG-4021",
     "human_review_status": "PENDING_HUMAN_REVIEW"
   }

@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETED",
+  "model": "gemma3:latest",
+  "temperature": 0.1,
+  "max_tokens_config": 1024,
+  "num_runs": 5,
+  "latencies_ms": [
+    38442.44,
+    25015.71,
+    24770.09,
+    24393.4,
+    23689.42
+  ],
+  "min_latency_ms": 23689.42,
+  "max_latency_ms": 38442.44,
+  "mean_latency_ms": 27262.21,
+  "median_latency_ms": 24770.09,
+  "mean_latency_seconds": 27.26
+}

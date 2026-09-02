@@ -1,0 +1,80 @@
+{
+  "suite": "multi_image",
+  "image_count": 10,
+  "total_duration_seconds": 570.59,
+  "latency_stats": {
+    "count": 10,
+    "total_ms": 570580.17,
+    "mean_ms": 57058.02,
+    "median_ms": 57044.92,
+    "min_ms": 49807.18,
+    "max_ms": 63614.93,
+    "stddev_ms": 4228.65
+  },
+  "throughput": {
+    "images_per_minute": 1.05,
+    "images_per_second": 0.0175
+  },
+  "per_image_results": [
+    {
+      "index": 1,
+      "image": "11112.jpg",
+      "duration_ms": 60878.29,
+      "passed": true
+    },
+    {
+      "index": 2,
+      "image": "11117.jpg",
+      "duration_ms": 55040.3,
+      "passed": true
+    },
+    {
+      "index": 3,
+      "image": "11118.jpg",
+      "duration_ms": 58360.8,
+      "passed": true
+    },
+    {
+      "index": 4,
+      "image": "11119.jpg",
+      "duration_ms": 59461.05,
+      "passed": true
+    },
+    {
+      "index": 5,
+      "image": "11134-1.jpg",
+      "duration_ms": 63614.93,
+      "passed": true
+    },
+    {
+      "index": 6,
+      "image": "11134-2.jpg",
+      "duration_ms": 49807.18,
+      "passed": true
+    },
+    {
+      "index": 7,
+      "image": "11134-3.jpg",
+      "duration_ms": 55729.03,
+      "passed": true
+    },
+    {
+      "index": 8,
+      "image": "11134-4.jpg",
+      "duration_ms": 52220.25,
+      "passed": true
+    },
+    {
+      "index": 9,
+      "image": "11134-5.jpg",
+      "duration_ms": 60297.73,
+      "passed": true
+    },
+    {
+      "index": 10,
+      "image": "11134-6.jpg",
+      "duration_ms": 55170.61,
+      "passed": true
+    }
+  ]
+}

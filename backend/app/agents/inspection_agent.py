@@ -288,27 +288,44 @@ class InspectionDecisionAgent:
         )
 
         llm_success = False
-        work_order_data = {}
+        raw_work_order_data = {}
         try:
             gen_response = provider.generate(gen_request)
-            work_order_data = AgentValidator.parse_and_validate_llm_json(gen_response.text)
+            raw_work_order_data = AgentValidator.parse_and_validate_llm_json(gen_response.text)
             llm_success = True
         except Exception as e:
             warnings.append(f"LLM generation/parsing encountered issue ({str(e)}); falling back to deterministic synthesis.")
 
-        if not llm_success or not work_order_data:
+        historical_costs = [m.cost for m in maint_out.records if m.cost is not None]
+        historical_downtimes = [m.downtime_hours for m in maint_out.records if m.downtime_hours is not None]
+        avg_hist_cost = round(sum(historical_costs) / len(historical_costs), 2) if historical_costs else None
+        avg_hist_downtime = round(sum(historical_downtimes) / len(historical_downtimes), 1) if historical_downtimes else None
+
+        if not llm_success or not raw_work_order_data:
             # Deterministic fallback synthesis without fake LLM output
-            work_order_data = {
+            raw_work_order_data = {
                 "contextual_summary": f"Visual inspection on asset {asset_id} identified {len(validated_evidence.detections)} indication(s).",
                 "engineering_justification": decision_outcome.rationale,
                 "recommended_action": f"Execute inspection and non-destructive survey for {primary_defect_type}.",
                 "required_inspection_methods": ["Visual Inspection", "Ultrasonic NDE"],
                 "safety_notes": ["Ensure line depressurization if wall breach is suspected."],
-                "estimated_cost": maint_out.records[0].cost if maint_out.records and maint_out.records[0].cost else None,
-                "estimated_downtime_hours": maint_out.records[0].downtime_hours if maint_out.records else None,
-                "cost_notes": "Estimated from historical baseline" if maint_out.has_history else "Cost unavailable; field engineering quote required.",
+                "estimated_cost": avg_hist_cost,
+                "estimated_downtime_hours": avg_hist_downtime,
+                "cost_notes": f"Based on historical baseline average of ${avg_hist_cost}" if avg_hist_cost else "Historical cost data unavailable; field engineering quote required.",
                 "recommended_team": "Pipeline Structural Integrity Team"
             }
+
+        # Deterministic Grounding & Fabrication Guarding
+        sanitized_work_order, grounding_warnings = AgentValidator.sanitize_and_ground_work_order(
+            llm_raw_data=raw_work_order_data,
+            expected_inspection_id=inspection_id,
+            expected_image_filename=validated_evidence.source_image.filename,
+            expected_image_sha256=validated_evidence.source_image.sha256_hash,
+            cost_data_available=(avg_hist_cost is not None),
+            verified_cost=avg_hist_cost,
+            verified_downtime_hours=avg_hist_downtime
+        )
+        warnings.extend(grounding_warnings)
 
         work_order_rec = WorkOrderRecommendation(
             work_order_id=f"wo-{inspection_id}-{asset_id}",
@@ -319,19 +336,19 @@ class InspectionDecisionAgent:
             defect_type=primary_defect_type,
             severity=decision_outcome.priority,
             risk_level=risk_out.risk_level,
-            recommended_action=work_order_data.get("recommended_action", "Conduct non-destructive evaluation"),
-            justification=work_order_data.get("engineering_justification", decision_outcome.rationale),
-            required_inspection_methods=work_order_data.get("required_inspection_methods", ["Visual Inspection"]),
-            estimated_cost=work_order_data.get("estimated_cost"),
-            estimated_downtime_hours=work_order_data.get("estimated_downtime_hours"),
-            cost_notes=work_order_data.get("cost_notes"),
-            recommended_team=work_order_data.get("recommended_team", "Pipeline Structural Integrity Team"),
-            safety_notes=work_order_data.get("safety_notes", []),
-            evidence_references={
+            recommended_action=sanitized_work_order.get("recommended_action") or "Conduct non-destructive evaluation",
+            justification=sanitized_work_order.get("engineering_justification") or decision_outcome.rationale,
+            required_inspection_methods=sanitized_work_order.get("required_inspection_methods", ["Visual Inspection"]),
+            estimated_cost=sanitized_work_order.get("estimated_cost"),
+            estimated_downtime_hours=sanitized_work_order.get("estimated_downtime_hours"),
+            cost_notes=sanitized_work_order.get("cost_notes"),
+            recommended_team=sanitized_work_order.get("recommended_team", "Pipeline Structural Integrity Team"),
+            safety_notes=sanitized_work_order.get("safety_notes", []),
+            evidence_references=sanitized_work_order.get("evidence_references", {
                 "inspection_id": inspection_id,
                 "source_image_filename": validated_evidence.source_image.filename,
                 "source_image_sha256": validated_evidence.source_image.sha256_hash,
-            },
+            }),
             status="PENDING_HUMAN_REVIEW"
         )
 

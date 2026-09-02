@@ -1,0 +1,69 @@
+{
+  "suite": "failure_recovery",
+  "total_cases": 10,
+  "passed_cases": 10,
+  "pass_rate_percent": 100.0,
+  "duration_seconds": 0.21,
+  "cases": [
+    {
+      "test_id": "FAIL-TEST-01",
+      "condition": "Missing Image File on Disk",
+      "expected_behavior": "Catches FileNotFoundError cleanly; no unhandled crash.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-02",
+      "condition": "Invalid Empty Image Path",
+      "expected_behavior": "Rejects invalid path immediately before model execution.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-03",
+      "condition": "Invalid Perception Evidence Schema",
+      "expected_behavior": "Raises VisionEvidenceInvalidError safely.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-04",
+      "condition": "Database Connection Unavailable",
+      "expected_behavior": "Falls back to safe default asset tier or catches DB error.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-05",
+      "condition": "Ollama LLM Daemon Unavailable",
+      "expected_behavior": "Emits deterministic fallback work order and preserves human review gate.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-06",
+      "condition": "Malformed LLM JSON Response",
+      "expected_behavior": "Rejects malformed JSON and triggers deterministic fallback.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-07",
+      "condition": "LLM Provider Timeout Exception",
+      "expected_behavior": "Aborts request after timeout and emits fallback recommendation.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-08",
+      "condition": "Vision Model Unloaded / Checkpoint Missing",
+      "expected_behavior": "Catches model initialization error before inference.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-09",
+      "condition": "None / Corrupted Inspection Payload",
+      "expected_behavior": "Rejects null perception payload immediately.",
+      "passed": true
+    },
+    {
+      "test_id": "FAIL-TEST-10",
+      "condition": "PostgreSQL Persistence Failure Simulation",
+      "expected_behavior": "Decisions retain PENDING_HUMAN_REVIEW and reject automated dispatch.",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "phase": "5D",
+  "benchmark_title": "Phase 5D End-to-End Performance and Reliability Benchmark",
+  "mode": "failures",
+  "timestamp": "2026-09-02T16:29:09.688499+00:00",
+  "workload_durations_seconds": {
+    "performance_benchmark_seconds": 0.0,
+    "multi_image_workload_seconds": 0.0,
+    "failure_recovery_seconds": 0.21,
+    "total_wall_clock_seconds": 0.21
+  },
+  "total_benchmark_duration_seconds": 0.21,
+  "environment": {
+    "os_system": "Windows",
+    "os_release": "10",
+    "os_version": "10.0.26200",
+    "machine": "AMD64",
+    "python_version": "3.11.9",
+    "pytorch_version": "2.6.0+cu124",
+    "cuda_available": true,
+    "gpu_device_count": 1,
+    "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_vram_total_mb": 4095.5
+  },
+  "resources": {
+    "cpu_utilization_percent": 26.2,
+    "process_rss_mb": 436.91,
+    "system_ram_total_mb": 15709.91,
+    "system_ram_available_mb": 861.99,
+    "system_ram_percent": 94.5,
+    "gpu_allocated_mb": 0.0,
+    "gpu_reserved_mb": 0.0,
+    "gpu_peak_allocated_mb": 0.0
+  },
+  "repeatability_benchmark": {},
+  "multi_image_benchmark": {},
+  "failure_recovery_tests": {
+    "failure_recovery_duration_seconds": 0.21,
+    "total_cases": 10,
+    "passed_cases": 10,
+    "cases": [
+      {
+        "test_id": "FAIL-TEST-01",
+        "condition": "Missing Image File on Disk",
+        "expected_behavior": "Catches FileNotFoundError cleanly; no unhandled crash.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-02",
+        "condition": "Invalid Empty Image Path",
+        "expected_behavior": "Rejects invalid path immediately before model execution.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-03",
+        "condition": "Invalid Perception Evidence Schema",
+        "expected_behavior": "Raises VisionEvidenceInvalidError safely.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-04",
+        "condition": "Database Connection Unavailable",
+        "expected_behavior": "Falls back to safe default asset tier or catches DB error.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-05",
+        "condition": "Ollama LLM Daemon Unavailable",
+        "expected_behavior": "Emits deterministic fallback work order and preserves human review gate.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-06",
+        "condition": "Malformed LLM JSON Response",
+        "expected_behavior": "Rejects malformed JSON and triggers deterministic fallback.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-07",
+        "condition": "LLM Provider Timeout Exception",
+        "expected_behavior": "Aborts request after timeout and emits fallback recommendation.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-08",
+        "condition": "Vision Model Unloaded / Checkpoint Missing",
+        "expected_behavior": "Catches model initialization error before inference.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-09",
+        "condition": "None / Corrupted Inspection Payload",
+        "expected_behavior": "Rejects null perception payload immediately.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-10",
+        "condition": "PostgreSQL Persistence Failure Simulation",
+        "expected_behavior": "Decisions retain PENDING_HUMAN_REVIEW and reject automated dispatch.",
+        "passed": true
+      }
+    ]
+  },
+  "regression_comparison": {
+    "baseline_mean_ms": 27262.21,
+    "current_mean_ms": 0.0,
+    "delta_ms": -27262.21,
+    "percentage_change": -100.0,
+    "is_faster": true,
+    "is_slower": false
+  }
+}

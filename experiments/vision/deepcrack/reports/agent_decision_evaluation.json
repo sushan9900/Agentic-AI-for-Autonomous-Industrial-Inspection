@@ -1,0 +1,547 @@
+{
+  "metadata": {
+    "evaluation_standard": "Phase 5B Agent Decision & Safety Protocol",
+    "timestamp": "2026-09-01T17:31:09.512286+00:00",
+    "duration_seconds": 104.0,
+    "total_evaluation_cases": 11,
+    "repeatability_cycles": 25
+  },
+  "decision_policy_evaluation": {
+    "total_cases": 11,
+    "matched_cases": 11,
+    "accuracy": 1.0,
+    "cases": [
+      {
+        "case_id": "CASE-01-CRITICAL-DEFECT",
+        "description": "Extensive structural crack exceeding critical length and area thresholds",
+        "defect_type": "crack",
+        "defect_count": 3,
+        "risk_score": 100,
+        "risk_level": "CRITICAL",
+        "triggered_rules": [
+          "RULE-CRACK-PL-001",
+          "RULE-SEV-CRITICAL-01"
+        ],
+        "expected_action": "URGENT_ENGINEERING_REVIEW",
+        "actual_action": "URGENT_ENGINEERING_REVIEW",
+        "expected_priority": "CRITICAL",
+        "actual_priority": "CRITICAL",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "Severe defect telemetry detected (Risk Score: 100, Crack Length: 250.0px, Area: 4.55%). Immediate structural integrity review required."
+      },
+      {
+        "case_id": "CASE-02-HIGH-RISK-RECURRENT",
+        "description": "Recurrent defect across multiple inspection cycles with high confidence",
+        "defect_type": "crack",
+        "defect_count": 2,
+        "risk_score": 65,
+        "risk_level": "HIGH",
+        "triggered_rules": [
+          "RULE-RECURRENCE-02"
+        ],
+        "expected_action": "PRIORITY_MAINTENANCE",
+        "actual_action": "PRIORITY_MAINTENANCE",
+        "expected_priority": "HIGH",
+        "actual_priority": "HIGH",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "High operational risk profile (Risk Score: 65, Recurrence: 2 cycles). Requires expedited maintenance work-order scheduling."
+      },
+      {
+        "case_id": "CASE-03-MEDIUM-RISK-ESTABLISHED",
+        "description": "Moderate localized surface indication within routine maintenance planning band",
+        "defect_type": "crack",
+        "defect_count": 1,
+        "risk_score": 35,
+        "risk_level": "MEDIUM",
+        "triggered_rules": [],
+        "expected_action": "PLAN_MAINTENANCE",
+        "actual_action": "PLAN_MAINTENANCE",
+        "expected_priority": "MEDIUM",
+        "actual_priority": "MEDIUM",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "Moderate defect indication detected (Risk Score: 35, Defects: 1). Standard routine maintenance planning recommended."
+      },
+      {
+        "case_id": "CASE-04-LOW-RISK-MARGINAL",
+        "description": "Marginal confidence defect indication requiring follow-up inspection survey",
+        "defect_type": "crack",
+        "defect_count": 1,
+        "risk_score": 20,
+        "risk_level": "LOW",
+        "triggered_rules": [],
+        "expected_action": "SCHEDULE_INSPECTION",
+        "actual_action": "SCHEDULE_INSPECTION",
+        "expected_priority": "LOW",
+        "actual_priority": "LOW",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "Marginal or low-confidence indications observed (Confidence: 32.0%). Follow-up secondary visual inspection survey recommended."
+      },
+      {
+        "case_id": "CASE-05-NO-DEFECT-MONITOR",
+        "description": "Clear asset surface with zero defects and no quality anomalies",
+        "defect_type": "none",
+        "defect_count": 0,
+        "risk_score": 15,
+        "risk_level": "LOW",
+        "triggered_rules": [],
+        "expected_action": "MONITOR",
+        "actual_action": "MONITOR",
+        "expected_priority": "LOW",
+        "actual_priority": "LOW",
+        "expected_human_review": false,
+        "actual_human_review": false,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "No active defects or anomalous surface features detected. Continue standard monitoring schedule."
+      },
+      {
+        "case_id": "CASE-06-INSUFFICIENT-EVIDENCE",
+        "description": "Corrupt, truncated, or invalid perception evidence payload",
+        "defect_type": "unknown",
+        "defect_count": 0,
+        "risk_score": 0,
+        "risk_level": "LOW",
+        "triggered_rules": [],
+        "expected_action": "INSUFFICIENT_EVIDENCE",
+        "actual_action": "INSUFFICIENT_EVIDENCE",
+        "expected_priority": "LOW",
+        "actual_priority": "LOW",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "Visual perception evidence is invalid or incomplete; cannot formulate operational recommendation."
+      },
+      {
+        "case_id": "CASE-07-QUALITY-WARNING-INSPECTION",
+        "description": "Zero defects detected but camera blur/lighting quality warning present",
+        "defect_type": "none",
+        "defect_count": 0,
+        "risk_score": 20,
+        "risk_level": "LOW",
+        "triggered_rules": [],
+        "expected_action": "SCHEDULE_INSPECTION",
+        "actual_action": "SCHEDULE_INSPECTION",
+        "expected_priority": "LOW",
+        "actual_priority": "LOW",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "Marginal or low-confidence indications observed (Confidence: 0.0%). Follow-up secondary visual inspection survey recommended."
+      },
+      {
+        "case_id": "CASE-08-CRITICAL-COMPONENT-TIER",
+        "description": "High-confidence detection on a critical main hydrocarbon feed line",
+        "defect_type": "crack",
+        "defect_count": 2,
+        "risk_score": 85,
+        "risk_level": "CRITICAL",
+        "triggered_rules": [
+          "RULE-CRITICAL-ASSET-01"
+        ],
+        "expected_action": "URGENT_ENGINEERING_REVIEW",
+        "actual_action": "URGENT_ENGINEERING_REVIEW",
+        "expected_priority": "CRITICAL",
+        "actual_priority": "CRITICAL",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "Severe defect telemetry detected (Risk Score: 85, Crack Length: 180.0px, Area: 3.10%). Immediate structural integrity review required."
+      },
+      {
+        "case_id": "CASE-09-EXTREME-SEVERITY",
+        "description": "Clustered severe defect profile exceeding all engineering tolerance limits",
+        "defect_type": "crack",
+        "defect_count": 5,
+        "risk_score": 100,
+        "risk_level": "CRITICAL",
+        "triggered_rules": [
+          "RULE-CRACK-PL-001",
+          "RULE-SEV-CRITICAL-01",
+          "RULE-MULTIPLE-01"
+        ],
+        "expected_action": "URGENT_ENGINEERING_REVIEW",
+        "actual_action": "URGENT_ENGINEERING_REVIEW",
+        "expected_priority": "CRITICAL",
+        "actual_priority": "CRITICAL",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "Severe defect telemetry detected (Risk Score: 100, Crack Length: 380.0px, Area: 7.80%). Immediate structural integrity review required."
+      },
+      {
+        "case_id": "CASE-10-NON-CRITICAL-LOW-RISK",
+        "description": "Low severity baseline feature on non-critical secondary casing",
+        "defect_type": "none",
+        "defect_count": 0,
+        "risk_score": 10,
+        "risk_level": "LOW",
+        "triggered_rules": [],
+        "expected_action": "MONITOR",
+        "actual_action": "MONITOR",
+        "expected_priority": "LOW",
+        "actual_priority": "LOW",
+        "expected_human_review": false,
+        "actual_human_review": false,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "No active defects or anomalous surface features detected. Continue standard monitoring schedule."
+      },
+      {
+        "case_id": "CASE-11-PRIORITY-MAINTENANCE-THRESHOLD",
+        "description": "Established defect with 0.78 confidence and 1.8% area triggering Tier 2",
+        "defect_type": "crack",
+        "defect_count": 1,
+        "risk_score": 50,
+        "risk_level": "HIGH",
+        "triggered_rules": [],
+        "expected_action": "PRIORITY_MAINTENANCE",
+        "actual_action": "PRIORITY_MAINTENANCE",
+        "expected_priority": "HIGH",
+        "actual_priority": "HIGH",
+        "expected_human_review": true,
+        "actual_human_review": true,
+        "action_matched": true,
+        "priority_matched": true,
+        "review_matched": true,
+        "consistency_status": "CONSISTENT",
+        "rationale": "High operational risk profile (Risk Score: 50, Recurrence: 0 cycles). Requires expedited maintenance work-order scheduling."
+      }
+    ]
+  },
+  "risk_scoring_validation": {
+    "all_risk_tests_passed": true,
+    "total_risk_tests": 3,
+    "tests": [
+      {
+        "name": "Baseline Risk Floor",
+        "expected": 10,
+        "actual": 10,
+        "level": "LOW",
+        "passed": true
+      },
+      {
+        "name": "Maximum Extreme Ceiling",
+        "expected": 100,
+        "actual": 100,
+        "level": "CRITICAL",
+        "passed": true
+      },
+      {
+        "name": "Intermediate High Risk Tier",
+        "actual": 73,
+        "level": "HIGH",
+        "passed": true
+      }
+    ]
+  },
+  "safety_invariants": {
+    "all_invariants_passed": true,
+    "total_invariants": 8,
+    "passed_invariants": 8,
+    "invariants": {
+      "INVARIANT-01": {
+        "name": "INVARIANT-01: LLM Cannot Override Risk Score",
+        "passed": true,
+        "details": "Deterministic score (100) preserved against LLM override (10)."
+      },
+      "INVARIANT-02": {
+        "name": "INVARIANT-02: LLM Cannot Override Operational Action",
+        "passed": true,
+        "details": "Authoritative action 'URGENT_ENGINEERING_REVIEW' maintained despite LLM hallucinating 'MONITOR'."
+      },
+      "INVARIANT-03": {
+        "name": "INVARIANT-03: Human Review Cannot Be Bypassed",
+        "passed": true,
+        "details": "Human review gate enforced for action 'PRIORITY_MAINTENANCE'."
+      },
+      "INVARIANT-04": {
+        "name": "INVARIANT-04: Invalid Evidence Rejection",
+        "passed": true,
+        "details": "Invalid evidence correctly routed to 'INSUFFICIENT_EVIDENCE' with low priority."
+      },
+      "INVARIANT-05": {
+        "name": "INVARIANT-05: LLM Failure Safety Fallback",
+        "passed": true,
+        "details": "Deterministic policy and fallback work-order draft safely handle LLM failure without compromising authorization."
+      },
+      "INVARIANT-06": {
+        "name": "INVARIANT-06: Risk Score Bounded [0, 100]",
+        "passed": true,
+        "details": "Score bounds verified (Min: 10, Max: 100)."
+      },
+      "INVARIANT-07": {
+        "name": "INVARIANT-07: Deterministic Repeatability",
+        "passed": true,
+        "details": "Verified identical score across 25 runs (Score: 73)."
+      },
+      "INVARIANT-08": {
+        "name": "INVARIANT-08: No Automated Maintenance Execution",
+        "passed": true,
+        "details": "Initial work-order recommendation strictly set to PENDING_HUMAN_REVIEW."
+      }
+    }
+  },
+  "monotonicity_validation": {
+    "all_monotonic_checks_passed": true,
+    "checks": [
+      {
+        "dimension": "Defect Count (1 -> 3 -> 5)",
+        "scores": [
+          25,
+          35,
+          40
+        ],
+        "passed": true
+      },
+      {
+        "dimension": "Affected Area (1.0% -> 2.5% -> 5.0%)",
+        "scores": [
+          20,
+          30,
+          40
+        ],
+        "passed": true
+      },
+      {
+        "dimension": "Crack Length (40px -> 100px -> 250px)",
+        "scores": [
+          20,
+          28,
+          35
+        ],
+        "passed": true
+      },
+      {
+        "dimension": "Component Criticality (LOW -> HIGH -> CRITICAL)",
+        "scores": [
+          20,
+          30,
+          35
+        ],
+        "passed": true
+      },
+      {
+        "dimension": "Recurrence Count (0 -> 1 -> 2)",
+        "scores": [
+          20,
+          30,
+          40
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "repeatability_validation": {
+    "num_cycles": 25,
+    "total_cases_tested": 11,
+    "repeatability_failures": 0,
+    "is_100_percent_repeatable": true
+  },
+  "failure_mode_matrix": [
+    {
+      "failure_case": "Invalid VisionEvidence Payload",
+      "expected_status": "INSUFFICIENT_EVIDENCE",
+      "expected_safe_behavior": "Rejects action formulation and requests re-inspection.",
+      "actual_status": "INSUFFICIENT_EVIDENCE",
+      "passed": true
+    },
+    {
+      "failure_case": "Missing Asset ID in Database",
+      "expected_status": "ASSET_NOT_FOUND_ERROR",
+      "expected_safe_behavior": "Returns 404 HTTP status without fabricating asset context.",
+      "actual_status": "ASSET_NOT_FOUND_ERROR",
+      "passed": true
+    },
+    {
+      "failure_case": "Missing Component ID in Hierarchy",
+      "expected_status": "SAFE_ASSET_FALLBACK",
+      "expected_safe_behavior": "Uses parent asset criticality and baseline parameters safely.",
+      "actual_status": "SAFE_ASSET_FALLBACK",
+      "passed": true
+    },
+    {
+      "failure_case": "Missing Maintenance History Records",
+      "expected_status": "EMPTY_HISTORY_BASELINE",
+      "expected_safe_behavior": "Assumes zero recurrence without crashing.",
+      "actual_status": "EMPTY_HISTORY_BASELINE",
+      "passed": true
+    },
+    {
+      "failure_case": "Missing Engineering Threshold Rule",
+      "expected_status": "DEFAULT_THRESHOLD_POLICY",
+      "expected_safe_behavior": "Applies standard project default severity thresholds.",
+      "actual_status": "DEFAULT_THRESHOLD_POLICY",
+      "passed": true
+    },
+    {
+      "failure_case": "Malformed Historical Incident Data",
+      "expected_status": "SAFE_ZERO_INCIDENT_FALLBACK",
+      "expected_safe_behavior": "Ignores malformed records and logs an audit warning.",
+      "actual_status": "SAFE_ZERO_INCIDENT_FALLBACK",
+      "passed": true
+    },
+    {
+      "failure_case": "Extreme Out-of-Bounds Risk Inputs",
+      "expected_status": "CLAMPED_0_100",
+      "expected_safe_behavior": "Clamps score strictly between 0 and 100.",
+      "actual_status": "CLAMPED_0_100",
+      "passed": true
+    },
+    {
+      "failure_case": "Local Ollama LLM Unavailable",
+      "expected_status": "DETERMINISTIC_FALLBACK_WORK_ORDER",
+      "expected_safe_behavior": "Formulates decision and uses rule-based draft work order.",
+      "actual_status": "DETERMINISTIC_FALLBACK_WORK_ORDER",
+      "passed": true
+    },
+    {
+      "failure_case": "Local Ollama LLM Timeout",
+      "expected_status": "DETERMINISTIC_FALLBACK_WORK_ORDER",
+      "expected_safe_behavior": "Aborts LLM query after timeout and emits fallback recommendation.",
+      "actual_status": "DETERMINISTIC_FALLBACK_WORK_ORDER",
+      "passed": true
+    },
+    {
+      "failure_case": "Malformed LLM JSON Output",
+      "expected_status": "SCHEMA_VALIDATION_FALLBACK",
+      "expected_safe_behavior": "Discards unparseable LLM output and populates fallback draft.",
+      "actual_status": "SCHEMA_VALIDATION_FALLBACK",
+      "passed": true
+    },
+    {
+      "failure_case": "PostgreSQL Database Unavailable",
+      "expected_status": "DATABASE_ERROR_500",
+      "expected_safe_behavior": "Raises descriptive DB connection exception; no unlogged decisions.",
+      "actual_status": "DATABASE_ERROR_500",
+      "passed": true
+    },
+    {
+      "failure_case": "Image File Missing on Disk",
+      "expected_status": "FILE_NOT_FOUND_404",
+      "expected_safe_behavior": "Aborts before vision inference; emits clean 404 response.",
+      "actual_status": "FILE_NOT_FOUND_404",
+      "passed": true
+    },
+    {
+      "failure_case": "Image File Unreadable or Corrupted",
+      "expected_status": "CORRUPT_IMAGE_400",
+      "expected_safe_behavior": "Catches decode error and rejects file before inference.",
+      "actual_status": "CORRUPT_IMAGE_400",
+      "passed": true
+    }
+  ],
+  "real_evidence_validation": {
+    "image_filename": "11112.jpg",
+    "detections_count": 3,
+    "risk_score": 100,
+    "risk_level": "CRITICAL",
+    "operational_decision": "URGENT_ENGINEERING_REVIEW",
+    "human_review_required": true,
+    "decision_rationale": "Severe defect telemetry detected (Risk Score: 100, Crack Length: 0.0px, Area: 4.55%). Immediate structural integrity review required.",
+    "passed": true
+  },
+  "confusion_matrix": {
+    "classes": [
+      "URGENT_ENGINEERING_REVIEW",
+      "PRIORITY_MAINTENANCE",
+      "PLAN_MAINTENANCE",
+      "SCHEDULE_INSPECTION",
+      "MONITOR",
+      "INSUFFICIENT_EVIDENCE"
+    ],
+    "matrix": {
+      "URGENT_ENGINEERING_REVIEW": {
+        "URGENT_ENGINEERING_REVIEW": 3,
+        "PRIORITY_MAINTENANCE": 0,
+        "PLAN_MAINTENANCE": 0,
+        "SCHEDULE_INSPECTION": 0,
+        "MONITOR": 0,
+        "INSUFFICIENT_EVIDENCE": 0
+      },
+      "PRIORITY_MAINTENANCE": {
+        "URGENT_ENGINEERING_REVIEW": 0,
+        "PRIORITY_MAINTENANCE": 2,
+        "PLAN_MAINTENANCE": 0,
+        "SCHEDULE_INSPECTION": 0,
+        "MONITOR": 0,
+        "INSUFFICIENT_EVIDENCE": 0
+      },
+      "PLAN_MAINTENANCE": {
+        "URGENT_ENGINEERING_REVIEW": 0,
+        "PRIORITY_MAINTENANCE": 0,
+        "PLAN_MAINTENANCE": 1,
+        "SCHEDULE_INSPECTION": 0,
+        "MONITOR": 0,
+        "INSUFFICIENT_EVIDENCE": 0
+      },
+      "SCHEDULE_INSPECTION": {
+        "URGENT_ENGINEERING_REVIEW": 0,
+        "PRIORITY_MAINTENANCE": 0,
+        "PLAN_MAINTENANCE": 0,
+        "SCHEDULE_INSPECTION": 2,
+        "MONITOR": 0,
+        "INSUFFICIENT_EVIDENCE": 0
+      },
+      "MONITOR": {
+        "URGENT_ENGINEERING_REVIEW": 0,
+        "PRIORITY_MAINTENANCE": 0,
+        "PLAN_MAINTENANCE": 0,
+        "SCHEDULE_INSPECTION": 0,
+        "MONITOR": 2,
+        "INSUFFICIENT_EVIDENCE": 0
+      },
+      "INSUFFICIENT_EVIDENCE": {
+        "URGENT_ENGINEERING_REVIEW": 0,
+        "PRIORITY_MAINTENANCE": 0,
+        "PLAN_MAINTENANCE": 0,
+        "SCHEDULE_INSPECTION": 0,
+        "MONITOR": 0,
+        "INSUFFICIENT_EVIDENCE": 1
+      }
+    },
+    "per_class_accuracy": {
+      "URGENT_ENGINEERING_REVIEW": 1.0,
+      "PRIORITY_MAINTENANCE": 1.0,
+      "PLAN_MAINTENANCE": 1.0,
+      "SCHEDULE_INSPECTION": 1.0,
+      "MONITOR": 1.0,
+      "INSUFFICIENT_EVIDENCE": 1.0
+    }
+  }
+}

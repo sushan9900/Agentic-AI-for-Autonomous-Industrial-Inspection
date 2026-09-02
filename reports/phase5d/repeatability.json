@@ -1,0 +1,63 @@
+{
+  "suite": "repeatability",
+  "primary_image": "11112.jpg",
+  "primary_image_sha256": "44e62c6410a898b496e245ac28f3f1604c31acb04cad4e5b0551738f40a78313",
+  "warmup_runs": 1,
+  "measured_runs": 5,
+  "execution_state": "WARM STEADY STATE",
+  "mean_e2e_latency_ms": 55246.18,
+  "mean_yolo_inference_ms": 311.5,
+  "mean_gemma_generation_ms": 54891.69,
+  "mean_db_retrieval_ms": 35.8,
+  "mean_persistence_ms": 6.2,
+  "mean_orchestration_overhead_ms": 1.0,
+  "throughput": {
+    "images_per_minute": 1.09,
+    "images_per_second": 0.0181,
+    "formula": "images_per_minute = 60.0 / (mean_e2e_latency_ms / 1000.0)"
+  },
+  "deterministic_consistency": {
+    "is_detection_count_deterministic": true,
+    "expected_detection_count": 3,
+    "actual_detection_counts": [
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "is_risk_score_deterministic": true,
+    "expected_risk_score": 100,
+    "actual_risk_scores": [
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "is_risk_level_deterministic": true,
+    "actual_risk_levels": [
+      "CRITICAL",
+      "CRITICAL",
+      "CRITICAL",
+      "CRITICAL",
+      "CRITICAL"
+    ],
+    "is_action_deterministic": true,
+    "expected_action": "URGENT_ENGINEERING_REVIEW",
+    "actual_actions": [
+      "URGENT_ENGINEERING_REVIEW",
+      "URGENT_ENGINEERING_REVIEW",
+      "URGENT_ENGINEERING_REVIEW",
+      "URGENT_ENGINEERING_REVIEW",
+      "URGENT_ENGINEERING_REVIEW"
+    ],
+    "is_human_review_deterministic": true,
+    "is_review_status_deterministic": true,
+    "expected_review_status": "PENDING_HUMAN_REVIEW",
+    "is_sha256_deterministic": true,
+    "all_deterministic_invariants_hold": true,
+    "consistency_rate_percent": 100.0
+  },
+  "duration_seconds": 331.48
+}

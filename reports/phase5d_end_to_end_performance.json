@@ -1,0 +1,264 @@
+{
+  "phase": "5D",
+  "report_title": "Phase 5D End-to-End Performance and Reliability Benchmark Final Report",
+  "timestamp": "2026-09-02T16:40:51.134371+00:00",
+  "environment": {
+    "os": "Windows 10 (AMD64)",
+    "python": "3.11.9",
+    "pytorch": "2.6.0+cu124",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "gpu_vram_total_mb": 4095.5,
+    "llm_model": "Ollama gemma3:latest (Temperature: 0.1)",
+    "database": "PostgreSQL (SQLAlchemy 2.x)"
+  },
+  "workload_durations": {
+    "performance_benchmark_duration_seconds": 331.48,
+    "multi_image_workload_duration_seconds": 570.59,
+    "failure_recovery_duration_seconds": 0.21,
+    "total_benchmark_execution_duration_seconds": 902.28
+  },
+  "repeatability_benchmark": {
+    "suite": "repeatability",
+    "primary_image": "11112.jpg",
+    "primary_image_sha256": "44e62c6410a898b496e245ac28f3f1604c31acb04cad4e5b0551738f40a78313",
+    "warmup_runs": 1,
+    "measured_runs": 5,
+    "execution_state": "WARM STEADY STATE",
+    "mean_e2e_latency_ms": 55246.18,
+    "mean_yolo_inference_ms": 311.5,
+    "mean_gemma_generation_ms": 54891.69,
+    "mean_db_retrieval_ms": 35.8,
+    "mean_persistence_ms": 6.2,
+    "mean_orchestration_overhead_ms": 1.0,
+    "throughput": {
+      "images_per_minute": 1.09,
+      "images_per_second": 0.0181,
+      "formula": "images_per_minute = 60.0 / (mean_e2e_latency_ms / 1000.0)"
+    },
+    "deterministic_consistency": {
+      "is_detection_count_deterministic": true,
+      "expected_detection_count": 3,
+      "actual_detection_counts": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "is_risk_score_deterministic": true,
+      "expected_risk_score": 100,
+      "actual_risk_scores": [
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "is_risk_level_deterministic": true,
+      "actual_risk_levels": [
+        "CRITICAL",
+        "CRITICAL",
+        "CRITICAL",
+        "CRITICAL",
+        "CRITICAL"
+      ],
+      "is_action_deterministic": true,
+      "expected_action": "URGENT_ENGINEERING_REVIEW",
+      "actual_actions": [
+        "URGENT_ENGINEERING_REVIEW",
+        "URGENT_ENGINEERING_REVIEW",
+        "URGENT_ENGINEERING_REVIEW",
+        "URGENT_ENGINEERING_REVIEW",
+        "URGENT_ENGINEERING_REVIEW"
+      ],
+      "is_human_review_deterministic": true,
+      "is_review_status_deterministic": true,
+      "expected_review_status": "PENDING_HUMAN_REVIEW",
+      "is_sha256_deterministic": true,
+      "all_deterministic_invariants_hold": true,
+      "consistency_rate_percent": 100.0
+    },
+    "duration_seconds": 331.48
+  },
+  "multi_image_workload": {
+    "suite": "multi_image",
+    "image_count": 10,
+    "total_duration_seconds": 570.59,
+    "latency_stats": {
+      "count": 10,
+      "total_ms": 570580.17,
+      "mean_ms": 57058.02,
+      "median_ms": 57044.92,
+      "min_ms": 49807.18,
+      "max_ms": 63614.93,
+      "stddev_ms": 4228.65
+    },
+    "throughput": {
+      "images_per_minute": 1.05,
+      "images_per_second": 0.0175
+    },
+    "per_image_results": [
+      {
+        "index": 1,
+        "image": "11112.jpg",
+        "duration_ms": 60878.29,
+        "passed": true
+      },
+      {
+        "index": 2,
+        "image": "11117.jpg",
+        "duration_ms": 55040.3,
+        "passed": true
+      },
+      {
+        "index": 3,
+        "image": "11118.jpg",
+        "duration_ms": 58360.8,
+        "passed": true
+      },
+      {
+        "index": 4,
+        "image": "11119.jpg",
+        "duration_ms": 59461.05,
+        "passed": true
+      },
+      {
+        "index": 5,
+        "image": "11134-1.jpg",
+        "duration_ms": 63614.93,
+        "passed": true
+      },
+      {
+        "index": 6,
+        "image": "11134-2.jpg",
+        "duration_ms": 49807.18,
+        "passed": true
+      },
+      {
+        "index": 7,
+        "image": "11134-3.jpg",
+        "duration_ms": 55729.03,
+        "passed": true
+      },
+      {
+        "index": 8,
+        "image": "11134-4.jpg",
+        "duration_ms": 52220.25,
+        "passed": true
+      },
+      {
+        "index": 9,
+        "image": "11134-5.jpg",
+        "duration_ms": 60297.73,
+        "passed": true
+      },
+      {
+        "index": 10,
+        "image": "11134-6.jpg",
+        "duration_ms": 55170.61,
+        "passed": true
+      }
+    ]
+  },
+  "failure_recovery": {
+    "suite": "failure_recovery",
+    "total_cases": 10,
+    "passed_cases": 10,
+    "pass_rate_percent": 100.0,
+    "duration_seconds": 0.21,
+    "cases": [
+      {
+        "test_id": "FAIL-TEST-01",
+        "condition": "Missing Image File on Disk",
+        "expected_behavior": "Catches FileNotFoundError cleanly; no unhandled crash.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-02",
+        "condition": "Invalid Empty Image Path",
+        "expected_behavior": "Rejects invalid path immediately before model execution.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-03",
+        "condition": "Invalid Perception Evidence Schema",
+        "expected_behavior": "Raises VisionEvidenceInvalidError safely.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-04",
+        "condition": "Database Connection Unavailable",
+        "expected_behavior": "Falls back to safe default asset tier or catches DB error.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-05",
+        "condition": "Ollama LLM Daemon Unavailable",
+        "expected_behavior": "Emits deterministic fallback work order and preserves human review gate.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-06",
+        "condition": "Malformed LLM JSON Response",
+        "expected_behavior": "Rejects malformed JSON and triggers deterministic fallback.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-07",
+        "condition": "LLM Provider Timeout Exception",
+        "expected_behavior": "Aborts request after timeout and emits fallback recommendation.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-08",
+        "condition": "Vision Model Unloaded / Checkpoint Missing",
+        "expected_behavior": "Catches model initialization error before inference.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-09",
+        "condition": "None / Corrupted Inspection Payload",
+        "expected_behavior": "Rejects null perception payload immediately.",
+        "passed": true
+      },
+      {
+        "test_id": "FAIL-TEST-10",
+        "condition": "PostgreSQL Persistence Failure Simulation",
+        "expected_behavior": "Decisions retain PENDING_HUMAN_REVIEW and reject automated dispatch.",
+        "passed": true
+      }
+    ]
+  },
+  "bottleneck_analysis": {
+    "primary_bottleneck": "Ollama Gemma 3 Generation",
+    "llm_mean_ms": 54891.69,
+    "e2e_mean_ms": 55246.18,
+    "llm_percentage_of_e2e": 99.36,
+    "yolo_mean_ms": 311.5,
+    "yolo_percentage_of_e2e": 0.56,
+    "database_and_persistence_percentage_of_e2e": 0.08
+  },
+  "safety_preservation": {
+    "decision_policy_engine_authoritative": true,
+    "llm_non_authoritative": true,
+    "human_review_mandatory": true,
+    "zero_automated_maintenance_execution": true,
+    "zero_technician_dispatch": true,
+    "zero_plant_control_modification": true,
+    "invalid_evidence_rejected": true,
+    "failure_recovery_safe_handling": "10/10",
+    "primary_image_11112_sanified_state": {
+      "risk_score": 100,
+      "operational_decision": "URGENT_ENGINEERING_REVIEW",
+      "human_review_required": true,
+      "review_status": "PENDING_HUMAN_REVIEW"
+    }
+  },
+  "limitations": [
+    "The measured workload was sequential and hardware-specific.",
+    "Benchmarked on a mobile workstation GPU (NVIDIA GeForce RTX 3050 Laptop GPU, 4GB VRAM).",
+    "Concurrent multi-request stress testing was intentionally avoided to prevent local VRAM thrashing."
+  ],
+  "conclusion": "Phase 5D successfully validated end-to-end pipeline latency, 100% deterministic decision repeatability, and safe failure recovery across all 10 real-image and fault conditions."
+}

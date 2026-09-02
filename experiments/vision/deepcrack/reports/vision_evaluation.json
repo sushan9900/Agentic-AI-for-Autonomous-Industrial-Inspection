@@ -1,0 +1,2597 @@
+{
+  "reproducibility": {
+    "checkpoint_path": "experiments/vision/deepcrack/baseline/weights/best.pt",
+    "checkpoint_sha256": "f9a4ab02b705aa9cf29e32f38e2402a0fbb450950e366d51947f3d8bda13e004",
+    "model_architecture": "YOLO11n-seg",
+    "ultralytics_version": "8.4.136",
+    "torch_version": "2.6.0+cu124",
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "dataset_split": "test",
+    "dataset_yaml": "data/processed/deepcrack/yolo/data.yaml",
+    "confidence_threshold": 0.25,
+    "iou_threshold": 0.5,
+    "timestamp": "2026-09-01T17:02:09.957624+00:00",
+    "test_image_count": 86,
+    "total_evaluation_duration_seconds": 80.8
+  },
+  "ultralytics_metrics": {
+    "object_detection": {
+      "precision": 0.5207,
+      "recall": 0.4647,
+      "map50": 0.399,
+      "map50_95": 0.2113
+    },
+    "segmentation": {
+      "precision": 0.5151,
+      "recall": 0.4029,
+      "map50": 0.3436,
+      "map50_95": 0.11
+    }
+  },
+  "instance_statistics": {
+    "total_ground_truth_instances": 340,
+    "total_predicted_instances": 354,
+    "true_positives": 164,
+    "false_positives": 190,
+    "false_negatives": 176,
+    "instance_precision": 0.4633,
+    "instance_recall": 0.4824,
+    "instance_f1_score": 0.4726,
+    "mean_matched_box_iou": 0.803,
+    "mean_matched_mask_iou": 0.6277
+  },
+  "confidence_analysis": {
+    "distribution": {
+      "count": 354,
+      "min": 0.2502,
+      "max": 0.9247,
+      "mean": 0.4911,
+      "median": 0.4639,
+      "std": 0.1861,
+      "p10": 0.2713,
+      "p25": 0.3136,
+      "p50": 0.4639,
+      "p75": 0.638,
+      "p90": 0.7687
+    },
+    "sweep": [
+      {
+        "confidence_threshold": 0.1,
+        "total_predictions": 793,
+        "true_positives": 216,
+        "false_positives": 577,
+        "false_negatives": 124,
+        "precision": 0.2724,
+        "recall": 0.6353,
+        "f1_score": 0.3813
+      },
+      {
+        "confidence_threshold": 0.25,
+        "total_predictions": 354,
+        "true_positives": 164,
+        "false_positives": 190,
+        "false_negatives": 176,
+        "precision": 0.4633,
+        "recall": 0.4824,
+        "f1_score": 0.4726
+      },
+      {
+        "confidence_threshold": 0.4,
+        "total_predictions": 217,
+        "true_positives": 133,
+        "false_positives": 84,
+        "false_negatives": 207,
+        "precision": 0.6129,
+        "recall": 0.3912,
+        "f1_score": 0.4776
+      },
+      {
+        "confidence_threshold": 0.5,
+        "total_predictions": 154,
+        "true_positives": 103,
+        "false_positives": 51,
+        "false_negatives": 237,
+        "precision": 0.6688,
+        "recall": 0.3029,
+        "f1_score": 0.417
+      },
+      {
+        "confidence_threshold": 0.6,
+        "total_predictions": 102,
+        "true_positives": 70,
+        "false_positives": 32,
+        "false_negatives": 270,
+        "precision": 0.6863,
+        "recall": 0.2059,
+        "f1_score": 0.3167
+      },
+      {
+        "confidence_threshold": 0.7,
+        "total_predictions": 63,
+        "true_positives": 47,
+        "false_positives": 16,
+        "false_negatives": 293,
+        "precision": 0.746,
+        "recall": 0.1382,
+        "f1_score": 0.2333
+      },
+      {
+        "confidence_threshold": 0.8,
+        "total_predictions": 27,
+        "true_positives": 18,
+        "false_positives": 9,
+        "false_negatives": 322,
+        "precision": 0.6667,
+        "recall": 0.0529,
+        "f1_score": 0.0981
+      }
+    ]
+  },
+  "error_analysis": {
+    "summary": {
+      "total_test_images": 86,
+      "images_with_ground_truth": 86,
+      "images_with_predictions": 86,
+      "completely_missed_images_count": 8,
+      "high_false_positive_images_count": 46,
+      "partial_detection_images_count": 48,
+      "low_confidence_images_count": 1
+    },
+    "missed_defect_images": [
+      "11150.jpg",
+      "11155-1.jpg",
+      "11167-2.jpg",
+      "11178-1.jpg",
+      "11178-3.jpg",
+      "11178.jpg",
+      "11296-1.jpg",
+      "IMG56.jpg"
+    ],
+    "high_false_positive_images": [
+      {
+        "filename": "11112.jpg",
+        "fp_count": 2,
+        "gt_count": 2
+      },
+      {
+        "filename": "11117.jpg",
+        "fp_count": 9,
+        "gt_count": 7
+      },
+      {
+        "filename": "11119.jpg",
+        "fp_count": 2,
+        "gt_count": 2
+      },
+      {
+        "filename": "11134-3.jpg",
+        "fp_count": 2,
+        "gt_count": 2
+      },
+      {
+        "filename": "11134-4.jpg",
+        "fp_count": 3,
+        "gt_count": 5
+      },
+      {
+        "filename": "11134-5.jpg",
+        "fp_count": 2,
+        "gt_count": 2
+      },
+      {
+        "filename": "11134-6.jpg",
+        "fp_count": 2,
+        "gt_count": 1
+      },
+      {
+        "filename": "11134.jpg",
+        "fp_count": 5,
+        "gt_count": 3
+      },
+      {
+        "filename": "11150.jpg",
+        "fp_count": 10,
+        "gt_count": 9
+      },
+      {
+        "filename": "11155.jpg",
+        "fp_count": 3,
+        "gt_count": 2
+      },
+      {
+        "filename": "11167-2.jpg",
+        "fp_count": 2,
+        "gt_count": 2
+      },
+      {
+        "filename": "11167.jpg",
+        "fp_count": 3,
+        "gt_count": 3
+      },
+      {
+        "filename": "11174.jpg",
+        "fp_count": 3,
+        "gt_count": 8
+      },
+      {
+        "filename": "11175-1.jpg",
+        "fp_count": 2,
+        "gt_count": 4
+      },
+      {
+        "filename": "11176.jpg",
+        "fp_count": 2,
+        "gt_count": 1
+      },
+      {
+        "filename": "11178-1.jpg",
+        "fp_count": 6,
+        "gt_count": 4
+      },
+      {
+        "filename": "11178-2.jpg",
+        "fp_count": 5,
+        "gt_count": 7
+      },
+      {
+        "filename": "11178-3.jpg",
+        "fp_count": 7,
+        "gt_count": 3
+      },
+      {
+        "filename": "11178-4.jpg",
+        "fp_count": 6,
+        "gt_count": 7
+      },
+      {
+        "filename": "11178.jpg",
+        "fp_count": 6,
+        "gt_count": 11
+      },
+      {
+        "filename": "11181.jpg",
+        "fp_count": 2,
+        "gt_count": 8
+      },
+      {
+        "filename": "11190-7.jpg",
+        "fp_count": 2,
+        "gt_count": 2
+      },
+      {
+        "filename": "11190.jpg",
+        "fp_count": 4,
+        "gt_count": 2
+      },
+      {
+        "filename": "11295.jpg",
+        "fp_count": 2,
+        "gt_count": 4
+      },
+      {
+        "filename": "11296-1.jpg",
+        "fp_count": 2,
+        "gt_count": 1
+      },
+      {
+        "filename": "11296-10.jpg",
+        "fp_count": 5,
+        "gt_count": 13
+      },
+      {
+        "filename": "11296-11.jpg",
+        "fp_count": 2,
+        "gt_count": 9
+      },
+      {
+        "filename": "11296-12.jpg",
+        "fp_count": 3,
+        "gt_count": 4
+      },
+      {
+        "filename": "11296-15.jpg",
+        "fp_count": 3,
+        "gt_count": 11
+      },
+      {
+        "filename": "11296-16.jpg",
+        "fp_count": 5,
+        "gt_count": 10
+      },
+      {
+        "filename": "11296-17.jpg",
+        "fp_count": 7,
+        "gt_count": 8
+      },
+      {
+        "filename": "11296-18.jpg",
+        "fp_count": 3,
+        "gt_count": 9
+      },
+      {
+        "filename": "11296-19.jpg",
+        "fp_count": 2,
+        "gt_count": 5
+      },
+      {
+        "filename": "11296-21.jpg",
+        "fp_count": 5,
+        "gt_count": 2
+      },
+      {
+        "filename": "11296-22.jpg",
+        "fp_count": 6,
+        "gt_count": 7
+      },
+      {
+        "filename": "11296-3.jpg",
+        "fp_count": 4,
+        "gt_count": 5
+      },
+      {
+        "filename": "11296-4.jpg",
+        "fp_count": 2,
+        "gt_count": 5
+      },
+      {
+        "filename": "11296-6.jpg",
+        "fp_count": 2,
+        "gt_count": 3
+      },
+      {
+        "filename": "11308-1.jpg",
+        "fp_count": 5,
+        "gt_count": 5
+      },
+      {
+        "filename": "11308-2.jpg",
+        "fp_count": 2,
+        "gt_count": 7
+      },
+      {
+        "filename": "IMG20.jpg",
+        "fp_count": 3,
+        "gt_count": 4
+      },
+      {
+        "filename": "IMG56.jpg",
+        "fp_count": 5,
+        "gt_count": 1
+      },
+      {
+        "filename": "IMG_6526-1.jpg",
+        "fp_count": 2,
+        "gt_count": 10
+      },
+      {
+        "filename": "IMG_6526-2.jpg",
+        "fp_count": 3,
+        "gt_count": 9
+      },
+      {
+        "filename": "IMG_6526-3.jpg",
+        "fp_count": 4,
+        "gt_count": 12
+      },
+      {
+        "filename": "IMG_6542-1.jpg",
+        "fp_count": 2,
+        "gt_count": 1
+      }
+    ],
+    "low_confidence_images": [
+      {
+        "filename": "11189-2.jpg",
+        "best_confidence": 0.264
+      }
+    ]
+  },
+  "per_image_records": [
+    {
+      "filename": "11112.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 3,
+      "true_positive_count": 1,
+      "false_positive_count": 2,
+      "false_negative_count": 1,
+      "precision": 0.3333,
+      "recall": 0.5,
+      "f1_score": 0.4,
+      "best_prediction_confidence": 0.6381,
+      "inference_latency_ms": 300.32,
+      "box_ious": [
+        0.9606
+      ],
+      "mask_ious": [
+        0.6723
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11117.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 7,
+      "prediction_count": 12,
+      "true_positive_count": 3,
+      "false_positive_count": 9,
+      "false_negative_count": 4,
+      "precision": 0.25,
+      "recall": 0.4286,
+      "f1_score": 0.3158,
+      "best_prediction_confidence": 0.693,
+      "inference_latency_ms": 124.56,
+      "box_ious": [
+        0.8615,
+        0.7155,
+        0.6054
+      ],
+      "mask_ious": [
+        0.5822,
+        0.5742,
+        0.5474
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11118.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.751,
+      "inference_latency_ms": 72.19,
+      "box_ious": [
+        0.983
+      ],
+      "mask_ious": [
+        0.5459
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11119.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 4,
+      "true_positive_count": 2,
+      "false_positive_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.6733,
+      "inference_latency_ms": 52.39,
+      "box_ious": [
+        0.965,
+        0.8788
+      ],
+      "mask_ious": [
+        0.6857,
+        0.6113
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11134-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 1,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.6963,
+      "inference_latency_ms": 49.22,
+      "box_ious": [
+        0.906
+      ],
+      "mask_ious": [
+        0.6517
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11134-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.5421,
+      "inference_latency_ms": 63.49,
+      "box_ious": [
+        0.7589
+      ],
+      "mask_ious": [
+        0.4218
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11134-3.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 3,
+      "true_positive_count": 1,
+      "false_positive_count": 2,
+      "false_negative_count": 1,
+      "precision": 0.3333,
+      "recall": 0.5,
+      "f1_score": 0.4,
+      "best_prediction_confidence": 0.6789,
+      "inference_latency_ms": 48.18,
+      "box_ious": [
+        0.7046
+      ],
+      "mask_ious": [
+        0.3581
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11134-4.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 5,
+      "prediction_count": 6,
+      "true_positive_count": 3,
+      "false_positive_count": 3,
+      "false_negative_count": 2,
+      "precision": 0.5,
+      "recall": 0.6,
+      "f1_score": 0.5455,
+      "best_prediction_confidence": 0.808,
+      "inference_latency_ms": 63.22,
+      "box_ious": [
+        0.6763,
+        0.5994,
+        0.5365
+      ],
+      "mask_ious": [
+        0.4484,
+        0.5322,
+        0.2929
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11134-5.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 3,
+      "true_positive_count": 1,
+      "false_positive_count": 2,
+      "false_negative_count": 1,
+      "precision": 0.3333,
+      "recall": 0.5,
+      "f1_score": 0.4,
+      "best_prediction_confidence": 0.8601,
+      "inference_latency_ms": 59.74,
+      "box_ious": [
+        0.6012
+      ],
+      "mask_ious": [
+        0.4299
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11134-6.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 3,
+      "true_positive_count": 1,
+      "false_positive_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "f1_score": 0.5,
+      "best_prediction_confidence": 0.8619,
+      "inference_latency_ms": 62.8,
+      "box_ious": [
+        0.9857
+      ],
+      "mask_ious": [
+        0.8409
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11134.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 3,
+      "prediction_count": 7,
+      "true_positive_count": 2,
+      "false_positive_count": 5,
+      "false_negative_count": 1,
+      "precision": 0.2857,
+      "recall": 0.6667,
+      "f1_score": 0.4,
+      "best_prediction_confidence": 0.5745,
+      "inference_latency_ms": 69.32,
+      "box_ious": [
+        0.8711,
+        0.6442
+      ],
+      "mask_ious": [
+        0.2767,
+        0.3422
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11135.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.8927,
+      "inference_latency_ms": 44.45,
+      "box_ious": [
+        0.8602
+      ],
+      "mask_ious": [
+        0.7546
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11138.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.6086,
+      "inference_latency_ms": 55.53,
+      "box_ious": [
+        0.9604
+      ],
+      "mask_ious": [
+        0.7669
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11140-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 3,
+      "prediction_count": 3,
+      "true_positive_count": 3,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.8629,
+      "inference_latency_ms": 50.51,
+      "box_ious": [
+        0.9157,
+        0.9132,
+        0.7073
+      ],
+      "mask_ious": [
+        0.6867,
+        0.78,
+        0.6318
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11140-6.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.8312,
+      "inference_latency_ms": 51.54,
+      "box_ious": [
+        0.9399
+      ],
+      "mask_ious": [
+        0.7928
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11140.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 3,
+      "prediction_count": 3,
+      "true_positive_count": 3,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.8689,
+      "inference_latency_ms": 50.11,
+      "box_ious": [
+        0.9683,
+        0.6943,
+        0.6773
+      ],
+      "mask_ious": [
+        0.7402,
+        0.5184,
+        0.4688
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11150.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 9,
+      "prediction_count": 10,
+      "true_positive_count": 0,
+      "false_positive_count": 10,
+      "false_negative_count": 9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "best_prediction_confidence": 0.4768,
+      "inference_latency_ms": 100.89,
+      "box_ious": [],
+      "mask_ious": [],
+      "evaluation_status": "FALSE_NEGATIVE_ONLY"
+    },
+    {
+      "filename": "11155-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 1,
+      "true_positive_count": 0,
+      "false_positive_count": 1,
+      "false_negative_count": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "best_prediction_confidence": 0.6075,
+      "inference_latency_ms": 56.41,
+      "box_ious": [],
+      "mask_ious": [],
+      "evaluation_status": "FALSE_NEGATIVE_ONLY"
+    },
+    {
+      "filename": "11155-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 1,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.743,
+      "inference_latency_ms": 51.6,
+      "box_ious": [
+        0.725
+      ],
+      "mask_ious": [
+        0.6091
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11155-3.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.4939,
+      "inference_latency_ms": 50.63,
+      "box_ious": [
+        0.7441
+      ],
+      "mask_ious": [
+        0.5915
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11155-4.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.6151,
+      "inference_latency_ms": 50.27,
+      "box_ious": [
+        0.813
+      ],
+      "mask_ious": [
+        0.8162
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11155.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 4,
+      "true_positive_count": 1,
+      "false_positive_count": 3,
+      "false_negative_count": 1,
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1_score": 0.3333,
+      "best_prediction_confidence": 0.7236,
+      "inference_latency_ms": 55.48,
+      "box_ious": [
+        0.718
+      ],
+      "mask_ious": [
+        0.565
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11167-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.6474,
+      "inference_latency_ms": 53.78,
+      "box_ious": [
+        0.7793
+      ],
+      "mask_ious": [
+        0.1013
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11167-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 2,
+      "true_positive_count": 0,
+      "false_positive_count": 2,
+      "false_negative_count": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "best_prediction_confidence": 0.615,
+      "inference_latency_ms": 55.81,
+      "box_ious": [],
+      "mask_ious": [],
+      "evaluation_status": "FALSE_NEGATIVE_ONLY"
+    },
+    {
+      "filename": "11167.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 3,
+      "prediction_count": 4,
+      "true_positive_count": 1,
+      "false_positive_count": 3,
+      "false_negative_count": 2,
+      "precision": 0.25,
+      "recall": 0.3333,
+      "f1_score": 0.2857,
+      "best_prediction_confidence": 0.5803,
+      "inference_latency_ms": 62.91,
+      "box_ious": [
+        0.7531
+      ],
+      "mask_ious": [
+        0.6221
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11174.jpg",
+      "image_dimensions": [
+        544,
+        384
+      ],
+      "ground_truth_count": 8,
+      "prediction_count": 4,
+      "true_positive_count": 1,
+      "false_positive_count": 3,
+      "false_negative_count": 7,
+      "precision": 0.25,
+      "recall": 0.125,
+      "f1_score": 0.1667,
+      "best_prediction_confidence": 0.6611,
+      "inference_latency_ms": 186.34,
+      "box_ious": [
+        0.8525
+      ],
+      "mask_ious": [
+        0.6692
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11175-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 4,
+      "prediction_count": 5,
+      "true_positive_count": 3,
+      "false_positive_count": 2,
+      "false_negative_count": 1,
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.6814,
+      "inference_latency_ms": 108.14,
+      "box_ious": [
+        0.9256,
+        0.8235,
+        0.7096
+      ],
+      "mask_ious": [
+        0.5075,
+        0.4776,
+        0.2924
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11175-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 4,
+      "prediction_count": 4,
+      "true_positive_count": 3,
+      "false_positive_count": 1,
+      "false_negative_count": 1,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1_score": 0.75,
+      "best_prediction_confidence": 0.8978,
+      "inference_latency_ms": 58.98,
+      "box_ious": [
+        0.948,
+        0.8995,
+        0.7531
+      ],
+      "mask_ious": [
+        0.5379,
+        0.4161,
+        0.3104
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11175-3.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 4,
+      "prediction_count": 4,
+      "true_positive_count": 3,
+      "false_positive_count": 1,
+      "false_negative_count": 1,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1_score": 0.75,
+      "best_prediction_confidence": 0.8948,
+      "inference_latency_ms": 65.62,
+      "box_ious": [
+        0.889,
+        0.6932,
+        0.6126
+      ],
+      "mask_ious": [
+        0.5162,
+        0.2536,
+        0.4058
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11175.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 5,
+      "prediction_count": 5,
+      "true_positive_count": 4,
+      "false_positive_count": 1,
+      "false_negative_count": 1,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1_score": 0.8,
+      "best_prediction_confidence": 0.5269,
+      "inference_latency_ms": 59.92,
+      "box_ious": [
+        0.95,
+        0.8103,
+        0.6535,
+        0.559
+      ],
+      "mask_ious": [
+        0.4536,
+        0.3627,
+        0.2185,
+        0.3216
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11176.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 3,
+      "true_positive_count": 1,
+      "false_positive_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "f1_score": 0.5,
+      "best_prediction_confidence": 0.5361,
+      "inference_latency_ms": 57.05,
+      "box_ious": [
+        0.8169
+      ],
+      "mask_ious": [
+        0.8116
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11178-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 4,
+      "prediction_count": 6,
+      "true_positive_count": 0,
+      "false_positive_count": 6,
+      "false_negative_count": 4,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "best_prediction_confidence": 0.8676,
+      "inference_latency_ms": 61.46,
+      "box_ious": [],
+      "mask_ious": [],
+      "evaluation_status": "FALSE_NEGATIVE_ONLY"
+    },
+    {
+      "filename": "11178-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 7,
+      "prediction_count": 7,
+      "true_positive_count": 2,
+      "false_positive_count": 5,
+      "false_negative_count": 5,
+      "precision": 0.2857,
+      "recall": 0.2857,
+      "f1_score": 0.2857,
+      "best_prediction_confidence": 0.5391,
+      "inference_latency_ms": 62.9,
+      "box_ious": [
+        0.9616,
+        0.6794
+      ],
+      "mask_ious": [
+        0.5509,
+        0.4078
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11178-3.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 3,
+      "prediction_count": 7,
+      "true_positive_count": 0,
+      "false_positive_count": 7,
+      "false_negative_count": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "best_prediction_confidence": 0.7982,
+      "inference_latency_ms": 54.62,
+      "box_ious": [],
+      "mask_ious": [],
+      "evaluation_status": "FALSE_NEGATIVE_ONLY"
+    },
+    {
+      "filename": "11178-4.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 7,
+      "prediction_count": 8,
+      "true_positive_count": 2,
+      "false_positive_count": 6,
+      "false_negative_count": 5,
+      "precision": 0.25,
+      "recall": 0.2857,
+      "f1_score": 0.2667,
+      "best_prediction_confidence": 0.8643,
+      "inference_latency_ms": 60.35,
+      "box_ious": [
+        0.9527,
+        0.8403
+      ],
+      "mask_ious": [
+        0.7718,
+        0.527
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11178.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 11,
+      "prediction_count": 6,
+      "true_positive_count": 0,
+      "false_positive_count": 6,
+      "false_negative_count": 11,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "best_prediction_confidence": 0.836,
+      "inference_latency_ms": 65.87,
+      "box_ious": [],
+      "mask_ious": [],
+      "evaluation_status": "FALSE_NEGATIVE_ONLY"
+    },
+    {
+      "filename": "11181.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 8,
+      "prediction_count": 6,
+      "true_positive_count": 4,
+      "false_positive_count": 2,
+      "false_negative_count": 4,
+      "precision": 0.6667,
+      "recall": 0.5,
+      "f1_score": 0.5714,
+      "best_prediction_confidence": 0.8469,
+      "inference_latency_ms": 63.92,
+      "box_ious": [
+        0.9632,
+        0.9444,
+        0.8927,
+        0.6967
+      ],
+      "mask_ious": [
+        0.6142,
+        0.7313,
+        0.7393,
+        0.5714
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11189-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1_score": 0.5,
+      "best_prediction_confidence": 0.7261,
+      "inference_latency_ms": 78.46,
+      "box_ious": [
+        0.7301
+      ],
+      "mask_ious": [
+        0.6428
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11189-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 1,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.264,
+      "inference_latency_ms": 79.2,
+      "box_ious": [
+        0.6625
+      ],
+      "mask_ious": [
+        0.6728
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11189.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.5524,
+      "inference_latency_ms": 60.59,
+      "box_ious": [
+        0.8316
+      ],
+      "mask_ious": [
+        0.73
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11190-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 1,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1_score": 0.5,
+      "best_prediction_confidence": 0.6256,
+      "inference_latency_ms": 54.76,
+      "box_ious": [
+        0.8413
+      ],
+      "mask_ious": [
+        0.5873
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11190-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.7452,
+      "inference_latency_ms": 47.46,
+      "box_ious": [
+        0.6717
+      ],
+      "mask_ious": [
+        0.7113
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11190-3.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.4596,
+      "inference_latency_ms": 53.85,
+      "box_ious": [
+        0.8584
+      ],
+      "mask_ious": [
+        0.8697
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11190-4.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.8855,
+      "inference_latency_ms": 53.12,
+      "box_ious": [
+        0.9779
+      ],
+      "mask_ious": [
+        0.8392
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11190-5.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.7692,
+      "inference_latency_ms": 53.38,
+      "box_ious": [
+        0.803
+      ],
+      "mask_ious": [
+        0.7448
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11190-6.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 2,
+      "true_positive_count": 2,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.9247,
+      "inference_latency_ms": 50.01,
+      "box_ious": [
+        0.9487,
+        0.7876
+      ],
+      "mask_ious": [
+        0.4901,
+        0.6121
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11190-7.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 4,
+      "true_positive_count": 2,
+      "false_positive_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.8407,
+      "inference_latency_ms": 46.99,
+      "box_ious": [
+        0.8487,
+        0.5418
+      ],
+      "mask_ious": [
+        0.6583,
+        0.157
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11190.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 5,
+      "true_positive_count": 1,
+      "false_positive_count": 4,
+      "false_negative_count": 1,
+      "precision": 0.2,
+      "recall": 0.5,
+      "f1_score": 0.2857,
+      "best_prediction_confidence": 0.7039,
+      "inference_latency_ms": 70.23,
+      "box_ious": [
+        0.5363
+      ],
+      "mask_ious": [
+        0.6427
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11295.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 4,
+      "prediction_count": 4,
+      "true_positive_count": 2,
+      "false_positive_count": 2,
+      "false_negative_count": 2,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1_score": 0.5,
+      "best_prediction_confidence": 0.7365,
+      "inference_latency_ms": 47.39,
+      "box_ious": [
+        0.9704,
+        0.7689
+      ],
+      "mask_ious": [
+        0.6164,
+        0.6719
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 0,
+      "false_positive_count": 2,
+      "false_negative_count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "best_prediction_confidence": 0.8708,
+      "inference_latency_ms": 44.5,
+      "box_ious": [],
+      "mask_ious": [],
+      "evaluation_status": "FALSE_NEGATIVE_ONLY"
+    },
+    {
+      "filename": "11296-10.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 13,
+      "prediction_count": 14,
+      "true_positive_count": 9,
+      "false_positive_count": 5,
+      "false_negative_count": 4,
+      "precision": 0.6429,
+      "recall": 0.6923,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.8513,
+      "inference_latency_ms": 58.19,
+      "box_ious": [
+        0.9149,
+        0.9141,
+        0.8129,
+        0.7985,
+        0.7803,
+        0.776,
+        0.7668,
+        0.7483,
+        0.6137
+      ],
+      "mask_ious": [
+        0.7927,
+        0.5983,
+        0.5615,
+        0.4754,
+        0.6035,
+        0.7692,
+        0.6848,
+        0.5761,
+        0.6532
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-11.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 9,
+      "prediction_count": 6,
+      "true_positive_count": 4,
+      "false_positive_count": 2,
+      "false_negative_count": 5,
+      "precision": 0.6667,
+      "recall": 0.4444,
+      "f1_score": 0.5333,
+      "best_prediction_confidence": 0.588,
+      "inference_latency_ms": 59.38,
+      "box_ious": [
+        0.9279,
+        0.9239,
+        0.7719,
+        0.5932
+      ],
+      "mask_ious": [
+        0.658,
+        0.7353,
+        0.7095,
+        0.4432
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-12.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 4,
+      "prediction_count": 6,
+      "true_positive_count": 3,
+      "false_positive_count": 3,
+      "false_negative_count": 1,
+      "precision": 0.5,
+      "recall": 0.75,
+      "f1_score": 0.6,
+      "best_prediction_confidence": 0.4874,
+      "inference_latency_ms": 53.68,
+      "box_ious": [
+        0.943,
+        0.8509,
+        0.6877
+      ],
+      "mask_ious": [
+        0.7573,
+        0.4665,
+        0.6412
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-13.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 4,
+      "prediction_count": 2,
+      "true_positive_count": 2,
+      "false_positive_count": 0,
+      "false_negative_count": 2,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.5957,
+      "inference_latency_ms": 45.46,
+      "box_ious": [
+        0.9324,
+        0.7625
+      ],
+      "mask_ious": [
+        0.5643,
+        0.7409
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-14.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 5,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 4,
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1_score": 0.3333,
+      "best_prediction_confidence": 0.6697,
+      "inference_latency_ms": 44.44,
+      "box_ious": [
+        0.7139
+      ],
+      "mask_ious": [
+        0.6555
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-15.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 11,
+      "prediction_count": 7,
+      "true_positive_count": 4,
+      "false_positive_count": 3,
+      "false_negative_count": 7,
+      "precision": 0.5714,
+      "recall": 0.3636,
+      "f1_score": 0.4444,
+      "best_prediction_confidence": 0.7011,
+      "inference_latency_ms": 60.23,
+      "box_ious": [
+        0.9439,
+        0.8616,
+        0.7659,
+        0.7305
+      ],
+      "mask_ious": [
+        0.873,
+        0.7379,
+        0.8292,
+        0.7067
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-16.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 10,
+      "prediction_count": 13,
+      "true_positive_count": 8,
+      "false_positive_count": 5,
+      "false_negative_count": 2,
+      "precision": 0.6154,
+      "recall": 0.8,
+      "f1_score": 0.6957,
+      "best_prediction_confidence": 0.7955,
+      "inference_latency_ms": 67.55,
+      "box_ious": [
+        0.923,
+        0.8973,
+        0.8791,
+        0.8247,
+        0.8085,
+        0.7924,
+        0.6258,
+        0.5919
+      ],
+      "mask_ious": [
+        0.7108,
+        0.6719,
+        0.719,
+        0.7962,
+        0.7523,
+        0.7267,
+        0.69,
+        0.5411
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-17.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 8,
+      "prediction_count": 11,
+      "true_positive_count": 4,
+      "false_positive_count": 7,
+      "false_negative_count": 4,
+      "precision": 0.3636,
+      "recall": 0.5,
+      "f1_score": 0.4211,
+      "best_prediction_confidence": 0.7371,
+      "inference_latency_ms": 120.66,
+      "box_ious": [
+        0.9461,
+        0.8782,
+        0.8364,
+        0.5091
+      ],
+      "mask_ious": [
+        0.7049,
+        0.7521,
+        0.7611,
+        0.413
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-18.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 9,
+      "prediction_count": 7,
+      "true_positive_count": 4,
+      "false_positive_count": 3,
+      "false_negative_count": 5,
+      "precision": 0.5714,
+      "recall": 0.4444,
+      "f1_score": 0.5,
+      "best_prediction_confidence": 0.7356,
+      "inference_latency_ms": 70.83,
+      "box_ious": [
+        0.91,
+        0.8894,
+        0.8727,
+        0.5283
+      ],
+      "mask_ious": [
+        0.6565,
+        0.2827,
+        0.6709,
+        0.4545
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-19.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 5,
+      "prediction_count": 5,
+      "true_positive_count": 3,
+      "false_positive_count": 2,
+      "false_negative_count": 2,
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1_score": 0.6,
+      "best_prediction_confidence": 0.8163,
+      "inference_latency_ms": 61.99,
+      "box_ious": [
+        0.9645,
+        0.7434,
+        0.7408
+      ],
+      "mask_ious": [
+        0.8417,
+        0.698,
+        0.6566
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.3522,
+      "inference_latency_ms": 49.61,
+      "box_ious": [
+        0.7022
+      ],
+      "mask_ious": [
+        0.6156
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-20.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 6,
+      "prediction_count": 3,
+      "true_positive_count": 2,
+      "false_positive_count": 1,
+      "false_negative_count": 4,
+      "precision": 0.6667,
+      "recall": 0.3333,
+      "f1_score": 0.4444,
+      "best_prediction_confidence": 0.814,
+      "inference_latency_ms": 56.38,
+      "box_ious": [
+        0.793,
+        0.7234
+      ],
+      "mask_ious": [
+        0.7799,
+        0.6667
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-21.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 6,
+      "true_positive_count": 1,
+      "false_positive_count": 5,
+      "false_negative_count": 1,
+      "precision": 0.1667,
+      "recall": 0.5,
+      "f1_score": 0.25,
+      "best_prediction_confidence": 0.6382,
+      "inference_latency_ms": 53.54,
+      "box_ious": [
+        0.9255
+      ],
+      "mask_ious": [
+        0.7907
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-22.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 7,
+      "prediction_count": 9,
+      "true_positive_count": 3,
+      "false_positive_count": 6,
+      "false_negative_count": 4,
+      "precision": 0.3333,
+      "recall": 0.4286,
+      "f1_score": 0.375,
+      "best_prediction_confidence": 0.6867,
+      "inference_latency_ms": 61.59,
+      "box_ious": [
+        0.9436,
+        0.8709,
+        0.6207
+      ],
+      "mask_ious": [
+        0.8108,
+        0.7275,
+        0.6473
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-23.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 3,
+      "true_positive_count": 2,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.6667,
+      "recall": 1.0,
+      "f1_score": 0.8,
+      "best_prediction_confidence": 0.5409,
+      "inference_latency_ms": 49.78,
+      "box_ious": [
+        0.7142,
+        0.5727
+      ],
+      "mask_ious": [
+        0.6557,
+        0.4829
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-3.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 5,
+      "prediction_count": 5,
+      "true_positive_count": 1,
+      "false_positive_count": 4,
+      "false_negative_count": 4,
+      "precision": 0.2,
+      "recall": 0.2,
+      "f1_score": 0.2,
+      "best_prediction_confidence": 0.808,
+      "inference_latency_ms": 59.94,
+      "box_ious": [
+        0.808
+      ],
+      "mask_ious": [
+        0.6423
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-4.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 5,
+      "prediction_count": 5,
+      "true_positive_count": 3,
+      "false_positive_count": 2,
+      "false_negative_count": 2,
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1_score": 0.6,
+      "best_prediction_confidence": 0.4906,
+      "inference_latency_ms": 55.29,
+      "box_ious": [
+        0.9264,
+        0.8653,
+        0.6649
+      ],
+      "mask_ious": [
+        0.7981,
+        0.6637,
+        0.6159
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-5.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 3,
+      "prediction_count": 3,
+      "true_positive_count": 3,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.7917,
+      "inference_latency_ms": 54.37,
+      "box_ious": [
+        0.9317,
+        0.8457,
+        0.8044
+      ],
+      "mask_ious": [
+        0.7596,
+        0.7975,
+        0.6806
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "11296-6.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 3,
+      "prediction_count": 4,
+      "true_positive_count": 2,
+      "false_positive_count": 2,
+      "false_negative_count": 1,
+      "precision": 0.5,
+      "recall": 0.6667,
+      "f1_score": 0.5714,
+      "best_prediction_confidence": 0.7945,
+      "inference_latency_ms": 50.22,
+      "box_ious": [
+        0.9527,
+        0.9127
+      ],
+      "mask_ious": [
+        0.6746,
+        0.6429
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-7.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 2,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 1,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.7254,
+      "inference_latency_ms": 57.46,
+      "box_ious": [
+        0.7775
+      ],
+      "mask_ious": [
+        0.652
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-8.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 7,
+      "prediction_count": 3,
+      "true_positive_count": 2,
+      "false_positive_count": 1,
+      "false_negative_count": 5,
+      "precision": 0.6667,
+      "recall": 0.2857,
+      "f1_score": 0.4,
+      "best_prediction_confidence": 0.7426,
+      "inference_latency_ms": 55.11,
+      "box_ious": [
+        0.9295,
+        0.7505
+      ],
+      "mask_ious": [
+        0.798,
+        0.7203
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11296-9.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 3,
+      "prediction_count": 4,
+      "true_positive_count": 3,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1_score": 0.8571,
+      "best_prediction_confidence": 0.7711,
+      "inference_latency_ms": 53.15,
+      "box_ious": [
+        0.8974,
+        0.8303,
+        0.7277
+      ],
+      "mask_ious": [
+        0.7906,
+        0.7313,
+        0.5933
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11308-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 5,
+      "prediction_count": 8,
+      "true_positive_count": 3,
+      "false_positive_count": 5,
+      "false_negative_count": 2,
+      "precision": 0.375,
+      "recall": 0.6,
+      "f1_score": 0.4615,
+      "best_prediction_confidence": 0.7067,
+      "inference_latency_ms": 56.79,
+      "box_ious": [
+        0.9524,
+        0.9032,
+        0.8363
+      ],
+      "mask_ious": [
+        0.5841,
+        0.6613,
+        0.7764
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "11308-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 7,
+      "prediction_count": 6,
+      "true_positive_count": 4,
+      "false_positive_count": 2,
+      "false_negative_count": 3,
+      "precision": 0.6667,
+      "recall": 0.5714,
+      "f1_score": 0.6154,
+      "best_prediction_confidence": 0.8075,
+      "inference_latency_ms": 64.92,
+      "box_ious": [
+        0.9467,
+        0.9176,
+        0.8874,
+        0.8823
+      ],
+      "mask_ious": [
+        0.7965,
+        0.7725,
+        0.5297,
+        0.7875
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "IMG20.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 4,
+      "prediction_count": 4,
+      "true_positive_count": 1,
+      "false_positive_count": 3,
+      "false_negative_count": 3,
+      "precision": 0.25,
+      "recall": 0.25,
+      "f1_score": 0.25,
+      "best_prediction_confidence": 0.4248,
+      "inference_latency_ms": 64.93,
+      "box_ious": [
+        0.9455
+      ],
+      "mask_ious": [
+        0.4633
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "IMG56.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 5,
+      "true_positive_count": 0,
+      "false_positive_count": 5,
+      "false_negative_count": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "best_prediction_confidence": 0.7677,
+      "inference_latency_ms": 53.76,
+      "box_ious": [],
+      "mask_ious": [],
+      "evaluation_status": "FALSE_NEGATIVE_ONLY"
+    },
+    {
+      "filename": "IMG_6526-1.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 10,
+      "prediction_count": 7,
+      "true_positive_count": 5,
+      "false_positive_count": 2,
+      "false_negative_count": 5,
+      "precision": 0.7143,
+      "recall": 0.5,
+      "f1_score": 0.5882,
+      "best_prediction_confidence": 0.4758,
+      "inference_latency_ms": 65.16,
+      "box_ious": [
+        0.8701,
+        0.8544,
+        0.8348,
+        0.8001,
+        0.721
+      ],
+      "mask_ious": [
+        0.7232,
+        0.6781,
+        0.5779,
+        0.5763,
+        0.721
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "IMG_6526-2.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 9,
+      "prediction_count": 7,
+      "true_positive_count": 4,
+      "false_positive_count": 3,
+      "false_negative_count": 5,
+      "precision": 0.5714,
+      "recall": 0.4444,
+      "f1_score": 0.5,
+      "best_prediction_confidence": 0.7453,
+      "inference_latency_ms": 69.01,
+      "box_ious": [
+        0.8818,
+        0.8589,
+        0.7297,
+        0.5155
+      ],
+      "mask_ious": [
+        0.7909,
+        0.7523,
+        0.658,
+        0.6864
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "IMG_6526-3.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 12,
+      "prediction_count": 7,
+      "true_positive_count": 3,
+      "false_positive_count": 4,
+      "false_negative_count": 9,
+      "precision": 0.4286,
+      "recall": 0.25,
+      "f1_score": 0.3158,
+      "best_prediction_confidence": 0.6618,
+      "inference_latency_ms": 62.11,
+      "box_ious": [
+        0.8012,
+        0.7817,
+        0.5067
+      ],
+      "mask_ious": [
+        0.7914,
+        0.6099,
+        0.6987
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "IMG_6526-4.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 14,
+      "prediction_count": 3,
+      "true_positive_count": 2,
+      "false_positive_count": 1,
+      "false_negative_count": 12,
+      "precision": 0.6667,
+      "recall": 0.1429,
+      "f1_score": 0.2353,
+      "best_prediction_confidence": 0.5889,
+      "inference_latency_ms": 72.54,
+      "box_ious": [
+        0.8253,
+        0.7673
+      ],
+      "mask_ious": [
+        0.7148,
+        0.7022
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "IMG_6542-1.jpg",
+      "image_dimensions": [
+        544,
+        384
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 3,
+      "true_positive_count": 1,
+      "false_positive_count": 2,
+      "false_negative_count": 0,
+      "precision": 0.3333,
+      "recall": 1.0,
+      "f1_score": 0.5,
+      "best_prediction_confidence": 0.5332,
+      "inference_latency_ms": 75.51,
+      "box_ious": [
+        0.6607
+      ],
+      "mask_ious": [
+        0.6688
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "IMG_6542-2.jpg",
+      "image_dimensions": [
+        544,
+        384
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.7044,
+      "inference_latency_ms": 59.94,
+      "box_ious": [
+        0.5962
+      ],
+      "mask_ious": [
+        0.477
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "IMG_6542-3.jpg",
+      "image_dimensions": [
+        384,
+        544
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.8504,
+      "inference_latency_ms": 54.2,
+      "box_ious": [
+        0.9539
+      ],
+      "mask_ious": [
+        0.7953
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "IMG_6542-4.jpg",
+      "image_dimensions": [
+        544,
+        384
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 1,
+      "true_positive_count": 1,
+      "false_positive_count": 0,
+      "false_negative_count": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "best_prediction_confidence": 0.5285,
+      "inference_latency_ms": 54.89,
+      "box_ious": [
+        0.7992
+      ],
+      "mask_ious": [
+        0.8012
+      ],
+      "evaluation_status": "PERFECT_MATCH"
+    },
+    {
+      "filename": "IMG_6542-5.jpg",
+      "image_dimensions": [
+        544,
+        384
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.4806,
+      "inference_latency_ms": 65.63,
+      "box_ious": [
+        0.7877
+      ],
+      "mask_ious": [
+        0.7287
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    },
+    {
+      "filename": "IMG_6542-7.jpg",
+      "image_dimensions": [
+        544,
+        384
+      ],
+      "ground_truth_count": 1,
+      "prediction_count": 2,
+      "true_positive_count": 1,
+      "false_positive_count": 1,
+      "false_negative_count": 0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1_score": 0.6667,
+      "best_prediction_confidence": 0.5624,
+      "inference_latency_ms": 55.73,
+      "box_ious": [
+        0.6615
+      ],
+      "mask_ious": [
+        0.5697
+      ],
+      "evaluation_status": "PARTIAL_DETECTION"
+    }
+  ]
+}

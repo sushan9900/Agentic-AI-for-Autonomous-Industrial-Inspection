@@ -1,0 +1,259 @@
+{
+  "summary": {
+    "total_test_images": 86,
+    "images_with_ground_truth": 86,
+    "images_with_predictions": 86,
+    "completely_missed_images_count": 8,
+    "high_false_positive_images_count": 46,
+    "partial_detection_images_count": 48,
+    "low_confidence_images_count": 1
+  },
+  "missed_defect_images": [
+    "11150.jpg",
+    "11155-1.jpg",
+    "11167-2.jpg",
+    "11178-1.jpg",
+    "11178-3.jpg",
+    "11178.jpg",
+    "11296-1.jpg",
+    "IMG56.jpg"
+  ],
+  "high_false_positive_images": [
+    {
+      "filename": "11112.jpg",
+      "fp_count": 2,
+      "gt_count": 2
+    },
+    {
+      "filename": "11117.jpg",
+      "fp_count": 9,
+      "gt_count": 7
+    },
+    {
+      "filename": "11119.jpg",
+      "fp_count": 2,
+      "gt_count": 2
+    },
+    {
+      "filename": "11134-3.jpg",
+      "fp_count": 2,
+      "gt_count": 2
+    },
+    {
+      "filename": "11134-4.jpg",
+      "fp_count": 3,
+      "gt_count": 5
+    },
+    {
+      "filename": "11134-5.jpg",
+      "fp_count": 2,
+      "gt_count": 2
+    },
+    {
+      "filename": "11134-6.jpg",
+      "fp_count": 2,
+      "gt_count": 1
+    },
+    {
+      "filename": "11134.jpg",
+      "fp_count": 5,
+      "gt_count": 3
+    },
+    {
+      "filename": "11150.jpg",
+      "fp_count": 10,
+      "gt_count": 9
+    },
+    {
+      "filename": "11155.jpg",
+      "fp_count": 3,
+      "gt_count": 2
+    },
+    {
+      "filename": "11167-2.jpg",
+      "fp_count": 2,
+      "gt_count": 2
+    },
+    {
+      "filename": "11167.jpg",
+      "fp_count": 3,
+      "gt_count": 3
+    },
+    {
+      "filename": "11174.jpg",
+      "fp_count": 3,
+      "gt_count": 8
+    },
+    {
+      "filename": "11175-1.jpg",
+      "fp_count": 2,
+      "gt_count": 4
+    },
+    {
+      "filename": "11176.jpg",
+      "fp_count": 2,
+      "gt_count": 1
+    },
+    {
+      "filename": "11178-1.jpg",
+      "fp_count": 6,
+      "gt_count": 4
+    },
+    {
+      "filename": "11178-2.jpg",
+      "fp_count": 5,
+      "gt_count": 7
+    },
+    {
+      "filename": "11178-3.jpg",
+      "fp_count": 7,
+      "gt_count": 3
+    },
+    {
+      "filename": "11178-4.jpg",
+      "fp_count": 6,
+      "gt_count": 7
+    },
+    {
+      "filename": "11178.jpg",
+      "fp_count": 6,
+      "gt_count": 11
+    },
+    {
+      "filename": "11181.jpg",
+      "fp_count": 2,
+      "gt_count": 8
+    },
+    {
+      "filename": "11190-7.jpg",
+      "fp_count": 2,
+      "gt_count": 2
+    },
+    {
+      "filename": "11190.jpg",
+      "fp_count": 4,
+      "gt_count": 2
+    },
+    {
+      "filename": "11295.jpg",
+      "fp_count": 2,
+      "gt_count": 4
+    },
+    {
+      "filename": "11296-1.jpg",
+      "fp_count": 2,
+      "gt_count": 1
+    },
+    {
+      "filename": "11296-10.jpg",
+      "fp_count": 5,
+      "gt_count": 13
+    },
+    {
+      "filename": "11296-11.jpg",
+      "fp_count": 2,
+      "gt_count": 9
+    },
+    {
+      "filename": "11296-12.jpg",
+      "fp_count": 3,
+      "gt_count": 4
+    },
+    {
+      "filename": "11296-15.jpg",
+      "fp_count": 3,
+      "gt_count": 11
+    },
+    {
+      "filename": "11296-16.jpg",
+      "fp_count": 5,
+      "gt_count": 10
+    },
+    {
+      "filename": "11296-17.jpg",
+      "fp_count": 7,
+      "gt_count": 8
+    },
+    {
+      "filename": "11296-18.jpg",
+      "fp_count": 3,
+      "gt_count": 9
+    },
+    {
+      "filename": "11296-19.jpg",
+      "fp_count": 2,
+      "gt_count": 5
+    },
+    {
+      "filename": "11296-21.jpg",
+      "fp_count": 5,
+      "gt_count": 2
+    },
+    {
+      "filename": "11296-22.jpg",
+      "fp_count": 6,
+      "gt_count": 7
+    },
+    {
+      "filename": "11296-3.jpg",
+      "fp_count": 4,
+      "gt_count": 5
+    },
+    {
+      "filename": "11296-4.jpg",
+      "fp_count": 2,
+      "gt_count": 5
+    },
+    {
+      "filename": "11296-6.jpg",
+      "fp_count": 2,
+      "gt_count": 3
+    },
+    {
+      "filename": "11308-1.jpg",
+      "fp_count": 5,
+      "gt_count": 5
+    },
+    {
+      "filename": "11308-2.jpg",
+      "fp_count": 2,
+      "gt_count": 7
+    },
+    {
+      "filename": "IMG20.jpg",
+      "fp_count": 3,
+      "gt_count": 4
+    },
+    {
+      "filename": "IMG56.jpg",
+      "fp_count": 5,
+      "gt_count": 1
+    },
+    {
+      "filename": "IMG_6526-1.jpg",
+      "fp_count": 2,
+      "gt_count": 10
+    },
+    {
+      "filename": "IMG_6526-2.jpg",
+      "fp_count": 3,
+      "gt_count": 9
+    },
+    {
+      "filename": "IMG_6526-3.jpg",
+      "fp_count": 4,
+      "gt_count": 12
+    },
+    {
+      "filename": "IMG_6542-1.jpg",
+      "fp_count": 2,
+      "gt_count": 1
+    }
+  ],
+  "low_confidence_images": [
+    {
+      "filename": "11189-2.jpg",
+      "best_confidence": 0.264
+    }
+  ]
+}

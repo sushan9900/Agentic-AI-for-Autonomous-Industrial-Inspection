@@ -1,29 +1,41 @@
-# Vision Evaluation Framework
+# Vision Model Evaluation Framework (Phase 5A)
 
-This module specifies the evaluation and benchmark metrics foundation for industrial defect detection models.
+## Overview
+The `vision.evaluation` module provides a reproducible, auditable, and deterministic evaluation framework for industrial defect segmentation and object detection models.
 
-## Planned Evaluation Metrics
+It operates strictly on the held-out test split without modifying model weights, mutating ground truth annotations, or fabricating metrics.
 
-The validation framework will calculate standard computer vision and operational benchmarks:
+---
 
-| Metric | Target / Description |
-|---|---|
-| **Precision** | Ratio of true positive detections over total positive predictions |
-| **Recall** | Coverage of actual ground truth industrial defects detected |
-| **F1-Score** | Harmonic mean of Precision and Recall |
-| **IoU (Intersection over Union)** | Spatial overlap accuracy between predicted and ground-truth boxes/masks |
-| **mAP@50** | Mean Average Precision at IoU threshold 0.50 |
-| **mAP@50:95** | Mean Average Precision across IoU thresholds from 0.50 to 0.95 (COCO standard) |
-| **Inference Latency** | End-to-end preprocessing, inference, and postprocessing latency in milliseconds |
+## Core Components
 
-## Defect Category Benchmark Tracking
+1. **`metrics.py`**:
+   - `calculate_bbox_iou(box1, box2)`: Computes bounding box Intersection-over-Union.
+   - `calculate_polygon_iou(poly1, poly2, mask_shape)`: Rasterizes polygon contours to compute true mask IoU.
+   - `match_image_predictions(...)`: Deterministic greedy bipartite matching between predictions and ground truths at `IoU >= 0.50`.
+   - `compute_precision_recall_f1(tp, fp, fn)`: Standard instance-level metrics.
+   - `compute_confidence_statistics(confs)`: Descriptive statistical distributions (min, max, mean, median, percentiles).
+   - `compute_confidence_sweep(...)`: Precision/Recall sensitivity across thresholds `[0.10, 0.25, 0.40, 0.50, 0.60, 0.70, 0.80]`.
 
-Evaluation will track per-class metrics across initial target industrial defect categories:
-- Corrosion
-- Crack
-- Surface damage
-- Coating damage
-- Deformation
+2. **`evaluator.py`**:
+   - `VisionModelEvaluator`:
+     - Loads model weights and records cryptographic SHA-256 hash.
+     - Runs native Ultralytics dataset validation (`mAP50`, `mAP50:95` for Box and Mask).
+     - Processes per-image test samples collecting inference latencies, defect matches, and failure classifications.
+     - Performs automated error analysis (completely missed defects, high false positives, low-confidence predictions).
 
-> [!NOTE]
-> Evaluation execution and benchmark runner scripts will be populated once models and evaluation test splits are incorporated in subsequent phases.
+3. **`report.py`**:
+   - `EvaluationReportGenerator`:
+     - Serializes `vision_evaluation.json`.
+     - Generates auditable Markdown report `vision_evaluation.md`.
+     - Exports per-image records to `per_image_results.json`.
+     - Exports failure mode breakdown to `error_analysis.json`.
+
+---
+
+## Usage
+
+Run evaluation CLI:
+```bash
+.\.venv\Scripts\python.exe scripts/evaluate_vision_model.py
+```
