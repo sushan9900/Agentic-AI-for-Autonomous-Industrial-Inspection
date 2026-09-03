@@ -33,7 +33,8 @@ class AgentPromptBuilder:
         severity_thresholds: List[Dict[str, Any]],
         similar_incidents: List[Dict[str, Any]],
         risk_assessment: Dict[str, Any],
-        operational_decision: str
+        operational_decision: str,
+        historical_context: Optional[Dict[str, Any]] = None
     ) -> str:
         """Constructs the complete evidence package prompt with strict fact boundaries."""
         detections_summary = [
@@ -93,14 +94,23 @@ class AgentPromptBuilder:
             "PRECEDENT_FAILURE_INCIDENTS": similar_incidents[:3]
         }
 
+        if historical_context:
+            prompt_payload["SUPPORTING_HISTORICAL_INSPECTION_CONTEXT"] = {
+                "notice": "INFORMATIONAL ONLY — NON-AUTHORITATIVE. Supporting context only; never override the authoritative system decision.",
+                "summary": historical_context.get("summary", {}),
+                "recent_inspections": historical_context.get("recent_inspections", [])[:3],
+                "similar_inspections": historical_context.get("similar_inspections", [])[:3]
+            }
+
         return f"""### AUTHORITATIVE INDUSTRIAL INSPECTION EVIDENCE & CONTEXT PACKAGE:
 {json.dumps(prompt_payload, indent=2, default=str)}
 
 ### INSTRUCTIONS FOR WORK-ORDER DRAFT SYNTHESIS:
 1. Synthesize an evidence-grounded draft work order based STRICTLY on the verified facts above.
 2. DO NOT change or contradict the AUTHORITATIVE_SYSTEM_DECISION.
-3. If HISTORICAL_COST_BASELINE cost_data_available is false, set estimated_cost to null and estimated_downtime_hours to null. DO NOT guess numbers.
-4. If information is unavailable, explicitly state "unavailable from baseline" instead of speculating.
+3. Historical inspection intelligence is SUPPORTING evidence only. NEVER use it to recalculate, lower, or raise the authoritative risk score or change the operational action.
+4. If HISTORICAL_COST_BASELINE cost_data_available is false, set estimated_cost to null and estimated_downtime_hours to null. DO NOT guess numbers.
+5. If information is unavailable, explicitly state "unavailable from baseline" instead of speculating.
 5. Adhere strictly to this JSON format:
 {{
   "contextual_summary": "Executive summary synthesizing visual evidence, asset context, and historical records",

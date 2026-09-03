@@ -60,7 +60,10 @@ class AgentDecisionService:
             work_order=decision.work_order.model_dump(mode="json") if decision.work_order else None,
             warnings=decision.warnings,
             evidence_gaps=decision.evidence_gaps,
-            execution_metrics=decision.execution_metrics,
+            execution_metrics={
+                **decision.execution_metrics,
+                **({"historical_context": decision.historical_context} if decision.historical_context else {})
+            },
             created_at=decision.generated_at
         )
         db.add(db_decision)

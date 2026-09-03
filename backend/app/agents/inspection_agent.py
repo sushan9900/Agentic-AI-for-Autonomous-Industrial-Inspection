@@ -27,8 +27,10 @@ from backend.app.tools import (
     CalculateRiskScoreTool,
     CheckSimilarIncidentsTool,
     GetAssetContextTool,
+    GetInspectionHistoryTool,
     GetMaintenanceHistoryTool,
     GetSeverityThresholdsTool,
+    InspectionHistoryInput,
     MaintenanceHistoryInput,
     RiskScoreInput,
     SeverityThresholdInput,
@@ -36,6 +38,7 @@ from backend.app.tools import (
     calculate_risk_score_tool,
     check_similar_incidents_tool,
     get_asset_context_tool,
+    get_inspection_history_tool,
     get_maintenance_history_tool,
     get_severity_thresholds_tool,
 )
@@ -145,33 +148,44 @@ class InspectionDecisionAgent:
         )
         if not maint_out.has_history:
             evidence_gaps.append("Historical maintenance records are unavailable for this asset.")
-            trace_recorder.record_step(
-                stage="GET_MAINTENANCE_HISTORY",
-                tool="get_maintenance_history",
-                input_summary={"asset_id": asset_id, "component_id": component_id},
-                result_summary="No prior maintenance history found in database.",
-                decision_impact="Asset will be evaluated without historical maintenance baselines.",
-                duration_ms=(time.time() - t0) * 1000
-            )
+            maint_summary = "No prior maintenance history found in database."
         else:
-            trace_recorder.record_step(
-                stage="GET_MAINTENANCE_HISTORY",
-                tool="get_maintenance_history",
-                input_summary={"asset_id": asset_id, "component_id": component_id},
-                result_summary=f"Retrieved {maint_out.records_count} historical maintenance records.",
-                decision_impact="Supplies past repair actions, actual costs, and historical downtime baselines.",
-                duration_ms=(time.time() - t0) * 1000
-            )
+            maint_summary = f"Retrieved {maint_out.records_count} historical maintenance records."
 
-        # ---------------------------------------------------------
-        # STAGE 5: GET_SEVERITY_THRESHOLDS
-        # ---------------------------------------------------------
-        t0 = time.time()
+        # Longitudinal inspection intelligence & memory (Phase 6A)
         if validated_evidence.detections:
             d0 = validated_evidence.detections[0].defect_type
             primary_defect_type = d0.value if hasattr(d0, "value") else str(d0)
         else:
             primary_defect_type = "crack"
+
+        hist_ctx_out = get_inspection_history_tool.execute(
+            InspectionHistoryInput(
+                asset_id=asset_id,
+                component_id=component_id,
+                defect_type=primary_defect_type,
+                current_inspection_id=inspection_id
+            ),
+            db=db
+        )
+        historical_context_dict = hist_ctx_out.model_dump(mode="json")
+
+        trace_recorder.record_step(
+            stage="GET_MAINTENANCE_HISTORY",
+            tool="get_maintenance_history",
+            input_summary={"asset_id": asset_id, "component_id": component_id},
+            result_summary=(
+                f"{maint_summary} Prior inspections: {hist_ctx_out.summary.total_previous_inspections} "
+                f"(Trend: {hist_ctx_out.summary.risk_trend}, Recurring: {hist_ctx_out.summary.recurring_defect_detected})."
+            ),
+            decision_impact="Supplies past repair actions, actual costs, and longitudinal recurrence intelligence.",
+            duration_ms=(time.time() - t0) * 1000
+        )
+
+        # ---------------------------------------------------------
+        # STAGE 5: GET_SEVERITY_THRESHOLDS
+        # ---------------------------------------------------------
+        t0 = time.time()
         thresh_out = get_severity_thresholds_tool.execute(
             SeverityThresholdInput(defect_type=primary_defect_type, asset_type=asset_ctx_out.asset_type)
         )
@@ -276,7 +290,8 @@ class InspectionDecisionAgent:
             severity_thresholds=[r.model_dump() for r in thresh_out.rules],
             similar_incidents=similar_inc_list,
             risk_assessment=risk_out.model_dump(),
-            operational_decision=decision_outcome.action
+            operational_decision=decision_outcome.action,
+            historical_context=historical_context_dict
         )
 
         provider = self._get_provider()
@@ -412,7 +427,8 @@ class InspectionDecisionAgent:
                 "total_duration_ms": round(total_duration * 1000, 2),
                 "steps_completed": len(trace_recorder.get_events()),
                 "model": provider.model_name(),
-            }
+            },
+            historical_context=historical_context_dict
         )
 
     # Backward compatibility wrapper for Phase 2C

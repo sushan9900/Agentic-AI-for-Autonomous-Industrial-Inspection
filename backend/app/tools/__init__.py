@@ -12,6 +12,11 @@ from backend.app.tools.component_context import (
     ComponentContextOutput,
     GetComponentContextTool,
 )
+from backend.app.tools.get_inspection_history import (
+    GetInspectionHistoryTool,
+    InspectionHistoryInput,
+    get_inspection_history_tool,
+)
 from backend.app.tools.maintenance_history import (
     GetMaintenanceHistoryTool,
     MaintenanceHistoryInput,
@@ -51,6 +56,10 @@ __all__ = [
     "get_maintenance_history_tool",
     "MaintenanceHistoryInput",
     "MaintenanceHistoryOutput",
+    # Tool 2B: Inspection History & Memory (Phase 6A)
+    "GetInspectionHistoryTool",
+    "get_inspection_history_tool",
+    "InspectionHistoryInput",
     # Tool 3: Severity Thresholds
     "GetSeverityThresholdsTool",
     "get_severity_thresholds_tool",

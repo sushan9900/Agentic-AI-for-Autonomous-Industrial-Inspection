@@ -35,6 +35,10 @@ class AgentInspectionState(BaseModel):
         default_factory=list,
         description="Similar failure incidents and failure modes"
     )
+    historical_context: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Structured historical inspection intelligence, similar past inspections, and risk trend (Phase 6A)"
+    )
 
     # 3. Deterministic Risk & Policy Assessment
     risk_assessment: Optional[Dict[str, Any]] = Field(

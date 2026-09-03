@@ -71,6 +71,10 @@ class AgentInspectionDecision(BaseModel):
 
     generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     execution_metrics: Dict[str, Any] = Field(default_factory=dict)
+    historical_context: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Supporting historical inspection intelligence and risk trends (Phase 6A)"
+    )
 
     model_config = ConfigDict(extra="forbid")
 
