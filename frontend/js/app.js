@@ -45,6 +45,9 @@ class InspectionWorkstationApp {
       this.loadOverview();
     } else if (viewName === "inspect") {
       window.location.hash = "#inspect";
+    } else if (viewName === "priority") {
+      window.location.hash = "#priority";
+      this.loadPriorityQueue();
     } else if (viewName === "inspections") {
       window.location.hash = "#inspections";
       this.loadHistory();
@@ -70,7 +73,7 @@ class InspectionWorkstationApp {
       }
     }
     const cleanView = hash.replace("#", "").trim();
-    if (["overview", "inspect", "inspections", "assets", "system"].includes(cleanView)) {
+    if (["overview", "inspect", "priority", "inspections", "assets", "system"].includes(cleanView)) {
       this.navigate(cleanView);
     } else {
       this.navigate("overview");
@@ -331,6 +334,46 @@ class InspectionWorkstationApp {
     } catch (err) {
       console.error(err);
       tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--accent-rose); padding: 20px;">Database connection error.</td></tr>`;
+    }
+  }
+
+  // -------------------------------------------------------------
+  // VIEW: REVIEW PRIORITIZATION (PHASE 6D)
+  // -------------------------------------------------------------
+  async loadPriorityQueue() {
+    const tbody = document.getElementById("priority-queue-tbody");
+    const countSpan = document.getElementById("priority-queue-count");
+    if (!tbody) return;
+
+    try {
+      const res = await fetch("/api/v1/agent/inspections/prioritized");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+
+      if (countSpan) countSpan.textContent = data.total_pending || 0;
+
+      if (!data.items || data.items.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 24px;">No pending inspections in review queue. All reviews up to date.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = data.items.map(item => `
+        <tr>
+          <td><strong style="color: var(--accent-amber); font-family: var(--font-mono);">#${item.priority_rank}</strong></td>
+          <td><strong style="font-family: var(--font-mono);">${item.asset_id}</strong></td>
+          <td>${item.component_id || "N/A"}</td>
+          <td><span class="badge ${this.getRiskBadgeClass(item.priority_class)}">${item.priority_class}</span></td>
+          <td><strong style="color: var(--text-primary); font-family: var(--font-mono);">${item.priority_score}</strong> / 100</td>
+          <td><span class="badge ${this.getRiskBadgeClass(item.severity)}">${item.authoritative_risk_score} (${item.severity})</span></td>
+          <td>${item.deterioration_status || "UNKNOWN"}</td>
+          <td>${item.recurrence_pattern || "UNKNOWN"}</td>
+          <td><span class="badge ${this.getReviewBadgeClass(item.review_status)}">${item.review_status}</span></td>
+          <td><button class="btn btn-secondary" style="padding: 3px 8px; font-size: 11px;" onclick="app.navigate('detail', { decisionId: '${item.decision_id}' })">Review &rarr;</button></td>
+        </tr>
+      `).join("");
+    } catch (err) {
+      console.error(err);
+      tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--accent-rose); padding: 20px;">Failed to load priority queue: ${err.message}</td></tr>`;
     }
   }
 

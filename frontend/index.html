@@ -21,6 +21,7 @@
     <nav class="nav-tabs" role="tablist">
       <button class="nav-tab-btn active" id="tab-overview" onclick="app.navigate('overview')">Overview</button>
       <button class="nav-tab-btn" id="tab-inspect" onclick="app.navigate('inspect')">New Inspection</button>
+      <button class="nav-tab-btn" id="tab-priority" onclick="app.navigate('priority')">Review Priority</button>
       <button class="nav-tab-btn" id="tab-inspections" onclick="app.navigate('inspections')">Inspection History</button>
       <button class="nav-tab-btn" id="tab-assets" onclick="app.navigate('assets')">Assets</button>
       <button class="nav-tab-btn" id="tab-system" onclick="app.navigate('system')">System Status</button>
@@ -449,6 +450,60 @@
           <div class="kpi-label">Hardware Acceleration</div>
           <div class="kpi-value" style="font-size: 18px; color: var(--text-primary);" id="sys-device-status">CUDA</div>
           <div class="kpi-subtext" id="sys-device-name">NVIDIA GeForce RTX 3050 Laptop GPU</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6: REVIEW PRIORITIZATION (PHASE 6D) -->
+    <section class="view-page" id="page-priority">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <div>
+          <h2 class="page-title">Agentic Inspection Review Prioritization</h2>
+          <p class="page-subtitle">Deterministic, explainable ranking of pending inspections awaiting human engineering review</p>
+        </div>
+        <button class="btn btn-secondary" onclick="app.loadPriorityQueue()">Refresh Queue</button>
+      </div>
+
+      <div class="card" style="border-left: 4px solid var(--accent-amber); margin-bottom: 24px; padding: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 20px;">🛡️</span>
+          <div>
+            <strong style="color: var(--text-primary); font-size: 13px;">Human Review Decision-Support Queue:</strong>
+            <span style="color: var(--text-muted); font-size: 13px;">
+              This queue deterministically ranks pending inspections to optimize inspector attention. It does not perform autonomous maintenance scheduling, dispatch field technicians, or modify plant controls.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Priority Queue Table Card -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Pending Human Review Queue (<span id="priority-queue-count">0</span> items)</span>
+          <span style="font-size: 11px; color: var(--text-dim);">Methodology: v1.0-deterministic</span>
+        </div>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Asset ID</th>
+                <th>Component</th>
+                <th>Review Priority</th>
+                <th>Priority Score</th>
+                <th>Authoritative Risk</th>
+                <th>Trend</th>
+                <th>Recurrence</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="priority-queue-tbody">
+              <tr>
+                <td colspan="10" style="text-align: center; color: var(--text-muted); padding: 24px;">Loading prioritized review queue...</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

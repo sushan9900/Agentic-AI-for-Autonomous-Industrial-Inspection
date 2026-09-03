@@ -20,12 +20,14 @@ from backend.app.schemas.agent_decision import (
     AgentInspectRequest,
     AgentInspectionDecision,
 )
+from backend.app.schemas.inspection_prioritization import InspectionPriorityQueue
 from backend.app.services.agent import (
     DecisionNotFoundError,
     InvalidReviewActionError,
     agent_decision_service,
 )
 from backend.app.services.end_to_end_inspection import e2e_inspection_service
+from backend.app.services.inspection_prioritization import inspection_prioritization_service
 
 router = APIRouter()
 
@@ -175,6 +177,32 @@ def list_agent_decisions(
 )
 def get_overview_kpis(db: Session = Depends(get_db)) -> Dict[str, Any]:
     return agent_decision_service.get_overview_kpis(db=db)
+
+
+@router.get(
+    "/agent/inspections/prioritized",
+    response_model=InspectionPriorityQueue,
+    status_code=status.HTTP_200_OK,
+    summary="Get Prioritized Human Review Queue",
+    description="Returns a transparent, deterministically prioritized queue of inspections requiring human review (Phase 6D).",
+    tags=["Agentic Decision Engine"]
+)
+def get_prioritized_inspections(
+    status_filter: Optional[str] = Query(default="PENDING_HUMAN_REVIEW", alias="status", description="Filter by review status"),
+    priority_class: Optional[str] = Query(default=None, description="Filter by review priority class: CRITICAL, HIGH, MEDIUM, LOW"),
+    asset_id: Optional[str] = Query(default=None, description="Filter by asset ID"),
+    component_id: Optional[str] = Query(default=None, description="Filter by component ID"),
+    limit: int = Query(default=50, ge=1, le=100, description="Max items to return"),
+    db: Session = Depends(get_db)
+) -> InspectionPriorityQueue:
+    return inspection_prioritization_service.get_prioritized_queue(
+        db=db,
+        status_filter=status_filter,
+        priority_class=priority_class,
+        asset_id=asset_id,
+        component_id=component_id,
+        limit=limit
+    )
 
 
 @router.get(
