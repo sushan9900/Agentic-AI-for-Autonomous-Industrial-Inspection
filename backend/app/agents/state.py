@@ -39,6 +39,10 @@ class AgentInspectionState(BaseModel):
         default=None,
         description="Structured historical inspection intelligence, similar past inspections, and risk trend (Phase 6A)"
     )
+    inspection_trends: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Structured multi-inspection trend analysis across time (Phase 6B)"
+    )
 
     # 3. Deterministic Risk & Policy Assessment
     risk_assessment: Optional[Dict[str, Any]] = Field(

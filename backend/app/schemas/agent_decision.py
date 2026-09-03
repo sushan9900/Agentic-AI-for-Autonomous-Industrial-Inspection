@@ -75,6 +75,10 @@ class AgentInspectionDecision(BaseModel):
         default=None,
         description="Supporting historical inspection intelligence and risk trends (Phase 6A)"
     )
+    inspection_trends: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Multi-inspection trend analysis across time (Phase 6B)"
+    )
 
     model_config = ConfigDict(extra="forbid")
 

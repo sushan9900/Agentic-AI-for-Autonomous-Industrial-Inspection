@@ -17,6 +17,7 @@ from backend.app.schemas.inspection_history import (
     HistoricalSummary,
     RiskTrendLiteral,
 )
+from backend.app.services.inspection_trend import inspection_trend_service
 
 logger = logging.getLogger(__name__)
 
@@ -375,6 +376,15 @@ class InspectionHistoryService:
                 trend_explanation=explanation
             )
 
+            # 8. Multi-inspection time series trend analysis (Phase 6B)
+            trend_analysis = inspection_trend_service.analyze_trends(
+                records=asset_history,
+                decisions=prev_decisions,
+                asset_id=asset_id,
+                component_id=component_id,
+                defect_type=defect_type
+            )
+
             has_history = (len(asset_history) > 0 or len(prev_decisions) > 0)
 
             return HistoricalInspectionContext(
@@ -385,6 +395,7 @@ class InspectionHistoryService:
                 recent_inspections=asset_history[:5],
                 similar_inspections=similar_inspections,
                 previous_decisions=prev_decisions[:5],
+                trends=trend_analysis,
                 retrieval_metadata={
                     "status": "SUCCESS",
                     "retrieval_timestamp": datetime.now(timezone.utc).isoformat(),

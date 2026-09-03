@@ -5,6 +5,8 @@ from typing import Any, Dict, List, Literal, Optional
 from pydantic import BaseModel, ConfigDict, Field
 
 
+from backend.app.schemas.inspection_trend import InspectionTrendAnalysis
+
 RiskTrendLiteral = Literal["STABLE", "INCREASING", "DECREASING", "INSUFFICIENT_HISTORY"]
 
 
@@ -61,6 +63,10 @@ class HistoricalInspectionContext(BaseModel):
     previous_decisions: List[Dict[str, Any]] = Field(
         default_factory=list,
         description="Historical agent decision and human review records"
+    )
+    trends: Optional[InspectionTrendAnalysis] = Field(
+        default=None,
+        description="Multi-inspection trend analysis across time (Phase 6B)"
     )
     retrieval_metadata: Dict[str, Any] = Field(
         default_factory=dict,

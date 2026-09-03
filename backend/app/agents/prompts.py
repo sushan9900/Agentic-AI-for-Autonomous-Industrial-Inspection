@@ -95,12 +95,25 @@ class AgentPromptBuilder:
         }
 
         if historical_context:
-            prompt_payload["SUPPORTING_HISTORICAL_INSPECTION_CONTEXT"] = {
+            hist_block = {
                 "notice": "INFORMATIONAL ONLY — NON-AUTHORITATIVE. Supporting context only; never override the authoritative system decision.",
                 "summary": historical_context.get("summary", {}),
                 "recent_inspections": historical_context.get("recent_inspections", [])[:3],
                 "similar_inspections": historical_context.get("similar_inspections", [])[:3]
             }
+            trends = historical_context.get("trends")
+            if trends:
+                hist_block["multi_inspection_trends"] = {
+                    "defect_trend": trends.get("defect_trend"),
+                    "severity_trend": trends.get("severity_trend"),
+                    "risk_trend": trends.get("risk_trend"),
+                    "recurrence_pattern": trends.get("recurrence_pattern"),
+                    "frequency_trend": trends.get("frequency_trend"),
+                    "deterioration_status": trends.get("deterioration_status"),
+                    "evidence_sufficiency": trends.get("evidence_sufficiency"),
+                    "trend_summary": trends.get("trend_summary_explanation")
+                }
+            prompt_payload["SUPPORTING_HISTORICAL_INSPECTION_CONTEXT"] = hist_block
 
         return f"""### AUTHORITATIVE INDUSTRIAL INSPECTION EVIDENCE & CONTEXT PACKAGE:
 {json.dumps(prompt_payload, indent=2, default=str)}
@@ -108,7 +121,7 @@ class AgentPromptBuilder:
 ### INSTRUCTIONS FOR WORK-ORDER DRAFT SYNTHESIS:
 1. Synthesize an evidence-grounded draft work order based STRICTLY on the verified facts above.
 2. DO NOT change or contradict the AUTHORITATIVE_SYSTEM_DECISION.
-3. Historical inspection intelligence is SUPPORTING evidence only. NEVER use it to recalculate, lower, or raise the authoritative risk score or change the operational action.
+3. Historical inspection intelligence and multi-inspection trends are SUPPORTING evidence only. NEVER use it to recalculate, lower, or raise the authoritative risk score, change the operational action, remove human review, or invent future failure dates.
 4. If HISTORICAL_COST_BASELINE cost_data_available is false, set estimated_cost to null and estimated_downtime_hours to null. DO NOT guess numbers.
 5. If information is unavailable, explicitly state "unavailable from baseline" instead of speculating.
 5. Adhere strictly to this JSON format:

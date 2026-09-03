@@ -169,14 +169,16 @@ class InspectionDecisionAgent:
             db=db
         )
         historical_context_dict = hist_ctx_out.model_dump(mode="json")
+        trends_dict = historical_context_dict.get("trends")
 
+        trend_status_str = f", Deterioration: {trends_dict.get('deterioration_status')}" if trends_dict else ""
         trace_recorder.record_step(
             stage="GET_MAINTENANCE_HISTORY",
             tool="get_maintenance_history",
             input_summary={"asset_id": asset_id, "component_id": component_id},
             result_summary=(
                 f"{maint_summary} Prior inspections: {hist_ctx_out.summary.total_previous_inspections} "
-                f"(Trend: {hist_ctx_out.summary.risk_trend}, Recurring: {hist_ctx_out.summary.recurring_defect_detected})."
+                f"(Trend: {hist_ctx_out.summary.risk_trend}, Recurring: {hist_ctx_out.summary.recurring_defect_detected}{trend_status_str})."
             ),
             decision_impact="Supplies past repair actions, actual costs, and longitudinal recurrence intelligence.",
             duration_ms=(time.time() - t0) * 1000
@@ -428,7 +430,8 @@ class InspectionDecisionAgent:
                 "steps_completed": len(trace_recorder.get_events()),
                 "model": provider.model_name(),
             },
-            historical_context=historical_context_dict
+            historical_context=historical_context_dict,
+            inspection_trends=trends_dict
         )
 
     # Backward compatibility wrapper for Phase 2C
