@@ -48,6 +48,9 @@ class InspectionWorkstationApp {
     } else if (viewName === "priority") {
       window.location.hash = "#priority";
       this.loadPriorityQueue();
+    } else if (viewName === "learning") {
+      window.location.hash = "#learning";
+      this.loadLearningDashboard();
     } else if (viewName === "inspections") {
       window.location.hash = "#inspections";
       this.loadHistory();
@@ -73,7 +76,7 @@ class InspectionWorkstationApp {
       }
     }
     const cleanView = hash.replace("#", "").trim();
-    if (["overview", "inspect", "priority", "inspections", "assets", "system"].includes(cleanView)) {
+    if (["overview", "inspect", "priority", "learning", "inspections", "assets", "system"].includes(cleanView)) {
       this.navigate(cleanView);
     } else {
       this.navigate("overview");
@@ -374,6 +377,108 @@ class InspectionWorkstationApp {
     } catch (err) {
       console.error(err);
       tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--accent-rose); padding: 20px;">Failed to load priority queue: ${err.message}</td></tr>`;
+    }
+  }
+
+  // -------------------------------------------------------------
+  // VIEW: LEARNING & OUTCOMES (PHASE 7)
+  // -------------------------------------------------------------
+  async loadLearningDashboard() {
+    try {
+      // 1. Fetch metrics
+      const mRes = await fetch("/api/v1/inspections/learning/metrics");
+      if (mRes.ok) {
+        const m = await mRes.json();
+        document.getElementById("kpi-learning-total").innerText = m.total_reviewed;
+        document.getElementById("kpi-learning-agreement").innerText = (m.overall_reviewer_agreement_rate * 100).toFixed(1) + "%";
+        document.getElementById("kpi-learning-correction").innerText = (m.correction_rate * 100).toFixed(1) + "%";
+        document.getElementById("kpi-learning-fp-fn").innerText = `${m.false_positive_count} / ${m.false_negative_count}`;
+      }
+
+      // 2. Fetch recommendations
+      const rRes = await fetch("/api/v1/inspections/learning/recommendations");
+      if (rRes.ok) {
+        const rData = await rRes.json();
+        const recs = rData.recommendations || [];
+        document.getElementById("learning-recs-count").innerText = recs.length;
+        const recContainer = document.getElementById("learning-recommendations-container");
+        if (recs.length === 0) {
+          recContainer.innerHTML = `<div style="color: var(--text-muted); text-align: center; padding: 12px;">No active adaptive recommendations. System operating within nominal bounds.</div>`;
+        } else {
+          recContainer.innerHTML = recs.map(rec => `
+            <div style="background: var(--bg-card); border-left: 4px solid var(--accent-amber); padding: 12px 16px; border-radius: 4px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                  <span class="badge badge-amber">${rec.recommendation_type}</span>
+                  <span class="badge ${this.getRiskBadgeClass(rec.advisory_priority)}">${rec.advisory_priority}</span>
+                  <strong style="font-size: 13px; color: var(--text-primary); font-family: var(--font-mono);">${rec.recommendation_id}</strong>
+                </div>
+                <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 4px;">${rec.reason}</div>
+                <div style="font-size: 11px; color: var(--text-dim);">
+                  Scope: ${rec.asset_id || "Fleet-wide"} ${rec.component_id ? `| Component: ${rec.component_id}` : ""}
+                </div>
+              </div>
+              <div style="text-align: right; flex-shrink: 0;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--accent-amber);">
+                  ${rec.suggested_score_adjustment >= 0 ? "+" : ""}${rec.suggested_score_adjustment} pts
+                </div>
+                <div style="font-size: 10px; color: var(--text-dim); text-transform: uppercase;">Advisory Overlay</div>
+              </div>
+            </div>
+          `).join("");
+        }
+      }
+
+      // 3. Fetch error patterns
+      const pRes = await fetch("/api/v1/inspections/learning/patterns");
+      if (pRes.ok) {
+        const pData = await pRes.json();
+        const patterns = pData.patterns || [];
+        const pTbody = document.getElementById("learning-patterns-tbody");
+        if (patterns.length === 0) {
+          pTbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted); padding: 20px;">No recurring error patterns detected.</td></tr>`;
+        } else {
+          pTbody.innerHTML = patterns.map(pat => `
+            <tr>
+              <td><strong style="font-family: var(--font-mono);">${pat.pattern_id}</strong></td>
+              <td><span class="badge badge-amber">${pat.pattern_type}</span></td>
+              <td><strong>${pat.asset_id || "All"}</strong> ${pat.component_id ? `<br/><span style="font-size: 11px; color: var(--text-muted);">${pat.component_id}</span>` : ""}</td>
+              <td><strong style="color: var(--accent-rose);">${pat.occurrence_count}</strong></td>
+              <td><span class="badge ${this.getRiskBadgeClass(pat.confidence)}">${pat.confidence}</span></td>
+              <td style="font-size: 12px;">${pat.explanation}</td>
+              <td style="font-size: 11px; color: var(--text-muted);">${new Date(pat.last_seen).toLocaleString()}</td>
+            </tr>
+          `).join("");
+        }
+      }
+
+      // 4. Fetch outcomes
+      const oRes = await fetch("/api/v1/inspections/outcomes?limit=20");
+      if (oRes.ok) {
+        const oData = await oRes.json();
+        const outcomes = oData.items || [];
+        const oTbody = document.getElementById("learning-outcomes-tbody");
+        if (outcomes.length === 0) {
+          oTbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 20px;">No finalized human review outcomes recorded yet.</td></tr>`;
+        } else {
+          oTbody.innerHTML = outcomes.map(o => `
+            <tr>
+              <td><strong style="font-family: var(--font-mono); font-size: 11px;">${o.outcome_id}</strong></td>
+              <td><span style="font-family: var(--font-mono); font-size: 11px;">${o.inspection_id}</span></td>
+              <td>${o.asset_id}</td>
+              <td><strong>${o.reviewer_id}</strong></td>
+              <td><span class="badge ${this.getReviewBadgeClass(o.review_status)}">${o.review_status}</span></td>
+              <td><span class="badge ${this.getRiskBadgeClass(o.ai_prediction.ai_severity)}">${o.ai_prediction.ai_severity} (${o.ai_prediction.ai_risk_score})</span></td>
+              <td><span class="badge ${this.getRiskBadgeClass(o.confirmed_outcome.confirmed_severity)}">${o.confirmed_outcome.confirmed_severity}</span></td>
+              <td>${o.is_agreement ? '<span style="color: var(--accent-emerald);">Agreed</span>' : '<span style="color: var(--accent-rose);">Corrected</span>'}</td>
+              <td style="font-size: 11px; color: var(--text-muted);">${new Date(o.reviewed_at).toLocaleString()}</td>
+            </tr>
+          `).join("");
+        }
+      }
+
+    } catch (err) {
+      console.error("Failed to load learning dashboard:", err);
     }
   }
 

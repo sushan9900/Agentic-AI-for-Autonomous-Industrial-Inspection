@@ -7,10 +7,12 @@ from sqlalchemy.orm import Session
 
 from backend.app.database.models.agent_decision import AgentDecisionModel
 from backend.app.schemas.inspection_prioritization import (
+    AdaptiveAdvisory,
     InspectionPriorityItem,
     InspectionPriorityQueue,
     PriorityClassLiteral,
 )
+from backend.app.services.adaptive_recommendation import adaptive_recommendation_service
 
 
 class InspectionPrioritizationService:
@@ -220,6 +222,9 @@ class InspectionPrioritizationService:
         # Batch retrieval of candidates
         decisions: List[AgentDecisionModel] = query.order_by(desc(AgentDecisionModel.created_at)).all()
 
+        # Phase 7 Adaptive Recommendations (Advisory only)
+        all_recommendations = adaptive_recommendation_service.generate_recommendations(db=db, asset_id=asset_id)
+
         candidates: List[Tuple[Any, ...]] = []
         severity_order = {"CRITICAL": 4, "HIGH": 3, "MEDIUM": 2, "MODERATE": 2, "LOW": 1}
         det_order = {"DETERIORATING": 3, "STABLE": 2, "IMPROVING": 1}
@@ -322,8 +327,25 @@ class InspectionPrioritizationService:
                 "contributing_factors": factors,
                 "source_inspection_ids": source_ids,
                 "generated_by": "deterministic_prioritization_engine_v1",
-                "authoritative": False
+                "authoritative": False,
+                "adaptive_advisory": None
             }
+
+            # Attach Phase 7 Adaptive Advisory Overlay if active recommendations exist
+            matching_recs = [
+                r for r in all_recommendations
+                if (r.asset_id is None or r.asset_id == dec.asset_id)
+                and (r.component_id is None or r.component_id == comp_id)
+            ]
+            if matching_recs:
+                adj = max(-10, min(15, sum(r.suggested_score_adjustment for r in matching_recs)))
+                item_data["adaptive_advisory"] = AdaptiveAdvisory(
+                    score_adjustment=adj,
+                    recommendations=[r.model_dump() for r in matching_recs],
+                    advisory_note="Advisory overlay only. Authoritative priority score remains unchanged.",
+                    authoritative=False
+                )
+
             candidates.append((sort_key, item_data))
 
         # Deterministic sort

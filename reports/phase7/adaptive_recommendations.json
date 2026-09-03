@@ -1,0 +1,235 @@
+{
+  "total_recommendations": 10,
+  "recommendations": [
+    {
+      "recommendation_id": "rec-fp-ASSET-PL-01-PIPE-SEG-4021",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "reason": "Detected 2 recurring false positive defect detections on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'. Multi-angle visual evidence or NDE verification recommended.",
+      "supporting_pattern_ids": [
+        "pat-repeated_false_positives-ASSET-PL-01-PIPE-SEG-4021"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-LRN-02",
+        "INSP-OUT-REJ-01"
+      ],
+      "advisory_priority": "MEDIUM",
+      "suggested_score_adjustment": 0,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-fp-ASSET-TK-04-TANK-SHELL-01",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "reason": "Detected 2 recurring false positive defect detections on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'. Multi-angle visual evidence or NDE verification recommended.",
+      "supporting_pattern_ids": [
+        "pat-repeated_false_positives-ASSET-TK-04-TANK-SHELL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "advisory_priority": "MEDIUM",
+      "suggested_score_adjustment": 0,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-fn-ASSET-PU-07-PUMP-SEAL-01",
+      "asset_id": "ASSET-PU-07",
+      "component_id": "PUMP-SEAL-01",
+      "recommendation_type": "HIGHER_REVIEW_PRIORITY",
+      "reason": "Detected 2 confirmed missed defects (false negatives) on asset 'ASSET-PU-07' on component 'PUMP-SEAL-01'. Priority review elevation advised.",
+      "supporting_pattern_ids": [
+        "pat-repeated_false_negatives-ASSET-PU-07-PUMP-SEAL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-ADAPT-FN-01",
+        "INSP-ADAPT-FN-02"
+      ],
+      "advisory_priority": "CRITICAL",
+      "suggested_score_adjustment": 15,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-over-ASSET-PL-01-PIPE-SEG-4021",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "reason": "Detected 49 recurring severity overestimations on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'. Physical dimensional confirmation advised.",
+      "supporting_pattern_ids": [
+        "pat-recurring_severity_overestimation-ASSET-PL-01-PIPE-SEG-4021"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-INJ-65039",
+        "INSP-INJ-84347",
+        "INSP-INJ-16780",
+        "INSP-INJ-73848",
+        "INSP-INJ-47493",
+        "INSP-INJ-71336",
+        "INSP-INJ-64616",
+        "INSP-INJ-54151",
+        "INSP-INJ-30840",
+        "INSP-INJ-86433",
+        "INSP-INJ-4348",
+        "INSP-INJ-71003",
+        "INSP-INJ-31019",
+        "INSP-INJ-26811",
+        "INSP-INJ-10726",
+        "INSP-INJ-9057",
+        "INSP-INJ-99778",
+        "INSP-INJ-59757",
+        "INSP-INJ-3169",
+        "INSP-INJ-10899",
+        "INSP-INJ-69413",
+        "INSP-INJ-41112",
+        "INSP-INJ-65499",
+        "INSP-INJ-45828",
+        "INSP-INJ-25679",
+        "INSP-INJ-8032",
+        "INSP-INJ-36298",
+        "INSP-INJ-36588",
+        "INSP-INJ-94106",
+        "INSP-INJ-3811",
+        "INSP-INJ-87534",
+        "INSP-INJ-5758",
+        "INSP-INJ-3798",
+        "INSP-INJ-57847",
+        "INSP-INJ-28080",
+        "INSP-INJ-41344",
+        "INSP-LRN-02",
+        "INSP-LRN-03",
+        "INSP-OUT-CORR-01",
+        "INSP-OUT-REJ-01",
+        "INSP-OUT-DUP-01",
+        "INSP-OUT-LIST-01",
+        "INSP-INV-14",
+        "INSP-INJ-95853",
+        "INSP-INJ-26093",
+        "INSP-INJ-89780",
+        "INSP-INJ-77406",
+        "INSP-INJ-66919",
+        "INSP-INJ-3729"
+      ],
+      "advisory_priority": "LOW",
+      "suggested_score_adjustment": -5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-over-ASSET-TK-04-TANK-SHELL-01",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "reason": "Detected 2 recurring severity overestimations on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'. Physical dimensional confirmation advised.",
+      "supporting_pattern_ids": [
+        "pat-recurring_severity_overestimation-ASSET-TK-04-TANK-SHELL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "advisory_priority": "LOW",
+      "suggested_score_adjustment": -5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-under-ASSET-PU-07-PUMP-SEAL-01",
+      "asset_id": "ASSET-PU-07",
+      "component_id": "PUMP-SEAL-01",
+      "recommendation_type": "HIGHER_REVIEW_PRIORITY",
+      "reason": "Detected 2 AI severity underestimations on asset 'ASSET-PU-07' on component 'PUMP-SEAL-01'. Human review queue elevation advised.",
+      "supporting_pattern_ids": [
+        "pat-recurring_severity_underestimation-ASSET-PU-07-PUMP-SEAL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-ADAPT-FN-01",
+        "INSP-ADAPT-FN-02"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 10,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-under-ASSET-ST-12-BEAM-COL-01",
+      "asset_id": "ASSET-ST-12",
+      "component_id": "BEAM-COL-01",
+      "recommendation_type": "HIGHER_REVIEW_PRIORITY",
+      "reason": "Detected 2 AI severity underestimations on asset 'ASSET-ST-12' on component 'BEAM-COL-01'. Human review queue elevation advised.",
+      "supporting_pattern_ids": [
+        "pat-recurring_severity_underestimation-ASSET-ST-12-BEAM-COL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-PAT-UNDER-01",
+        "INSP-PAT-UNDER-02"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 10,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-act-ASSET-PL-01-PIPE-VALVE-01",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-VALVE-01",
+      "recommendation_type": "REQUIRE_EXPERT_REVIEW",
+      "reason": "Detected 2 operational action disagreements on asset 'ASSET-PL-01' on component 'PIPE-VALVE-01'. Senior specialist inspection signoff advised.",
+      "supporting_pattern_ids": [
+        "pat-repeated_action_disagreement-ASSET-PL-01-PIPE-VALVE-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-ADAPT-ACT-01",
+        "INSP-ADAPT-ACT-02"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-act-ASSET-PL-01-PIPE-SEG-4021",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "recommendation_type": "REQUIRE_EXPERT_REVIEW",
+      "reason": "Detected 3 operational action disagreements on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'. Senior specialist inspection signoff advised.",
+      "supporting_pattern_ids": [
+        "pat-repeated_action_disagreement-ASSET-PL-01-PIPE-SEG-4021"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-LRN-02",
+        "INSP-OUT-CORR-01",
+        "INSP-OUT-REJ-01"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-act-ASSET-TK-04-TANK-SHELL-01",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "recommendation_type": "REQUIRE_EXPERT_REVIEW",
+      "reason": "Detected 2 operational action disagreements on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'. Senior specialist inspection signoff advised.",
+      "supporting_pattern_ids": [
+        "pat-repeated_action_disagreement-ASSET-TK-04-TANK-SHELL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    }
+  ],
+  "methodology_version": "1.0",
+  "safety_notice": "Adaptive recommendations are advisory-only and do not modify authoritative inspection decisions or execute field actions."
+}

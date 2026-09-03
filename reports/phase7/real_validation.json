@@ -1,0 +1,501 @@
+{
+  "timestamp": "2026-09-03T16:23:36.974359+00:00",
+  "target_inspection_id": "insp-11112-phase7-validation",
+  "image_sha256": "44e62c6410a898b496e245ac28f3f1604c31acb04cad4e5b0551738f40a78313",
+  "review_outcome": {
+    "id": 151,
+    "outcome_id": "out-insp-11112-phase7-validation-41fc481e",
+    "inspection_id": "insp-11112-phase7-validation",
+    "asset_id": "ASSET-PL-01",
+    "component_id": "PIPE-SEG-4021",
+    "reviewer_id": "CHIEF-NDT-ENG-901",
+    "review_status": "APPROVED",
+    "ai_prediction": {
+      "ai_risk_score": 95,
+      "ai_severity": "CRITICAL",
+      "ai_action": "URGENT_ENGINEERING_REVIEW",
+      "ai_risk_band": "CRITICAL",
+      "ai_defect_detected": true,
+      "ai_defect_type": "CRACK"
+    },
+    "confirmed_outcome": {
+      "confirmed_defect_present": true,
+      "confirmed_severity": "CRITICAL",
+      "confirmed_defect_type": "CRACK",
+      "reviewer_correction": null
+    },
+    "reviewer_comment": "Physical crack confirmed on weld seam of Loop 1A pipe segment 4021. AI detection verified.",
+    "confirmation_source": "VISUAL_INSPECTION",
+    "evidence_quality": "EXCELLENT",
+    "reviewed_at": "2026-09-03T21:53:36.892851+05:30",
+    "created_at": "2026-09-03T21:53:36.892851+05:30",
+    "is_agreement": true
+  },
+  "learning_metrics": {
+    "total_reviewed": 57,
+    "defect_agreement_rate": 0.9649,
+    "severity_agreement_rate": 0.1404,
+    "risk_band_agreement_rate": 0.8772,
+    "action_agreement_rate": 0.9123,
+    "overall_reviewer_agreement_rate": 0.1053,
+    "false_positive_count": 2,
+    "false_positive_rate": 0.0351,
+    "false_negative_count": 0,
+    "false_negative_rate": 0.0,
+    "correction_count": 48,
+    "correction_rate": 0.8421,
+    "severity_overestimation_count": 49,
+    "severity_underestimation_count": 0,
+    "methodology_version": "1.0"
+  },
+  "error_patterns_count": 10,
+  "error_patterns": [
+    {
+      "pattern_id": "pat-repeated_false_positives-ASSET-PL-01-PIPE-SEG-4021",
+      "pattern_type": "REPEATED_FALSE_POSITIVES",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "occurrence_count": 2,
+      "affected_inspection_ids": [
+        "INSP-LRN-02",
+        "INSP-OUT-REJ-01"
+      ],
+      "confidence": "MEDIUM",
+      "explanation": "Observed 2 recurring false positive defect detections on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'.",
+      "first_seen": "2026-09-03T21:39:54.727174+05:30",
+      "last_seen": "2026-09-03T21:39:54.948504+05:30"
+    },
+    {
+      "pattern_id": "pat-repeated_false_positives-ASSET-TK-04-TANK-SHELL-01",
+      "pattern_type": "REPEATED_FALSE_POSITIVES",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "occurrence_count": 2,
+      "affected_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "confidence": "MEDIUM",
+      "explanation": "Observed 2 recurring false positive defect detections on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'.",
+      "first_seen": "2026-09-03T21:39:54.774695+05:30",
+      "last_seen": "2026-09-03T21:39:54.794052+05:30"
+    },
+    {
+      "pattern_id": "pat-repeated_false_negatives-ASSET-PU-07-PUMP-SEAL-01",
+      "pattern_type": "REPEATED_FALSE_NEGATIVES",
+      "asset_id": "ASSET-PU-07",
+      "component_id": "PUMP-SEAL-01",
+      "occurrence_count": 2,
+      "affected_inspection_ids": [
+        "INSP-ADAPT-FN-01",
+        "INSP-ADAPT-FN-02"
+      ],
+      "confidence": "MEDIUM",
+      "explanation": "Observed 2 missed defects (false negatives) confirmed by human reviewers on asset 'ASSET-PU-07' on component 'PUMP-SEAL-01'.",
+      "first_seen": "2026-09-03T21:37:58.983678+05:30",
+      "last_seen": "2026-09-03T21:37:59.009838+05:30"
+    },
+    {
+      "pattern_id": "pat-recurring_severity_overestimation-ASSET-PL-01-PIPE-SEG-4021",
+      "pattern_type": "RECURRING_SEVERITY_OVERESTIMATION",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "occurrence_count": 49,
+      "affected_inspection_ids": [
+        "INSP-INJ-65039",
+        "INSP-INJ-84347",
+        "INSP-INJ-16780",
+        "INSP-INJ-73848",
+        "INSP-INJ-47493",
+        "INSP-INJ-71336",
+        "INSP-INJ-64616",
+        "INSP-INJ-54151",
+        "INSP-INJ-30840",
+        "INSP-INJ-86433",
+        "INSP-INJ-4348",
+        "INSP-INJ-71003",
+        "INSP-INJ-31019",
+        "INSP-INJ-26811",
+        "INSP-INJ-10726",
+        "INSP-INJ-9057",
+        "INSP-INJ-99778",
+        "INSP-INJ-59757",
+        "INSP-INJ-3169",
+        "INSP-INJ-10899",
+        "INSP-INJ-69413",
+        "INSP-INJ-41112",
+        "INSP-INJ-65499",
+        "INSP-INJ-45828",
+        "INSP-INJ-25679",
+        "INSP-INJ-8032",
+        "INSP-INJ-36298",
+        "INSP-INJ-36588",
+        "INSP-INJ-94106",
+        "INSP-INJ-3811",
+        "INSP-INJ-87534",
+        "INSP-INJ-5758",
+        "INSP-INJ-3798",
+        "INSP-INJ-57847",
+        "INSP-INJ-28080",
+        "INSP-INJ-41344",
+        "INSP-LRN-02",
+        "INSP-LRN-03",
+        "INSP-OUT-CORR-01",
+        "INSP-OUT-REJ-01",
+        "INSP-OUT-DUP-01",
+        "INSP-OUT-LIST-01",
+        "INSP-INV-14",
+        "INSP-INJ-95853",
+        "INSP-INJ-26093",
+        "INSP-INJ-89780",
+        "INSP-INJ-77406",
+        "INSP-INJ-66919",
+        "INSP-INJ-3729"
+      ],
+      "confidence": "HIGH",
+      "explanation": "Observed 49 recurring severity overestimations by AI on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'.",
+      "first_seen": "2026-09-03T21:15:39.690623+05:30",
+      "last_seen": "2026-09-03T21:42:51.743221+05:30"
+    },
+    {
+      "pattern_id": "pat-recurring_severity_overestimation-ASSET-TK-04-TANK-SHELL-01",
+      "pattern_type": "RECURRING_SEVERITY_OVERESTIMATION",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "occurrence_count": 2,
+      "affected_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "confidence": "MEDIUM",
+      "explanation": "Observed 2 recurring severity overestimations by AI on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'.",
+      "first_seen": "2026-09-03T21:39:54.774695+05:30",
+      "last_seen": "2026-09-03T21:39:54.794052+05:30"
+    },
+    {
+      "pattern_id": "pat-recurring_severity_underestimation-ASSET-PU-07-PUMP-SEAL-01",
+      "pattern_type": "RECURRING_SEVERITY_UNDERESTIMATION",
+      "asset_id": "ASSET-PU-07",
+      "component_id": "PUMP-SEAL-01",
+      "occurrence_count": 2,
+      "affected_inspection_ids": [
+        "INSP-ADAPT-FN-01",
+        "INSP-ADAPT-FN-02"
+      ],
+      "confidence": "MEDIUM",
+      "explanation": "Observed 2 recurring severity underestimations by AI on asset 'ASSET-PU-07' on component 'PUMP-SEAL-01' requiring human elevation.",
+      "first_seen": "2026-09-03T21:37:58.983678+05:30",
+      "last_seen": "2026-09-03T21:37:59.009838+05:30"
+    },
+    {
+      "pattern_id": "pat-recurring_severity_underestimation-ASSET-ST-12-BEAM-COL-01",
+      "pattern_type": "RECURRING_SEVERITY_UNDERESTIMATION",
+      "asset_id": "ASSET-ST-12",
+      "component_id": "BEAM-COL-01",
+      "occurrence_count": 2,
+      "affected_inspection_ids": [
+        "INSP-PAT-UNDER-01",
+        "INSP-PAT-UNDER-02"
+      ],
+      "confidence": "MEDIUM",
+      "explanation": "Observed 2 recurring severity underestimations by AI on asset 'ASSET-ST-12' on component 'BEAM-COL-01' requiring human elevation.",
+      "first_seen": "2026-09-03T21:39:54.820249+05:30",
+      "last_seen": "2026-09-03T21:39:54.841475+05:30"
+    },
+    {
+      "pattern_id": "pat-repeated_action_disagreement-ASSET-PL-01-PIPE-VALVE-01",
+      "pattern_type": "REPEATED_ACTION_DISAGREEMENT",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-VALVE-01",
+      "occurrence_count": 2,
+      "affected_inspection_ids": [
+        "INSP-ADAPT-ACT-01",
+        "INSP-ADAPT-ACT-02"
+      ],
+      "confidence": "MEDIUM",
+      "explanation": "Observed 2 operational action modifications or rejections by human inspectors on asset 'ASSET-PL-01' on component 'PIPE-VALVE-01'.",
+      "first_seen": "2026-09-03T21:37:59.039519+05:30",
+      "last_seen": "2026-09-03T21:37:59.059563+05:30"
+    },
+    {
+      "pattern_id": "pat-repeated_action_disagreement-ASSET-PL-01-PIPE-SEG-4021",
+      "pattern_type": "REPEATED_ACTION_DISAGREEMENT",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "occurrence_count": 3,
+      "affected_inspection_ids": [
+        "INSP-LRN-02",
+        "INSP-OUT-CORR-01",
+        "INSP-OUT-REJ-01"
+      ],
+      "confidence": "HIGH",
+      "explanation": "Observed 3 operational action modifications or rejections by human inspectors on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'.",
+      "first_seen": "2026-09-03T21:39:54.727174+05:30",
+      "last_seen": "2026-09-03T21:39:54.948504+05:30"
+    },
+    {
+      "pattern_id": "pat-repeated_action_disagreement-ASSET-TK-04-TANK-SHELL-01",
+      "pattern_type": "REPEATED_ACTION_DISAGREEMENT",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "occurrence_count": 2,
+      "affected_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "confidence": "MEDIUM",
+      "explanation": "Observed 2 operational action modifications or rejections by human inspectors on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'.",
+      "first_seen": "2026-09-03T21:39:54.774695+05:30",
+      "last_seen": "2026-09-03T21:39:54.794052+05:30"
+    }
+  ],
+  "adaptive_recommendations_count": 10,
+  "adaptive_recommendations": [
+    {
+      "recommendation_id": "rec-fp-ASSET-PL-01-PIPE-SEG-4021",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "reason": "Detected 2 recurring false positive defect detections on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'. Multi-angle visual evidence or NDE verification recommended.",
+      "supporting_pattern_ids": [
+        "pat-repeated_false_positives-ASSET-PL-01-PIPE-SEG-4021"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-LRN-02",
+        "INSP-OUT-REJ-01"
+      ],
+      "advisory_priority": "MEDIUM",
+      "suggested_score_adjustment": 0,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-fp-ASSET-TK-04-TANK-SHELL-01",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "reason": "Detected 2 recurring false positive defect detections on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'. Multi-angle visual evidence or NDE verification recommended.",
+      "supporting_pattern_ids": [
+        "pat-repeated_false_positives-ASSET-TK-04-TANK-SHELL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "advisory_priority": "MEDIUM",
+      "suggested_score_adjustment": 0,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-fn-ASSET-PU-07-PUMP-SEAL-01",
+      "asset_id": "ASSET-PU-07",
+      "component_id": "PUMP-SEAL-01",
+      "recommendation_type": "HIGHER_REVIEW_PRIORITY",
+      "reason": "Detected 2 confirmed missed defects (false negatives) on asset 'ASSET-PU-07' on component 'PUMP-SEAL-01'. Priority review elevation advised.",
+      "supporting_pattern_ids": [
+        "pat-repeated_false_negatives-ASSET-PU-07-PUMP-SEAL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-ADAPT-FN-01",
+        "INSP-ADAPT-FN-02"
+      ],
+      "advisory_priority": "CRITICAL",
+      "suggested_score_adjustment": 15,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-over-ASSET-PL-01-PIPE-SEG-4021",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "reason": "Detected 49 recurring severity overestimations on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'. Physical dimensional confirmation advised.",
+      "supporting_pattern_ids": [
+        "pat-recurring_severity_overestimation-ASSET-PL-01-PIPE-SEG-4021"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-INJ-65039",
+        "INSP-INJ-84347",
+        "INSP-INJ-16780",
+        "INSP-INJ-73848",
+        "INSP-INJ-47493",
+        "INSP-INJ-71336",
+        "INSP-INJ-64616",
+        "INSP-INJ-54151",
+        "INSP-INJ-30840",
+        "INSP-INJ-86433",
+        "INSP-INJ-4348",
+        "INSP-INJ-71003",
+        "INSP-INJ-31019",
+        "INSP-INJ-26811",
+        "INSP-INJ-10726",
+        "INSP-INJ-9057",
+        "INSP-INJ-99778",
+        "INSP-INJ-59757",
+        "INSP-INJ-3169",
+        "INSP-INJ-10899",
+        "INSP-INJ-69413",
+        "INSP-INJ-41112",
+        "INSP-INJ-65499",
+        "INSP-INJ-45828",
+        "INSP-INJ-25679",
+        "INSP-INJ-8032",
+        "INSP-INJ-36298",
+        "INSP-INJ-36588",
+        "INSP-INJ-94106",
+        "INSP-INJ-3811",
+        "INSP-INJ-87534",
+        "INSP-INJ-5758",
+        "INSP-INJ-3798",
+        "INSP-INJ-57847",
+        "INSP-INJ-28080",
+        "INSP-INJ-41344",
+        "INSP-LRN-02",
+        "INSP-LRN-03",
+        "INSP-OUT-CORR-01",
+        "INSP-OUT-REJ-01",
+        "INSP-OUT-DUP-01",
+        "INSP-OUT-LIST-01",
+        "INSP-INV-14",
+        "INSP-INJ-95853",
+        "INSP-INJ-26093",
+        "INSP-INJ-89780",
+        "INSP-INJ-77406",
+        "INSP-INJ-66919",
+        "INSP-INJ-3729"
+      ],
+      "advisory_priority": "LOW",
+      "suggested_score_adjustment": -5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-over-ASSET-TK-04-TANK-SHELL-01",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "reason": "Detected 2 recurring severity overestimations on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'. Physical dimensional confirmation advised.",
+      "supporting_pattern_ids": [
+        "pat-recurring_severity_overestimation-ASSET-TK-04-TANK-SHELL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "advisory_priority": "LOW",
+      "suggested_score_adjustment": -5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-under-ASSET-PU-07-PUMP-SEAL-01",
+      "asset_id": "ASSET-PU-07",
+      "component_id": "PUMP-SEAL-01",
+      "recommendation_type": "HIGHER_REVIEW_PRIORITY",
+      "reason": "Detected 2 AI severity underestimations on asset 'ASSET-PU-07' on component 'PUMP-SEAL-01'. Human review queue elevation advised.",
+      "supporting_pattern_ids": [
+        "pat-recurring_severity_underestimation-ASSET-PU-07-PUMP-SEAL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-ADAPT-FN-01",
+        "INSP-ADAPT-FN-02"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 10,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-under-ASSET-ST-12-BEAM-COL-01",
+      "asset_id": "ASSET-ST-12",
+      "component_id": "BEAM-COL-01",
+      "recommendation_type": "HIGHER_REVIEW_PRIORITY",
+      "reason": "Detected 2 AI severity underestimations on asset 'ASSET-ST-12' on component 'BEAM-COL-01'. Human review queue elevation advised.",
+      "supporting_pattern_ids": [
+        "pat-recurring_severity_underestimation-ASSET-ST-12-BEAM-COL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-PAT-UNDER-01",
+        "INSP-PAT-UNDER-02"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 10,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-act-ASSET-PL-01-PIPE-VALVE-01",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-VALVE-01",
+      "recommendation_type": "REQUIRE_EXPERT_REVIEW",
+      "reason": "Detected 2 operational action disagreements on asset 'ASSET-PL-01' on component 'PIPE-VALVE-01'. Senior specialist inspection signoff advised.",
+      "supporting_pattern_ids": [
+        "pat-repeated_action_disagreement-ASSET-PL-01-PIPE-VALVE-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-ADAPT-ACT-01",
+        "INSP-ADAPT-ACT-02"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-act-ASSET-PL-01-PIPE-SEG-4021",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "recommendation_type": "REQUIRE_EXPERT_REVIEW",
+      "reason": "Detected 3 operational action disagreements on asset 'ASSET-PL-01' on component 'PIPE-SEG-4021'. Senior specialist inspection signoff advised.",
+      "supporting_pattern_ids": [
+        "pat-repeated_action_disagreement-ASSET-PL-01-PIPE-SEG-4021"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-LRN-02",
+        "INSP-OUT-CORR-01",
+        "INSP-OUT-REJ-01"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    },
+    {
+      "recommendation_id": "rec-act-ASSET-TK-04-TANK-SHELL-01",
+      "asset_id": "ASSET-TK-04",
+      "component_id": "TANK-SHELL-01",
+      "recommendation_type": "REQUIRE_EXPERT_REVIEW",
+      "reason": "Detected 2 operational action disagreements on asset 'ASSET-TK-04' on component 'TANK-SHELL-01'. Senior specialist inspection signoff advised.",
+      "supporting_pattern_ids": [
+        "pat-repeated_action_disagreement-ASSET-TK-04-TANK-SHELL-01"
+      ],
+      "supporting_inspection_ids": [
+        "INSP-PAT-FP-01",
+        "INSP-PAT-FP-02"
+      ],
+      "advisory_priority": "HIGH",
+      "suggested_score_adjustment": 5,
+      "created_at": "2026-09-03T16:23:36.941312Z",
+      "authoritative": false
+    }
+  ],
+  "latency_benchmarks_ms": {
+    "outcome_persistence_latency": 49.86,
+    "metric_calculation_latency": 8.54,
+    "pattern_detection_latency": 12.35,
+    "recommendation_generation_latency": 9.4,
+    "prioritization_query_latency": 33.69,
+    "total_workflow_latency": 113.84
+  },
+  "invariants_verified": {
+    "authoritative_risk_score_unchanged": true,
+    "authoritative_operational_action_unchanged": true,
+    "human_review_mandatory": true,
+    "zero_maintenance_execution": true,
+    "zero_technician_dispatch": true,
+    "zero_plc_scada_control": true,
+    "llm_non_authoritative": true,
+    "zero_overwrite_invariant": true
+  }
+}

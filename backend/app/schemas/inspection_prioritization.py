@@ -49,6 +49,28 @@ class InspectionPriorityItem(BaseModel):
     generated_by: str = Field(default="deterministic_prioritization_engine_v1", description="Prioritization engine identifier")
     authoritative: bool = Field(default=False, description="Strict safety invariant: review priorities are never authoritative")
 
+    # Phase 7 Adaptive Intelligence Advisory Overlay (Zero-Overwrite Invariant)
+    adaptive_advisory: Optional["AdaptiveAdvisory"] = Field(
+        default=None,
+        description="Non-authoritative advisory overlay from Phase 7 learning layer. Original priority score is unchanged."
+    )
+
+    model_config = ConfigDict(extra="forbid")
+
+
+class AdaptiveAdvisory(BaseModel):
+    """
+    Non-authoritative adaptive intelligence overlay (Phase 7F).
+    Does NOT modify or overwrite the 100-point authoritative review priority score.
+    """
+    score_adjustment: int = Field(default=0, ge=-10, le=15, description="Advisory score adjustment suggestion (-10 to +15 pts)")
+    recommendations: List[dict] = Field(default_factory=list, description="Associated adaptive advisory recommendations")
+    advisory_note: str = Field(
+        default="Advisory overlay only. Authoritative priority score remains unchanged.",
+        description="Explicit advisory disclaimer"
+    )
+    authoritative: bool = Field(default=False, description="Strict safety invariant: advisories are never authoritative")
+
     model_config = ConfigDict(extra="forbid")
 
 

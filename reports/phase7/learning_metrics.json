@@ -1,0 +1,17 @@
+{
+  "total_reviewed": 57,
+  "defect_agreement_rate": 0.9649,
+  "severity_agreement_rate": 0.1404,
+  "risk_band_agreement_rate": 0.8772,
+  "action_agreement_rate": 0.9123,
+  "overall_reviewer_agreement_rate": 0.1053,
+  "false_positive_count": 2,
+  "false_positive_rate": 0.0351,
+  "false_negative_count": 0,
+  "false_negative_rate": 0.0,
+  "correction_count": 48,
+  "correction_rate": 0.8421,
+  "severity_overestimation_count": 49,
+  "severity_underestimation_count": 0,
+  "methodology_version": "1.0"
+}

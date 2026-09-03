@@ -8,6 +8,7 @@ from backend.app.api.v1.endpoints import (
     decision,
     health,
     images,
+    inspection_outcomes,
     llm,
     reviews,
     system,
@@ -22,6 +23,7 @@ api_router.include_router(components.router, tags=["Asset Intelligence"])
 api_router.include_router(llm.router, tags=["LLM Inference"])
 api_router.include_router(assessment.router, tags=["Agentic Assessment"])
 api_router.include_router(reviews.router, tags=["Inspector Reviews"])
+api_router.include_router(inspection_outcomes.router, tags=["Inspection Learning & Outcomes"])
 api_router.include_router(images.router, tags=["Inspection Images"])
 api_router.include_router(assets.router, tags=["Asset Management"])
 api_router.include_router(analytics.router, tags=["Fleet Analytics"])
