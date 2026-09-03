@@ -306,7 +306,7 @@ def test_deterministic_tie_breaker(db_session: Session):
     _create_mock_decision(db_session, "INSP-TIE-A", risk_score=75, risk_level="HIGH", age_hours=5.0)
     _create_mock_decision(db_session, "INSP-TIE-B", risk_score=75, risk_level="HIGH", age_hours=5.0)
 
-    queue = inspection_prioritization_service.get_prioritized_queue(db_session)
+    queue = inspection_prioritization_service.get_prioritized_queue(db_session, limit=500)
     tie_items = [i for i in queue.items if i.inspection_id in ("INSP-TIE-A", "INSP-TIE-B")]
 
     assert len(tie_items) == 2

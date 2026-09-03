@@ -1,0 +1,195 @@
+{
+  "phase": "Phase 8 \u2014 Agentic Inspection Orchestration & Closed-Loop Review",
+  "timestamp": "2026-09-03T16:55:01.634422+00:00",
+  "real_evidence": {
+    "image_filename": "11112.jpg",
+    "image_path": "data/processed/deepcrack/yolo/images/test/11112.jpg",
+    "image_sha256": "44e62c6410a898b496e245ac28f3f1604c31acb04cad4e5b0551738f40a78313",
+    "target_inspection_id": "insp-11112-phase8-validation",
+    "target_asset_id": "ASSET-PL-01",
+    "component_id": "PIPE-SEG-4021"
+  },
+  "task_recommendation": {
+    "recommendation_id": "rec-ev-insp-11112-phase8-validation-cb736f",
+    "asset_id": "ASSET-PL-01",
+    "component_id": "PIPE-SEG-4021",
+    "inspection_id": "insp-11112-phase8-validation",
+    "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+    "urgency": "CRITICAL",
+    "timing_window": "IMMEDIATE",
+    "reason": "Inspection 'insp-11112-phase8-validation' on component 'PIPE-SEG-4021' exhibits evidence gaps or insufficient visual resolution. Additional targeted imagery recommended.",
+    "supporting_evidence_ids": [
+      "Unmeasured depth of wall thinning in heat-affected zone"
+    ],
+    "supporting_inspection_ids": [
+      "insp-11112-phase8-validation"
+    ],
+    "authoritative": false,
+    "human_approval_required": true,
+    "created_at": "2026-09-03T16:55:01.522010Z"
+  },
+  "timing_recommendation": {
+    "timing_window": "IMMEDIATE",
+    "urgency": "CRITICAL",
+    "rationale": "Critical structural risk with documented physical deterioration warrants immediate inspection.",
+    "supporting_factors": [
+      "Critical risk severity combined with active deterioration trend"
+    ],
+    "authoritative": false,
+    "evaluated_at": "2026-09-03T16:55:01.524019Z"
+  },
+  "evidence_request_plan": {
+    "inspection_id": "insp-11112-phase8-validation",
+    "total_requests": 1,
+    "requests": [
+      {
+        "request_id": "req-ev-insp-11112-phase8-validation-462f38",
+        "inspection_id": "insp-11112-phase8-validation",
+        "asset_id": "ASSET-PL-01",
+        "component_id": "PIPE-SEG-4021",
+        "request_type": "COMPONENT_CLOSEUP",
+        "reason": "Defect dimensional analysis requires macro closeup to quantify wall depth/loss (Unmeasured depth of wall thinning in heat-affected zone).",
+        "evidence_gap": "Unmeasured depth of wall thinning in heat-affected zone",
+        "required": true,
+        "human_approval_required": true,
+        "created_at": "2026-09-03T16:55:01.526019Z"
+      }
+    ]
+  },
+  "human_approval": {
+    "id": 21,
+    "approval_id": "appr-ce753e2e8f24",
+    "recommendation_id": "rec-ev-insp-11112-phase8-validation-cb736f",
+    "task_id": "task-1db47ce63812",
+    "status": "APPROVED",
+    "reviewer_id": "CHIEF-ENG-4091",
+    "reviewer_comment": "Authorized repeat inspection with ultrasonic wall loss measurement.",
+    "original_recommendation": {
+      "recommendation_id": "rec-ev-insp-11112-phase8-validation-cb736f",
+      "asset_id": "ASSET-PL-01",
+      "component_id": "PIPE-SEG-4021",
+      "inspection_id": "insp-11112-phase8-validation",
+      "recommendation_type": "REQUEST_ADDITIONAL_EVIDENCE",
+      "urgency": "CRITICAL",
+      "timing_window": "IMMEDIATE",
+      "reason": "Inspection 'insp-11112-phase8-validation' on component 'PIPE-SEG-4021' exhibits evidence gaps or insufficient visual resolution. Additional targeted imagery recommended.",
+      "supporting_evidence_ids": [
+        "Unmeasured depth of wall thinning in heat-affected zone"
+      ],
+      "supporting_inspection_ids": [
+        "insp-11112-phase8-validation"
+      ],
+      "authoritative": false,
+      "human_approval_required": true,
+      "created_at": "2026-09-03T16:55:01.522010Z"
+    },
+    "modifications": null,
+    "reviewed_at": "2026-09-03T22:25:01.545555+05:30",
+    "created_at": "2026-09-03T22:25:01.536548+05:30"
+  },
+  "final_task": {
+    "id": 69,
+    "task_id": "task-1db47ce63812",
+    "inspection_id": "insp-11112-phase8-validation",
+    "asset_id": "ASSET-PL-01",
+    "component_id": "PIPE-SEG-4021",
+    "state": "COMPLETED",
+    "task_type": "EVIDENCE_COLLECTION",
+    "priority": "CRITICAL",
+    "timing_window": "IMMEDIATE",
+    "assigned_to": "CHIEF-ENG-4091",
+    "payload": {
+      "source_recommendation_id": "rec-ev-insp-11112-phase8-validation-cb736f",
+      "recommendation_reason": "Inspection 'insp-11112-phase8-validation' on component 'PIPE-SEG-4021' exhibits evidence gaps or insufficient visual resolution. Additional targeted imagery recommended.",
+      "approval_comments": "Authorized repeat inspection with ultrasonic wall loss measurement."
+    },
+    "created_at": "2026-09-03T22:25:01.546557+05:30",
+    "updated_at": "2026-09-03T22:25:01.616144+05:30",
+    "transitions": [
+      {
+        "id": 139,
+        "transition_id": "tr-5d3fde95cdb6",
+        "task_id": "task-1db47ce63812",
+        "inspection_id": "insp-11112-phase8-validation",
+        "previous_state": "CREATED",
+        "new_state": "CREATED",
+        "actor_type": "HUMAN_REVIEWER",
+        "actor_id": "CHIEF-ENG-4091",
+        "reason": "Human approved recommendation: Authorized repeat inspection with ultrasonic wall loss measurement.",
+        "transition_metadata": {
+          "initial_priority": "CRITICAL",
+          "timing_window": "IMMEDIATE"
+        },
+        "created_at": "2026-09-03T22:25:01.546557+05:30"
+      },
+      {
+        "id": 140,
+        "transition_id": "tr-806a28c6db48",
+        "task_id": "task-1db47ce63812",
+        "inspection_id": "insp-11112-phase8-validation",
+        "previous_state": "CREATED",
+        "new_state": "QUEUED",
+        "actor_type": "SYSTEM_RECOMMENDATION",
+        "actor_id": null,
+        "reason": "Queued into primary operations inspection backlog.",
+        "transition_metadata": {},
+        "created_at": "2026-09-03T22:25:01.579079+05:30"
+      },
+      {
+        "id": 141,
+        "transition_id": "tr-5a71f45913ae",
+        "task_id": "task-1db47ce63812",
+        "inspection_id": "insp-11112-phase8-validation",
+        "previous_state": "QUEUED",
+        "new_state": "IN_REVIEW",
+        "actor_type": "HUMAN_REVIEWER",
+        "actor_id": "ENG-SPECIALIST-202",
+        "reason": "NDE specialist commenced physical and acoustic scan examination.",
+        "transition_metadata": {},
+        "created_at": "2026-09-03T22:25:01.596620+05:30"
+      },
+      {
+        "id": 142,
+        "transition_id": "tr-3b329c5bf2c8",
+        "task_id": "task-1db47ce63812",
+        "inspection_id": "insp-11112-phase8-validation",
+        "previous_state": "IN_REVIEW",
+        "new_state": "REVIEWED",
+        "actor_type": "HUMAN_REVIEWER",
+        "actor_id": "ENG-SPECIALIST-202",
+        "reason": "Acoustic examination completed; diagnostic verification logged.",
+        "transition_metadata": {},
+        "created_at": "2026-09-03T22:25:01.605627+05:30"
+      },
+      {
+        "id": 143,
+        "transition_id": "tr-70b6e69f2845",
+        "task_id": "task-1db47ce63812",
+        "inspection_id": "insp-11112-phase8-validation",
+        "previous_state": "REVIEWED",
+        "new_state": "COMPLETED",
+        "actor_type": "HUMAN_REVIEWER",
+        "actor_id": "CHIEF-ENG-4091",
+        "reason": "Chief Engineer final acceptance and operational task closure.",
+        "transition_metadata": {},
+        "created_at": "2026-09-03T16:55:01.616144Z"
+      }
+    ]
+  },
+  "latencies_ms": {
+    "task_recommendations_ms": 29.24,
+    "timing_evaluation_ms": 0.0,
+    "evidence_request_ms": 2.0,
+    "create_approval_entry_ms": 17.53,
+    "process_human_approval_ms": 31.53,
+    "state_progression_ms": 49.82
+  },
+  "safety_audit": {
+    "autonomous_plant_control_executed": false,
+    "autonomous_technician_dispatch_executed": false,
+    "human_approval_gate_enforced": true,
+    "system_completion_blocked": true,
+    "authoritative_decision_policy_preserved": true,
+    "immutable_transition_audit_logged": true
+  }
+}

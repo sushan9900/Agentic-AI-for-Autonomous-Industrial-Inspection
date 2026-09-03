@@ -23,6 +23,7 @@
       <button class="nav-tab-btn" id="tab-inspect" onclick="app.navigate('inspect')">New Inspection</button>
       <button class="nav-tab-btn" id="tab-priority" onclick="app.navigate('priority')">Review Priority</button>
       <button class="nav-tab-btn" id="tab-learning" onclick="app.navigate('learning')">Learning &amp; Outcomes</button>
+      <button class="nav-tab-btn" id="tab-operations" onclick="app.navigate('operations')">Operations</button>
       <button class="nav-tab-btn" id="tab-inspections" onclick="app.navigate('inspections')">Inspection History</button>
       <button class="nav-tab-btn" id="tab-assets" onclick="app.navigate('assets')">Assets</button>
       <button class="nav-tab-btn" id="tab-system" onclick="app.navigate('system')">System Status</button>
@@ -619,6 +620,124 @@
             <tbody id="learning-outcomes-tbody">
               <tr>
                 <td colspan="9" style="text-align: center; color: var(--text-muted); padding: 20px;">Loading historical outcomes...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 8: INSPECTION OPERATIONS (PHASE 8) -->
+    <section class="view-page" id="page-operations">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <div>
+          <h2 class="page-title">Inspection Operations &amp; Orchestration</h2>
+          <p class="page-subtitle">Deterministic lifecycle management, task recommendations, and human approval gateway</p>
+        </div>
+        <button class="btn btn-secondary" onclick="app.loadOperationsDashboard()">Refresh Operations</button>
+      </div>
+
+      <!-- Advisory Notice -->
+      <div class="card" style="border-left: 4px solid var(--accent-amber); margin-bottom: 24px; padding: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 20px;">🛡️</span>
+          <div>
+            <strong style="color: var(--text-primary); font-size: 13px;">Human Authorization Notice:</strong>
+            <span style="color: var(--text-muted); font-size: 13px;">
+              Task recommendations are advisory-only and require explicit human engineering approval before scheduling. The orchestration layer does not execute maintenance or dispatch plant control commands.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operations KPIs -->
+      <div class="kpi-grid">
+        <div class="kpi-card" style="border-left: 4px solid var(--accent-amber);">
+          <div class="kpi-label">Pending Approvals</div>
+          <div class="kpi-value" style="color: var(--accent-amber);" id="kpi-ops-pending-approvals">0</div>
+          <div class="kpi-subtext">Awaiting human signoff</div>
+        </div>
+        <div class="kpi-card" style="border-left: 4px solid var(--accent-blue);">
+          <div class="kpi-label">Active Tasks</div>
+          <div class="kpi-value" style="color: var(--accent-blue);" id="kpi-ops-active-tasks">0</div>
+          <div class="kpi-subtext">Queued &amp; assigned</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">In Review</div>
+          <div class="kpi-value" id="kpi-ops-in-review">0</div>
+          <div class="kpi-subtext">Currently being examined</div>
+        </div>
+        <div class="kpi-card" style="border-left: 4px solid var(--accent-emerald);">
+          <div class="kpi-label">Completed Tasks</div>
+          <div class="kpi-value" style="color: var(--accent-emerald);" id="kpi-ops-completed-tasks">0</div>
+          <div class="kpi-subtext">Finalized inspections</div>
+        </div>
+      </div>
+
+      <!-- Task Recommendations & Approvals Section -->
+      <div class="card" style="margin-bottom: 24px;">
+        <div class="card-header">
+          <span class="card-title">Orchestration Task Recommendations (<span id="ops-recs-count">0</span> pending)</span>
+          <span class="badge badge-amber">HUMAN APPROVAL REQUIRED</span>
+        </div>
+        <div id="ops-recommendations-container" style="display: flex; flex-direction: column; gap: 12px; padding: 16px;">
+          <div style="color: var(--text-muted); text-align: center; padding: 12px;">No pending task recommendations.</div>
+        </div>
+      </div>
+
+      <!-- Active Inspection Tasks Table -->
+      <div class="card" style="margin-bottom: 24px;">
+        <div class="card-header">
+          <span class="card-title">Operational Inspection Tasks</span>
+          <span style="font-size: 11px; color: var(--text-dim);">Lifecycle Execution</span>
+        </div>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Task ID</th>
+                <th>Asset / Component</th>
+                <th>Task Type</th>
+                <th>Priority</th>
+                <th>Timing Window</th>
+                <th>State</th>
+                <th>Assigned To</th>
+                <th>Created At</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="ops-tasks-tbody">
+              <tr>
+                <td colspan="9" style="text-align: center; color: var(--text-muted); padding: 20px;">Loading inspection tasks...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Transition Audit Trail -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Orchestration Transition Audit Trail</span>
+          <span style="font-size: 11px; color: var(--text-dim);">Immutable Ledger</span>
+        </div>
+        <div class="data-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Transition ID</th>
+                <th>Task ID</th>
+                <th>Previous State</th>
+                <th>New State</th>
+                <th>Actor Type</th>
+                <th>Actor ID</th>
+                <th>Reason</th>
+                <th>Timestamp</th>
+              </tr>
+            </thead>
+            <tbody id="ops-audit-tbody">
+              <tr>
+                <td colspan="8" style="text-align: center; color: var(--text-muted); padding: 20px;">Loading audit events...</td>
               </tr>
             </tbody>
           </table>

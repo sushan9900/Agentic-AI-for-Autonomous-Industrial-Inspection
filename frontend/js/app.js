@@ -51,6 +51,9 @@ class InspectionWorkstationApp {
     } else if (viewName === "learning") {
       window.location.hash = "#learning";
       this.loadLearningDashboard();
+    } else if (viewName === "operations") {
+      window.location.hash = "#operations";
+      this.loadOperationsDashboard();
     } else if (viewName === "inspections") {
       window.location.hash = "#inspections";
       this.loadHistory();
@@ -76,7 +79,7 @@ class InspectionWorkstationApp {
       }
     }
     const cleanView = hash.replace("#", "").trim();
-    if (["overview", "inspect", "priority", "learning", "inspections", "assets", "system"].includes(cleanView)) {
+    if (["overview", "inspect", "priority", "learning", "operations", "inspections", "assets", "system"].includes(cleanView)) {
       this.navigate(cleanView);
     } else {
       this.navigate("overview");
@@ -479,6 +482,206 @@ class InspectionWorkstationApp {
 
     } catch (err) {
       console.error("Failed to load learning dashboard:", err);
+    }
+  }
+
+  // -------------------------------------------------------------
+  // VIEW: INSPECTION OPERATIONS & ORCHESTRATION (PHASE 8)
+  // -------------------------------------------------------------
+  async loadOperationsDashboard() {
+    try {
+      // 1. Fetch tasks
+      const tRes = await fetch("/api/v1/inspections/tasks?limit=50");
+      let tasks = [];
+      if (tRes.ok) {
+        const tData = await tRes.json();
+        tasks = tData.items || [];
+      }
+
+      // 2. Fetch approvals
+      const aRes = await fetch("/api/v1/inspections/orchestration/approvals?limit=50");
+      let approvals = [];
+      if (aRes.ok) {
+        const aData = await aRes.json();
+        approvals = aData.items || [];
+      }
+
+      // 3. Fetch recommendations
+      const rRes = await fetch("/api/v1/inspections/orchestration/recommendations");
+      let recs = [];
+      if (rRes.ok) {
+        const rData = await rRes.json();
+        recs = rData.recommendations || [];
+      }
+
+      // Update KPIs
+      const pendingApprovals = approvals.filter(a => a.status === "PENDING").length + recs.length;
+      const activeTasks = tasks.filter(t => !["COMPLETED", "CANCELLED", "REJECTED"].includes(t.state)).length;
+      const inReview = tasks.filter(t => t.state === "IN_REVIEW").length;
+      const completed = tasks.filter(t => t.state === "COMPLETED").length;
+
+      document.getElementById("kpi-ops-pending-approvals").innerText = pendingApprovals;
+      document.getElementById("kpi-ops-active-tasks").innerText = activeTasks;
+      document.getElementById("kpi-ops-in-review").innerText = inReview;
+      document.getElementById("kpi-ops-completed-tasks").innerText = completed;
+
+      // Render Recommendations
+      document.getElementById("ops-recs-count").innerText = recs.length;
+      const recContainer = document.getElementById("ops-recommendations-container");
+      if (recs.length === 0) {
+        recContainer.innerHTML = `<div style="color: var(--text-muted); text-align: center; padding: 12px;">No pending task recommendations.</div>`;
+      } else {
+        recContainer.innerHTML = recs.map(rec => `
+          <div style="background: var(--bg-card); border-left: 4px solid var(--accent-amber); padding: 12px 16px; border-radius: 4px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                <span class="badge badge-amber">${rec.recommendation_type}</span>
+                <span class="badge ${this.getRiskBadgeClass(rec.urgency)}">${rec.urgency}</span>
+                <span class="badge badge-blue">${rec.timing_window}</span>
+                <strong style="font-size: 13px; color: var(--text-primary); font-family: var(--font-mono);">${rec.recommendation_id}</strong>
+              </div>
+              <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 4px;">${rec.reason}</div>
+              <div style="font-size: 11px; color: var(--text-dim);">
+                Asset: <strong>${rec.asset_id}</strong> ${rec.component_id ? `| Component: ${rec.component_id}` : ""}
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; flex-shrink: 0;">
+              <button class="btn btn-primary" style="padding: 4px 10px; font-size: 11px;" onclick="app.approveRecommendation('${rec.recommendation_id}')">Approve &amp; Schedule</button>
+              <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px;" onclick="app.rejectRecommendation('${rec.recommendation_id}')">Decline</button>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // Render Active Tasks
+      const tTbody = document.getElementById("ops-tasks-tbody");
+      if (tasks.length === 0) {
+        tTbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 20px;">No active inspection tasks.</td></tr>`;
+      } else {
+        tTbody.innerHTML = tasks.map(t => {
+          let nextActionBtn = "";
+          if (t.state === "CREATED") {
+            nextActionBtn = `<button class="btn btn-secondary" style="padding: 2px 6px; font-size: 11px;" onclick="app.advanceTaskState('${t.task_id}', 'QUEUED')">Queue &rarr;</button>`;
+          } else if (t.state === "QUEUED") {
+            nextActionBtn = `<button class="btn btn-secondary" style="padding: 2px 6px; font-size: 11px;" onclick="app.advanceTaskState('${t.task_id}', 'IN_REVIEW')">Start Review &rarr;</button>`;
+          } else if (t.state === "IN_REVIEW") {
+            nextActionBtn = `<button class="btn btn-secondary" style="padding: 2px 6px; font-size: 11px;" onclick="app.advanceTaskState('${t.task_id}', 'REVIEWED')">Mark Reviewed &rarr;</button>`;
+          } else if (t.state === "REVIEWED") {
+            nextActionBtn = `<button class="btn btn-primary" style="padding: 2px 6px; font-size: 11px;" onclick="app.advanceTaskState('${t.task_id}', 'COMPLETED')">Finalize &check;</button>`;
+          }
+
+          return `
+            <tr>
+              <td><strong style="font-family: var(--font-mono); font-size: 11px;">${t.task_id}</strong></td>
+              <td><strong>${t.asset_id}</strong><br/><span style="font-size: 11px; color: var(--text-dim);">${t.component_id || "Fleet"}</span></td>
+              <td><span class="badge badge-blue">${t.task_type}</span></td>
+              <td><span class="badge ${this.getRiskBadgeClass(t.priority)}">${t.priority}</span></td>
+              <td><span style="font-size: 11px;">${t.timing_window}</span></td>
+              <td><span class="badge ${this.getReviewBadgeClass(t.state)}">${t.state}</span></td>
+              <td style="font-size: 11px;">${t.assigned_to || "Unassigned"}</td>
+              <td style="font-size: 11px; color: var(--text-muted);">${new Date(t.created_at).toLocaleDateString()}</td>
+              <td>${nextActionBtn}</td>
+            </tr>
+          `;
+        }).join("");
+      }
+
+      // Render Audit Trail
+      const auditRes = await fetch("/api/v1/inspections/orchestration/audit?limit=20");
+      if (auditRes.ok) {
+        const auditData = await auditRes.json();
+        const events = auditData.events || [];
+        const aTbody = document.getElementById("ops-audit-tbody");
+        if (events.length === 0) {
+          aTbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 20px;">No audit events recorded.</td></tr>`;
+        } else {
+          aTbody.innerHTML = events.map(e => `
+            <tr>
+              <td><strong style="font-family: var(--font-mono); font-size: 11px;">${e.event_id}</strong></td>
+              <td><span style="font-family: var(--font-mono); font-size: 11px;">${e.task_id}</span></td>
+              <td><span class="badge badge-amber">${e.previous_state}</span></td>
+              <td><span class="badge badge-emerald">${e.new_state}</span></td>
+              <td style="font-size: 11px;">${e.actor_type}</td>
+              <td style="font-size: 11px;">${e.actor_id || "SYSTEM"}</td>
+              <td style="font-size: 12px;">${e.reason}</td>
+              <td style="font-size: 11px; color: var(--text-muted);">${new Date(e.timestamp).toLocaleTimeString()}</td>
+            </tr>
+          `).join("");
+        }
+      }
+
+    } catch (err) {
+      console.error("Failed to load operations dashboard:", err);
+    }
+  }
+
+  async advanceTaskState(taskId, targetState) {
+    try {
+      const res = await fetch(`/api/v1/inspections/tasks/${taskId}/transition`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          new_state: targetState,
+          actor_type: "HUMAN_REVIEWER",
+          actor_id: "CHIEF-ENG-OPERATOR",
+          reason: `Operator advanced state to ${targetState}`
+        })
+      });
+      if (res.ok) {
+        this.showToast(`Task '${taskId}' advanced to ${targetState}`, "success");
+        this.loadOperationsDashboard();
+      } else {
+        const err = await res.json();
+        this.showToast(`Transition failed: ${err.detail || err.message}`, "error");
+      }
+    } catch (err) {
+      this.showToast(`Error: ${err.message}`, "error");
+    }
+  }
+
+  async approveRecommendation(recId) {
+    try {
+      const res = await fetch(`/api/v1/inspections/orchestration/${recId}/approve`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          reviewer_id: "CHIEF-ENG-OPERATOR",
+          status: "APPROVED",
+          reviewer_comment: "Approved via Inspection Operations Workstation"
+        })
+      });
+      if (res.ok) {
+        this.showToast(`Recommendation '${recId}' approved and task instantiated.`, "success");
+        this.loadOperationsDashboard();
+      } else {
+        const err = await res.json();
+        this.showToast(`Approval failed: ${err.detail || err.message}`, "error");
+      }
+    } catch (err) {
+      this.showToast(`Error: ${err.message}`, "error");
+    }
+  }
+
+  async rejectRecommendation(recId) {
+    try {
+      const res = await fetch(`/api/v1/inspections/orchestration/${recId}/reject`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          reviewer_id: "CHIEF-ENG-OPERATOR",
+          status: "REJECTED",
+          reviewer_comment: "Declined via Inspection Operations Workstation"
+        })
+      });
+      if (res.ok) {
+        this.showToast(`Recommendation '${recId}' declined.`, "info");
+        this.loadOperationsDashboard();
+      } else {
+        const err = await res.json();
+        this.showToast(`Rejection failed: ${err.detail || err.message}`, "error");
+      }
+    } catch (err) {
+      this.showToast(`Error: ${err.message}`, "error");
     }
   }
 

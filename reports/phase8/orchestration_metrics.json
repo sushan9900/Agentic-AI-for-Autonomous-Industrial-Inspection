@@ -1,0 +1,14 @@
+{
+  "latencies_ms": {
+    "task_recommendations_ms": 29.24,
+    "timing_evaluation_ms": 0.0,
+    "evidence_request_ms": 2.0,
+    "create_approval_entry_ms": 17.53,
+    "process_human_approval_ms": 31.53,
+    "state_progression_ms": 49.82
+  },
+  "total_lifecycle_transitions": 5,
+  "total_evidence_requests": 1,
+  "approval_status": "APPROVED",
+  "final_task_state": "COMPLETED"
+}
