@@ -210,3 +210,46 @@ class AgentValidator:
         }
 
         return sanitized, warnings
+
+    @classmethod
+    def sanitize_investigation_plan_output(
+        cls,
+        llm_raw_data: Dict[str, Any],
+        fallback_plan: Dict[str, Any]
+    ) -> Tuple[Dict[str, Any], List[str]]:
+        """
+        Validates that LLM-suggested investigation fields do not contain prompt injections,
+        unauthorized risk overrides, plant-control commands, or review bypasses.
+        """
+        warnings: List[str] = []
+        sanitized = dict(fallback_plan)
+
+        # Rejection of prompt injection patterns
+        injection_keywords = [
+            "ignore previous",
+            "disable human review",
+            "approve this inspection",
+            "set risk to zero",
+            "modify plc",
+            "scada override",
+            "plant control"
+        ]
+
+        # Scan text fields
+        for field in ("objective", "primary_question"):
+            val = llm_raw_data.get(field)
+            if val and isinstance(val, str):
+                lower_val = val.lower()
+                if any(k in lower_val for k in injection_keywords):
+                    warnings.append(f"Rejected prompt injection attempt in '{field}'; using deterministic baseline.")
+                else:
+                    sanitized[field] = val.strip()
+
+        # Enforce that authoritative fields in plan are strictly immutable
+        sanitized["authoritative"] = False
+        sanitized["constraints"] = [
+            "Decision support only: zero automated maintenance execution.",
+            "Zero plant-control modification or PLC/SCADA override.",
+            "Mandatory human sign-off required prior to technician dispatch."
+        ]
+        return sanitized, warnings

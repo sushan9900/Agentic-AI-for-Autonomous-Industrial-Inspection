@@ -22,6 +22,7 @@ from backend.app.schemas.agent_decision import (
     AgentInspectionDecision,
     WorkOrderRecommendation,
 )
+from backend.app.services.investigation_planner import investigation_planner
 from backend.app.tools import (
     AssetContextInput,
     CalculateRiskScoreTool,
@@ -281,6 +282,19 @@ class InspectionDecisionAgent:
             duration_ms=(time.time() - t0) * 1000
         )
 
+        # Agentic Investigation Planning (Phase 6C) - Non-authoritative decision support
+        inv_plan = investigation_planner.generate_plan(
+            inspection_id=inspection_id,
+            asset_id=asset_id,
+            evidence=validated_evidence,
+            risk_score=risk_out.risk_score,
+            operational_decision=decision_outcome.action,
+            component_id=component_id,
+            historical_context=hist_ctx_out,
+            trends=hist_ctx_out.trends
+        )
+        inv_plan_dict = inv_plan.model_dump(mode="json")
+
         # ---------------------------------------------------------
         # STAGE 9: GENERATE_WORK_ORDER
         # ---------------------------------------------------------
@@ -293,7 +307,8 @@ class InspectionDecisionAgent:
             similar_incidents=similar_inc_list,
             risk_assessment=risk_out.model_dump(),
             operational_decision=decision_outcome.action,
-            historical_context=historical_context_dict
+            historical_context=historical_context_dict,
+            investigation_plan=inv_plan_dict
         )
 
         provider = self._get_provider()
@@ -431,7 +446,8 @@ class InspectionDecisionAgent:
                 "model": provider.model_name(),
             },
             historical_context=historical_context_dict,
-            inspection_trends=trends_dict
+            inspection_trends=trends_dict,
+            investigation_plan=inv_plan_dict
         )
 
     # Backward compatibility wrapper for Phase 2C

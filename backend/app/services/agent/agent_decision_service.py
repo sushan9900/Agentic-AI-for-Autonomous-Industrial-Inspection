@@ -63,7 +63,8 @@ class AgentDecisionService:
             execution_metrics={
                 **decision.execution_metrics,
                 **({"historical_context": decision.historical_context} if decision.historical_context else {}),
-                **({"inspection_trends": decision.inspection_trends} if decision.inspection_trends else {})
+                **({"inspection_trends": decision.inspection_trends} if decision.inspection_trends else {}),
+                **({"investigation_plan": decision.investigation_plan} if decision.investigation_plan else {})
             },
             created_at=decision.generated_at
         )
