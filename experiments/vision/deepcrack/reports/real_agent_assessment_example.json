@@ -25,17 +25,15 @@
         "affected_area_percentage": 0.0508
       }
     ],
-    "historical_context_summary": "The component has a history of crack detections, including a critical crack identified in 2026 and a medium crack in 2024. Recent maintenance included sandblasting and epoxy coating application in 2024. The last manual inspection in 2023 found no defects. The historical failure incident (INC-2022-044) involving crack propagation due to vibration suggests a potential vulnerability.",
-    "reasoning": "The autonomous inspection identified three crack detections with varying confidence levels. The detection with ID 'det-001' has the highest confidence (63.8%) and a significant spatial area (4.55%). The deterministic rules triggered due to the number of detections and confidence levels, indicating a potential concern. Given the component's function as a high-pressure distribution manifold and the historical incident involving vibration-induced crack propagation, the current findings warrant immediate investigation. The recent coating application may have masked previous defects, but the presence of multiple cracks suggests a continuing issue.",
+    "historical_context_summary": "The component has a history of crack detections, including a critical crack identified in 2026 and a medium crack in 2024. Recent maintenance included sandblasting and epoxy coating application in 2024. The last manual inspection in 2023 reported no defects. The historical failure incident (INC-2022-044) involving crack propagation due to vibration suggests a potential vulnerability.",
+    "reasoning": "The autonomous inspection identified three crack detections with varying confidence levels. The detection with ID 'det-001' has the highest confidence (63.8%) and a significant spatial area (4.55%). The deterministic rules triggered due to the number of detections and confidence levels, indicating a potential concern. Given the component's material (A106_GR_B) and the historical incident related to vibration, cyclic loading represents a significant risk factor. The recent coating application may have masked previous defects, but the presence of multiple cracks warrants immediate investigation.",
     "risk_factors": [
-      "Cyclic Vibration",
-      "Material Degradation",
-      "Fatigue Crack Propagation"
+      "Cyclic Loading/Vibration",
+      "Coating Integrity"
     ],
     "recommended_actions": [
       "Detailed NDE Inspection",
-      "Coating Integrity Assessment",
-      "Vibration Monitoring Review"
+      "Root Cause Analysis"
     ],
     "confidence": "HIGH",
     "uncertainty": "The confidence scores of the autonomous detection system are subject to limitations. Further investigation is required to confirm the physical presence and extent of the cracks and to determine the root cause of the defect formation.",
@@ -49,13 +47,13 @@
       "component_id": "PIPE-SEG-4021",
       "asset_id": "ASSET-PL-01"
     },
-    "generated_at": "2026-09-02T15:59:59.093749+00:00",
+    "generated_at": "2026-09-07T16:04:22.173085+00:00",
     "model_provenance": {
       "provider": "ollama",
       "model": "gemma3:latest",
-      "duration_ms": 73993.12,
+      "duration_ms": 62476.87,
       "prompt_tokens": 1131,
-      "completion_tokens": 679
+      "completion_tokens": 690
     }
   },
   "draft_work_order": {
@@ -64,9 +62,9 @@
     "component_id": "PIPE-SEG-4021",
     "inspection_reference": "insp-11112-44e62c64",
     "priority": "CRITICAL",
-    "recommended_action": "Perform Ultrasonic NDE Examination - Focus on Crack Detection and Coating Integrity Assessment.",
-    "justification": "The autonomous inspection identified multiple critical crack detections. The deterministic rules triggered, and the historical context suggests a potential for continued crack propagation. A thorough NDE examination is required to accurately assess the crack size, orientation, and depth, as well as the integrity of the applied coating.",
-    "required_inspection": "Ultrasonic NDE Sa 2.5",
+    "recommended_action": "Perform Ultrasonic Thickness Measurement and Crack Detection NDE (UT/CD) on Primary Body Segment 4021, Span 40m - 52m. Focus on areas identified by the autonomous inspection system.",
+    "justification": "The multiple crack detections, coupled with the deterministic rule triggers and historical vibration incident, necessitate immediate investigation to assess the structural integrity and potential for further propagation. UT/CD provides a robust method for quantifying crack size and location.",
+    "required_inspection": "Ultrasonic Thickness Measurement and Crack Detection (UT/CD)",
     "suggested_team": "Pipeline Structural Integrity Team",
     "estimated_downtime_hours": 8.0,
     "estimated_cost": 4000.0,
@@ -81,7 +79,7 @@
     ],
     "uncertainty": "The confidence scores of the autonomous detection system are subject to limitations. Further investigation is required to confirm the physical presence and extent of the cracks and to determine the root cause of the defect formation.",
     "approval_status": "PENDING_HUMAN_REVIEW",
-    "generated_at": "2026-09-02T15:59:59.094765+00:00",
+    "generated_at": "2026-09-07T16:04:22.173085+00:00",
     "generated_by": "InspectionReasoningAgent"
   },
   "reasoning_trace": {
@@ -112,7 +110,7 @@
     "provider": "ollama",
     "model": "gemma3:latest",
     "prompt_version": "1.0",
-    "timestamp": "2026-09-02T15:59:59.094765+00:00",
+    "timestamp": "2026-09-07T16:04:22.173085+00:00",
     "output_reference": "assess-insp-11112-44e62c64-PIPE-SEG-4021",
     "human_review_status": "PENDING_HUMAN_REVIEW"
   }
